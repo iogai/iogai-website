@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+/* ============================================================
+   IOGAI — premium refrigeration & HVAC service site
+   Deep navy dominant · brushed gold as the ONE accent · blue demoted
+   to a minor secondary touch. Bright blue pill-buttons on white read as
+   generic SaaS-template default - swapped the primary action color to
+   the gold from his own logo-gold.svg gradient instead, and dropped the
+   rounded-full "bubble" treatment on buttons/badges for something with
+   more editorial confidence. Palette source: live iogai.com stylesheet
+   and logo-gold.svg gradient stops (checked 2 Sept 2026).
+   ============================================================ */
+
+@theme {
+  /* Surfaces */
+  --color-paper: oklch(1 0 0);              /* white               */
+  --color-mist: oklch(0.955 0.006 255);     /* soft navy-tinted grey */
+  --color-night: #000a24;                   /* real IOGAI dark navy */
+  --color-hairline: oklch(0.915 0.006 255);
+  --color-hairline-dark: oklch(0.33 0.01 255);
+
+  /* Ink */
+  --color-ink: #01123d;                     /* real IOGAI navy headings */
+  --color-ink-2: oklch(0.48 0.03 255);       /* body grey           */
+  --color-ink-3: oklch(0.6 0.03 255);        /* labels / meta       */
+
+  /* Accent — brushed gold, pulled from logo-gold.svg's gradient stops
+     (#C1995C -> #FCD877 -> #BD8E37). This is the primary action color now. */
+  --color-accent: #b8912f;
+  --color-accent-strong: #8f6f22;
+  --color-accent-soft: #e3c268;
+
+  /* Blue — the real IOGAI blue, kept only as a minor secondary touch
+     (small icons, focus rings) - no longer the button/badge fill color. */
+  --color-blue: #2489fe;
+
+  /* Gold — alias kept for anything already referencing it directly (ratings, stars) */
+  --color-gold: #e3c268;
+
+  /* Type */
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Motion */
+  --ease-xdr: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* Anchor jumps clear the fixed nav */
+section[id] { scroll-margin-top: 5.5rem; }
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  /* overflow-x alone without overflow-y computes overflow-y to "auto" per
+     the CSS Overflow spec, turning body into its own nested scroll
+     container - that silently breaks any scroll-linked motion value
+     (Framer's useScroll) that expects the document itself to scroll.
+     Pin overflow-y to visible so body never becomes a scroller. */
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+/* Fewer orphans in prose */
+p { text-wrap: pretty; }
+
+/* Spinning fan mark (the logo propeller) */
+@keyframes fan-spin { to { transform: rotate(360deg); } }
+.fan-blades {
+  /* Rotate around the true SVG center (12,12), NOT the bbox center —
+     a 3-blade shape's bbox is off-center, which made the hub wobble. */
+  transform-box: view-box;
+  transform-origin: 12px 12px;
+  animation: fan-spin 9s linear infinite;
+}
+.group:hover .fan-blades,
+a:hover .fan-blades {
+  animation-duration: 1.6s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fan-blades { animation: none; }
+}
+
+::selection {
+  background: color-mix(in oklch, var(--color-accent) 22%, transparent);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Eyebrow label with the little blue dot (matches references) */
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--color-ink-3);
+}
+.label::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background: var(--color-accent);
+}
+
+/* Bold rounded display headline */
+.display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.rule { height: 1px; background: var(--color-hairline); border: 0; }
+
+/* Legal / long-form pages */
+.legal h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--color-ink);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+.legal p { color: var(--color-ink-2); line-height: 1.7; margin-bottom: 1rem; }
+.legal ul { list-style: disc; padding-left: 1.25rem; color: var(--color-ink-2); margin-bottom: 1rem; }
+.legal li { margin-bottom: 0.35rem; line-height: 1.6; }
+.legal a { color: var(--color-accent); text-decoration: underline; }
+
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track { background: var(--color-mist); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-hairline);
+  border: 3px solid var(--color-mist);
+  border-radius: 8px;
+}
