@@ -5,7 +5,16 @@ import { z } from "zod";
 
 export const runtime = "nodejs";
 
-const LEAD_EMAIL = process.env.LEAD_EMAIL || "support@iogai.com";
+// Default destination is Igor's phone via the Verizon email-to-SMS gateway
+// (owner confirmed 3 Sept 2026: (424) 421-7771, Verizon) — no SMS API/cost,
+// just an email sent to a carrier address that arrives as a text.
+const LEAD_EMAIL = process.env.LEAD_EMAIL || "4244217771@vtext.com";
+const SMS_GATEWAY_DOMAINS = [
+  "vtext.com", // Verizon
+  "txt.att.net", // AT&T
+  "tmomail.net", // T-Mobile
+];
+const isSmsGateway = SMS_GATEWAY_DOMAINS.some((d) => LEAD_EMAIL.toLowerCase().endsWith(`@${d}`));
 const MAX_PHOTO = 8 * 1024 * 1024; // 8MB
 
 const Lead = z.object({
@@ -68,9 +77,14 @@ export async function POST(req: Request) {
     console.error("lead persist failed", e);
   }
 
-  const summary = `New IOGAI booking\nService: ${lead.service ?? "-"}\n${lead.firstName} ${lead.lastName}\n${lead.phone} · ${lead.email}\n${lead.address ? `Address: ${lead.address}\n` : ""}${lead.message ?? ""}`;
+  // Carrier SMS gateways drop long messages and attachments silently — keep
+  // it to the essentials when texting, full detail when it's a real inbox.
+  const summary = isSmsGateway
+    ? `IOGAI lead: ${lead.firstName} ${lead.lastName}, ${lead.phone}, ${lead.service ?? "service"}${lead.address ? `, ${lead.address}` : ""}`
+    : `New IOGAI booking\nService: ${lead.service ?? "-"}\n${lead.firstName} ${lead.lastName}\n${lead.phone} · ${lead.email}\n${lead.address ? `Address: ${lead.address}\n` : ""}${lead.message ?? ""}`;
 
-  // Email the lead to the business inbox (nodemailer) — needs GMAIL creds, else skip.
+  // Email the lead to the business inbox / SMS gateway (nodemailer) — needs
+  // GMAIL creds, else skip.
   const { GMAIL_USER, GMAIL_APP_PASSWORD } = process.env;
   if (GMAIL_USER && GMAIL_APP_PASSWORD) {
     try {
@@ -83,9 +97,9 @@ export async function POST(req: Request) {
         from: `IOGAI Website <${GMAIL_USER}>`,
         to: LEAD_EMAIL,
         replyTo: lead.email,
-        subject: `New booking — ${lead.firstName} ${lead.lastName} (${lead.service ?? "service"})`,
+        subject: isSmsGateway ? "" : `New booking — ${lead.firstName} ${lead.lastName} (${lead.service ?? "service"})`,
         text: summary,
-        attachments: photoBuf && photoName ? [{ filename: photoName, content: photoBuf }] : [],
+        attachments: !isSmsGateway && photoBuf && photoName ? [{ filename: photoName, content: photoBuf }] : [],
       });
     } catch (e) {
       console.error("email send failed", e);
@@ -93,7 +107,7 @@ export async function POST(req: Request) {
   }
 
   if (!GMAIL_USER) {
-    console.info("lead received (email disabled — set GMAIL_USER + GMAIL_APP_PASSWORD):", record);
+    console.info("lead received (notification disabled — set GMAIL_USER + GMAIL_APP_PASSWORD):", record);
   }
 
   return NextResponse.json({ ok: true });
