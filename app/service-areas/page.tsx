@@ -4,6 +4,7 @@ import { Logo } from "@/components/Logo";
 import { Footer } from "@/components/sections/Footer";
 import { site, services } from "@/lib/copy";
 import { locations, type Region } from "@/lib/locations";
+import { brands } from "@/lib/brands";
 
 export const metadata: Metadata = {
   title: "Service Areas | IOGAI Refrigeration & HVAC Repair",
@@ -35,6 +36,22 @@ export default function ServiceAreasPage() {
           equipment across Orange County and the South Bay / SE Los Angeles County area. Pick a
           service, then your city.
         </p>
+
+        <section className="mt-14">
+          <h2 className="font-display text-xl font-semibold text-ink">Brands We Service</h2>
+          <ul className="mt-5 flex flex-wrap gap-2.5">
+            {brands.map((b) => (
+              <li key={b.slug}>
+                <Link
+                  href={`/brands/${b.slug}`}
+                  className="inline-flex items-center rounded-md border border-hairline px-3.5 py-1.5 text-sm text-ink-2 transition-colors hover:border-accent hover:text-ink"
+                >
+                  {b.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
 
         {REGIONS.map((region) => (
           <section key={region} className="mt-14">
