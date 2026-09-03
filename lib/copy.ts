@@ -93,24 +93,28 @@ export const services = {
   items: [
     {
       no: "01",
+      slug: "refrigerator-freezer-repair",
       name: "Refrigerator & Freezer Repair",
       body: "Residential and commercial refrigerators and freezers, diagnosed and fixed - usually the same visit.",
       image: "/media/real/svc-refrigerator.jpg",
     },
     {
       no: "02",
+      slug: "commercial-refrigeration",
       name: "Commercial Refrigeration & Restaurant Equipment",
       body: "Walk-in coolers, ice makers, and restaurant equipment kept running for businesses that can't afford downtime.",
       image: "/media/real/svc-walkin.jpg",
     },
     {
       no: "03",
+      slug: "hvac-repair",
       name: "HVAC Repair",
       body: "Heating and air conditioning repair for homes and small businesses, done right the first time.",
       image: "/media/real/svc-hvac.jpg",
     },
     {
       no: "04",
+      slug: "marine-mortuary-refrigeration",
       name: "Specialty Refrigeration",
       body: "Marine refrigeration & AC, and mortuary refrigeration - equipment most repair companies won't touch.",
       image: "/media/real/svc-specialty.jpg",
@@ -257,6 +261,7 @@ export const footer = {
         { label: "How it works", href: "#process" },
         { label: "Reviews", href: "#testimonials" },
         { label: "FAQ", href: "#faq" },
+        { label: "Service Areas", href: "/service-areas" },
       ],
     },
     {
