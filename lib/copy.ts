@@ -16,8 +16,39 @@ export const site = {
 
 export const offer = {
   badge: "Same-day service",
-  text: "Call now for your quote - we'll walk you through what to expect before a tech ever shows up.",
+  text: "Call now for your quote - we'll walk you through what to expect before a tech ever shows up. Diagnostics are free on every repair call.",
   cta: "Call (424) 421-7771",
+};
+
+// Real quarterly maintenance program, described verbatim by the owner
+// 3 Sept 2026 - for restaurant chains and independent restaurants that
+// contract IOGAI for ongoing service instead of one-off repair calls.
+export const maintenance = {
+  label: "Maintenance Contracts",
+  title: "Annual Maintenance Contracts for Restaurants",
+  intro:
+    "For restaurant chains and independent restaurants that need their refrigeration running every day, not just fixed when it breaks. One contract, a set schedule, no surprise downtime.",
+  schedule: [
+    {
+      k: "Every 3 months",
+      v: "Full refrigeration and freezer service visit - four times a year.",
+    },
+    {
+      k: "Every 6 months",
+      v: "Ice maker service.",
+    },
+    {
+      k: "Once a year",
+      v: "Filter replacement.",
+    },
+  ],
+  includes: [
+    "Condenser coil cleaning with chemical treatment",
+    "Drain system cleaning and repair",
+    "Electrical connection diagnostics",
+    "Full equipment check at every technician visit",
+  ],
+  cta: "Ask about a maintenance contract",
 };
 
 // Google is the only platform with a verified count right now (Yelp shows 5.0 / 7 reviews,
@@ -269,6 +300,7 @@ export const footer = {
         { label: "Reviews", href: "#testimonials" },
         { label: "FAQ", href: "#faq" },
         { label: "Service Areas", href: "/service-areas" },
+        { label: "Maintenance Contracts", href: "/maintenance-contracts" },
       ],
     },
     {

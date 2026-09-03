@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: base, changeFrequency: "weekly", priority: 1 },
+    { url: `${base}/maintenance-contracts`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/service-areas`, changeFrequency: "monthly", priority: 0.7 },
     ...serviceAreaPages,
     { url: `${base}/privacy`, changeFrequency: "yearly", priority: 0.3 },
