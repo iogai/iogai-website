@@ -3,6 +3,7 @@ import { Bricolage_Grotesque, Inter } from "next/font/google";
 import "./globals.css";
 import { MotionRoot } from "@/components/ui/MotionRoot";
 import { Analytics } from "@/components/Analytics";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { faq, services } from "@/lib/copy";
 
 // LocalBusiness structured data — trust + Google rich results (rating stars, etc.)
@@ -151,6 +152,7 @@ export default function RootLayout({
         </a>
         <MotionRoot>{children}</MotionRoot>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
