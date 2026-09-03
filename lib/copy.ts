@@ -147,7 +147,7 @@ export const services = {
       no: "04",
       slug: "marine-mortuary-refrigeration",
       name: "Specialty Refrigeration",
-      body: "Marine refrigeration & AC, and mortuary refrigeration - equipment most repair companies won't touch.",
+      body: "Marine refrigeration & AC, mortuary refrigeration, shock freezers, and hospital/medical freezers - equipment most repair companies won't touch.",
       image: "/media/real/svc-specialty.jpg",
     },
   ],

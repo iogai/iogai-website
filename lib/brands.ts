@@ -25,6 +25,16 @@ export const brands: Brand[] = [
     name: "Atosa",
     blurb: "commercial refrigerators, freezers, and glass-door merchandisers.",
   },
+  {
+    slug: "traulsen",
+    name: "Traulsen",
+    blurb: "reach-in and glass-door refrigerators, freezers, and shock freezers.",
+  },
+  {
+    slug: "beverage-air",
+    name: "Beverage-Air",
+    blurb: "reach-in refrigerators, freezers, and beverage/wine coolers.",
+  },
 ];
 
 export function findBrand(slug: string): Brand | undefined {
