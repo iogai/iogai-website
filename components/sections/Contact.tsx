@@ -61,6 +61,18 @@ export function Contact() {
       if (!res.ok) throw new Error();
       trackLead(service); // conversion event for Meta/Google Ads
       setStatus("ok");
+
+      // Same pattern as rimrepairjoes.com: the API call above is a silent
+      // backup, but the real notification is the customer's own phone -
+      // redirect to sms: with the details pre-filled so they text IOGAI
+      // directly (and can attach the photo right in Messages, which a web
+      // form can't forward into a text). No SMS API, no cost, no delay.
+      const serviceLabel =
+        contact.serviceStep.options.find((o) => o.id === service)?.label ?? "repair";
+      const smsBody = `Hi IOGAI, I need a ${serviceLabel.toLowerCase()} quote.\n\nName: ${first} ${last}\nPhone: ${phone}\nAddress: ${address}\n${message ? `Issue: ${message}\n` : ""}\n(Attaching a photo below)`;
+      const sep = /android/i.test(navigator.userAgent) ? "?" : "&";
+      const smsHref = `sms:${site.phoneHref.replace("tel:", "")}${sep}body=${encodeURIComponent(smsBody)}`;
+      window.location.href = smsHref;
     } catch {
       setStatus("error");
     }
