@@ -37,7 +37,7 @@ export function MobileCTA() {
       <Link
         href="#contact"
         onClick={() => trackContact("book_click")}
-        className="flex h-12 flex-[1.4] items-center justify-center rounded-md bg-accent text-sm font-semibold text-ink"
+        className="pulse-cta flex h-12 flex-[1.4] items-center justify-center rounded-md bg-accent text-sm font-semibold text-ink"
       >
         Book a Repair
       </Link>

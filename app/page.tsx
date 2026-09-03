@@ -21,6 +21,7 @@ export default function Home() {
         <ScrollVideo />
         <Hero />
         <OfferBand />
+        <Contact />
         <TrustBar />
         <Advantages />
         <Guarantees />
@@ -28,7 +29,6 @@ export default function Home() {
         <Testimonials />
         <FAQ />
         <ClosingBand />
-        <Contact />
       </main>
       <Footer />
       <MobileCTA />

@@ -150,6 +150,18 @@ a:hover .fan-blades {
 .legal li { margin-bottom: 0.35rem; line-height: 1.6; }
 .legal a { color: var(--color-accent); text-decoration: underline; }
 
+/* Soft glowing-ring pulse for the highest-intent CTAs (call/book/text) —
+   a ring that expands and fades, not the harsh default opacity flicker. */
+@keyframes cta-pulse-ring {
+  0% { box-shadow: 0 0 0 0 color-mix(in oklch, var(--color-accent) 55%, transparent); }
+  70% { box-shadow: 0 0 0 10px color-mix(in oklch, var(--color-accent) 0%, transparent); }
+  100% { box-shadow: 0 0 0 0 color-mix(in oklch, var(--color-accent) 0%, transparent); }
+}
+.pulse-cta { animation: cta-pulse-ring 2.4s ease-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .pulse-cta { animation: none; }
+}
+
 ::-webkit-scrollbar { width: 12px; height: 12px; }
 ::-webkit-scrollbar-track { background: var(--color-mist); }
 ::-webkit-scrollbar-thumb {

@@ -19,6 +19,10 @@ export function Logo({ tone = "ink" }: { tone?: "ink" | "paper" }) {
       height={46}
       priority
       className="h-9 w-auto"
+      // The gradient's lightest stop (#FFFFD1) nearly disappears on the
+      // scrolled nav's near-white bg-paper/85 backdrop. A soft navy-tinted
+      // shadow gives the mark an edge without changing brand colors.
+      style={{ filter: "drop-shadow(0 1px 2px rgba(1,18,61,0.35))" }}
     />
   );
 }

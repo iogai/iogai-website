@@ -232,7 +232,14 @@ export const contact = {
     lastName: "Last name",
     phone: "Phone",
     email: "Email",
+    address: "Service address",
     consent: "We'll only use these to confirm and schedule your service.",
+  },
+  textUs: {
+    label: "Prefer to text?",
+    cta: "Text us a photo",
+    prefill:
+      "Hi IOGAI, I have equipment that needs repair. Here's what's going on: ",
   },
   steps: ["Service", "Details", "Your info"],
   back: "Back",

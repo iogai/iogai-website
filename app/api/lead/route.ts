@@ -15,6 +15,7 @@ const Lead = z.object({
   lastName: z.string().min(1).max(80),
   phone: z.string().min(5).max(40),
   email: z.string().email().max(200),
+  address: z.string().max(200).optional(),
   company: z.string().optional(), // honeypot
 });
 
@@ -29,6 +30,7 @@ export async function POST(req: Request) {
     lastName: form.get("lastName") ?? "",
     phone: form.get("phone") ?? "",
     email: form.get("email") ?? "",
+    address: form.get("address") ?? undefined,
     company: form.get("company") ?? undefined,
   });
   if (!parsed.success) return NextResponse.json({ ok: false, error: "invalid" }, { status: 422 });
@@ -66,7 +68,7 @@ export async function POST(req: Request) {
     console.error("lead persist failed", e);
   }
 
-  const summary = `New IOGAI booking\nService: ${lead.service ?? "-"}\n${lead.firstName} ${lead.lastName}\n${lead.phone} · ${lead.email}\n${lead.message ?? ""}`;
+  const summary = `New IOGAI booking\nService: ${lead.service ?? "-"}\n${lead.firstName} ${lead.lastName}\n${lead.phone} · ${lead.email}\n${lead.address ? `Address: ${lead.address}\n` : ""}${lead.message ?? ""}`;
 
   // Email the lead to the business inbox (nodemailer) — needs GMAIL creds, else skip.
   const { GMAIL_USER, GMAIL_APP_PASSWORD } = process.env;

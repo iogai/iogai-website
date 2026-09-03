@@ -73,7 +73,7 @@ export function Nav() {
           </a>
           <Link
             href="#contact"
-            className="hidden h-11 items-center rounded-md bg-accent px-5 text-sm font-medium text-ink transition-colors hover:bg-accent-strong hover:text-paper min-[420px]:inline-flex"
+            className="pulse-cta hidden h-11 items-center rounded-md bg-accent px-5 text-sm font-medium text-ink transition-colors hover:bg-accent-strong hover:text-paper min-[420px]:inline-flex"
           >
             {nav.cta}
           </Link>

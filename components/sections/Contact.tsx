@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { contact, site } from "@/lib/copy";
+import { trackContact } from "@/lib/track";
 import { easeXdr } from "@/lib/motion";
 import { trackLead } from "@/lib/track";
 
@@ -24,6 +25,7 @@ export function Contact() {
   const [last, setLast] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const [address, setAddress] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const fileRef = useRef<HTMLInputElement>(null);
 
@@ -52,6 +54,7 @@ export function Contact() {
       fd.append("lastName", last);
       fd.append("phone", phone);
       fd.append("email", email);
+      fd.append("address", address);
       fd.append("company", ""); // honeypot
       if (photo) fd.append("photo", photo);
       const res = await fetch("/api/lead", { method: "POST", body: fd });
@@ -75,13 +78,32 @@ export function Contact() {
             <div className="text-xs uppercase tracking-widest text-ink-3">{contact.directLabel}</div>
             <a
               href={site.phoneHref}
-              className="block font-display text-3xl font-semibold text-ink transition-colors hover:text-accent"
+              onClick={() => trackContact("phone")}
+              className="pulse-cta inline-block rounded-md font-display text-3xl font-semibold text-ink transition-colors hover:text-accent"
             >
               {site.phoneDisplay}
             </a>
             <a href={site.emailHref} className="block text-base text-ink-2 transition-colors hover:text-accent">
               {site.email}
             </a>
+            <div className="pt-1">
+              <div className="text-xs uppercase tracking-widest text-ink-3">{contact.textUs.label}</div>
+              <a
+                href={`sms:${site.phoneHref.replace("tel:", "")}?body=${encodeURIComponent(contact.textUs.prefill)}`}
+                onClick={() => trackContact("sms")}
+                className="mt-2 inline-flex h-11 items-center gap-2 rounded-md border border-hairline px-4 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden>
+                  <path
+                    d="M12 3C6.5 3 2 6.7 2 11.2c0 2.5 1.4 4.8 3.6 6.3-.1.9-.5 2.2-1.3 3.4 1.5-.2 3-.8 4.2-1.6 1.1.4 2.3.6 3.5.6 5.5 0 10-3.7 10-8.2S17.5 3 12 3Z"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                {contact.textUs.cta}
+              </a>
+            </div>
           </div>
         </Reveal>
 
@@ -281,6 +303,12 @@ export function Contact() {
                             {contact.contactStep.email}
                           </span>
                           <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" required className={field} placeholder="you@email.com" />
+                        </label>
+                        <label className="block sm:col-span-2">
+                          <span className="text-xs uppercase tracking-widest text-ink-3">
+                            {contact.contactStep.address}
+                          </span>
+                          <input value={address} onChange={(e) => setAddress(e.target.value)} className={field} placeholder="Street, city, ZIP" />
                         </label>
                       </div>
                       <p className="mt-4 text-xs text-ink-3">{contact.contactStep.consent}</p>
