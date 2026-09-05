@@ -95,6 +95,7 @@ export function ScrollVideo() {
         <video
           ref={videoRef}
           src="/media/real/video/walkthrough.mp4"
+          poster="/media/real/video/walkthrough-poster.jpg"
           muted
           playsInline
           preload="auto"

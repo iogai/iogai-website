@@ -69,7 +69,7 @@ const videoLd = {
   "@type": "VideoObject",
   name: "IOGAI refrigeration repair walkthrough",
   description: "A look inside a commercial refrigeration repair: diagnostics, the compressor, and a completed repair.",
-  thumbnailUrl: "https://iogai.com/media/real/video/walkthrough.mp4",
+  thumbnailUrl: "https://iogai.com/media/real/video/walkthrough-poster.jpg",
   uploadDate: "2026-09-03",
   contentUrl: "https://iogai.com/media/real/video/walkthrough.mp4",
   publisher: { "@id": "https://iogai.com/#business" },

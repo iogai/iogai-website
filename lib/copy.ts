@@ -110,10 +110,28 @@ export const guarantees = {
 // The old CoolFix "brands we service" section named AC brands the business
 // doesn't actually work on. Replaced with the real service categories from
 // iogai.com's own sitemap instead of guessing at brand relationships.
+// Google Business Profile lists IOGAI's category as general Appliance
+// Repair Service (washers, dryers, ovens, dishwashers) alongside
+// refrigeration - confirmed real by the owner 5 Sept 2026, added here
+// without touching the refrigeration/HVAC/marine/mortuary specialist
+// positioning the rest of the site is built around.
 export const brands = {
   label: "What we service",
   note: "From single refrigerators to mortuary and marine units - see the full list below.",
-  names: ["Refrigerators", "Commercial Refrigeration", "Walk-In Coolers", "Freezers", "Ice Makers", "Restaurant Equipment", "Marine Refrigeration & AC", "Mortuary Refrigeration", "HVAC Systems"],
+  names: [
+    "Refrigerators",
+    "Commercial Refrigeration",
+    "Walk-In Coolers",
+    "Freezers",
+    "Ice Makers",
+    "Restaurant Equipment",
+    "Marine Refrigeration & AC",
+    "Mortuary Refrigeration",
+    "HVAC Systems",
+    "Washers & Dryers",
+    "Ovens & Stoves",
+    "Dishwashers",
+  ],
 };
 
 export const services = {
@@ -126,6 +144,10 @@ export const services = {
       no: "01",
       slug: "refrigerator-freezer-repair",
       name: "Refrigerator & Freezer Repair",
+      // Short label for title tags - "Refrigerator & Freezer Repair in
+      // [longest city]" blows past 60 chars; the full name still shows
+      // in on-page copy.
+      titleName: "Refrigerator Repair",
       body: "Residential and commercial refrigerators and freezers, diagnosed and fixed - usually the same visit.",
       image: "/media/real/svc-refrigerator.jpg",
     },
@@ -133,6 +155,7 @@ export const services = {
       no: "02",
       slug: "commercial-refrigeration",
       name: "Commercial Refrigeration & Restaurant Equipment",
+      titleName: "Commercial Refrigeration",
       body: "Walk-in coolers, ice makers, and restaurant equipment kept running for businesses that can't afford downtime.",
       image: "/media/real/svc-walkin.jpg",
     },
@@ -140,6 +163,7 @@ export const services = {
       no: "03",
       slug: "hvac-repair",
       name: "HVAC Repair",
+      titleName: "HVAC Repair",
       body: "Heating and air conditioning repair for homes and small businesses, done right the first time.",
       image: "/media/real/svc-hvac.jpg",
     },
@@ -147,6 +171,7 @@ export const services = {
       no: "04",
       slug: "marine-mortuary-refrigeration",
       name: "Specialty Refrigeration",
+      titleName: "Specialty Refrigeration",
       body: "Marine refrigeration & AC, mortuary refrigeration, shock freezers, and hospital/medical freezers - equipment most repair companies won't touch.",
       image: "/media/real/svc-specialty.jpg",
     },

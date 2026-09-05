@@ -43,8 +43,8 @@ export async function generateMetadata({
   const data = getData(service, city);
   if (!data) return {};
   const { svc, loc } = data;
-  const title = `${svc.name} in ${loc.city}, CA | IOGAI`;
-  const description = `${svc.body} Serving ${loc.city} and ${REGION_BLURB[loc.region]}. Same-day dispatch, 5.0 stars on Google. Call ${site.phoneDisplay}.`;
+  const title = `${svc.titleName} in ${loc.city} | IOGAI`;
+  const description = `${svc.body} Serving ${loc.city}, CA and ${REGION_BLURB[loc.region]}. Same-day dispatch, 5.0 stars on Google. Call ${site.phoneDisplay}.`;
   return {
     title,
     description,
