@@ -1,23 +1,28 @@
 import Script from "next/script";
 
-// Meta Pixel + GA4/Google Ads. Both stay dormant until their IDs are set as
-// env vars (NEXT_PUBLIC_FB_PIXEL_ID / NEXT_PUBLIC_GA_ID) — so nothing loads,
-// and no consent is needed, until you actually run ads. Then conversions
-// (PageView + Lead) fire automatically. See lib/track.ts.
+// Meta Pixel + GA4 + Google Ads. All three stay dormant until their IDs are
+// set as env vars (NEXT_PUBLIC_FB_PIXEL_ID / NEXT_PUBLIC_GA_ID /
+// NEXT_PUBLIC_GOOGLE_ADS_ID) — so nothing loads, and no consent is needed,
+// until you actually run ads. Then conversions (PageView + Lead) fire
+// automatically. See lib/track.ts.
 export function Analytics() {
   const fb = process.env.NEXT_PUBLIC_FB_PIXEL_ID;
   const ga = process.env.NEXT_PUBLIC_GA_ID;
+  const ads = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
+  // gtag.js is one shared loader - load it once off whichever ID exists,
+  // then config every Google ID present (GA4's G- and/or Ads' AW-) on it.
+  const gtagLoaderId = ga || ads;
 
   return (
     <>
-      {ga && (
+      {gtagLoaderId && (
         <>
           <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${ga}`}
+            src={`https://www.googletagmanager.com/gtag/js?id=${gtagLoaderId}`}
             strategy="afterInteractive"
           />
           <Script id="ga4" strategy="afterInteractive">
-            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${ga}');`}
+            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());${ga ? `gtag('config','${ga}');` : ""}${ads ? `gtag('config','${ads}');` : ""}`}
           </Script>
         </>
       )}
