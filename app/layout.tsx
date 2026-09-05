@@ -107,6 +107,9 @@ export const metadata: Metadata = {
   description:
     "Refrigerator, freezer, walk-in cooler, ice maker, marine, and HVAC repair across Orange County and LA. Same-day dispatch, 5.0 stars on Google. Book online.",
   metadataBase: new URL("https://iogai.com"),
+  // Google Search Console site ownership verification (added 5 Sept 2026,
+  // via HTML tag method - the property was otherwise unverified).
+  verification: { google: "Zaqug4w0xnCIJGjh2PJnH3daafBuzwxMMcwgD4tUXkc" },
   keywords: [
     "refrigerator repair Huntington Beach",
     "HVAC repair Orange County",
