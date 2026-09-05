@@ -27,7 +27,7 @@ const businessLd = {
     addressCountry: "US",
   },
   areaServed: ["Huntington Beach", "Orange County", "Los Angeles"],
-  serviceType: services.items.map((s) => s.name),
+  serviceType: [...services.items.map((s) => s.name), "General Appliance Repair"],
   aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "118" },
   openingHoursSpecification: [
     {
@@ -53,14 +53,28 @@ const faqLd = {
 // One Service entity per real offering, linked back to the business - lets
 // an answer engine cite "IOGAI does X" for a specific service rather than
 // only the business as a whole.
-const servicesLd = services.items.map((s) => ({
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: s.name,
-  description: s.body,
-  provider: { "@id": "https://iogai.com/#business" },
-  areaServed: ["Huntington Beach", "Orange County", "Los Angeles"],
-}));
+const servicesLd = [
+  ...services.items.map((s) => ({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: s.name,
+    description: s.body,
+    provider: { "@id": "https://iogai.com/#business" },
+    areaServed: ["Huntington Beach", "Orange County", "Los Angeles"],
+  })),
+  // General appliance repair - the primary category on IOGAI's Google
+  // Business Profile alongside refrigeration (checked 5 Sept 2026), not
+  // one of the four "specialist" services the rest of the site is built
+  // around, but a real offering that belongs in the machine-readable facts.
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "General Appliance Repair",
+    description: "Washer, dryer, oven, and dishwasher repair for homes and businesses.",
+    provider: { "@id": "https://iogai.com/#business" },
+    areaServed: ["Huntington Beach", "Orange County", "Los Angeles"],
+  },
+];
 
 // The scroll walkthrough video, described for video search / AI crawlers -
 // uploadDate is the date this cut was produced, not a real-world event date.
