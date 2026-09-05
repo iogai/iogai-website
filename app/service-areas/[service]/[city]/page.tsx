@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { redirect } from "next/navigation";
 import { Logo } from "@/components/Logo";
 import { Footer } from "@/components/sections/Footer";
 import { CTA } from "@/components/ui/CTA";
@@ -59,7 +59,11 @@ export default async function ServiceAreaPage({
 }) {
   const { service, city } = await params;
   const data = getData(service, city);
-  if (!data) notFound();
+  // A city trimmed from the location list (e.g. already indexed by Google
+  // before we cut down to the 19 official GBP service-area cities) 301s to
+  // the hub instead of a bare 404 - keeps whatever SEO value the URL had
+  // instead of dead-ending it.
+  if (!data) redirect("/service-areas");
   const { svc, loc } = data;
 
   const otherServices = services.items.filter((s) => s.slug !== svc.slug);
