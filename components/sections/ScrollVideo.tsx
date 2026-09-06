@@ -98,7 +98,7 @@ export function ScrollVideo() {
           poster="/media/real/video/walkthrough-poster.jpg"
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
           className="absolute inset-0 h-full w-full object-cover"
         />
         {!ready && <div className="absolute inset-0 bg-night" />}
