@@ -98,11 +98,11 @@ export const guarantees = {
   label: "Our promise",
   title: "Service you can trust",
   intro:
-    "This is what the current iogai.com already tells customers. Ask the owner for the exact warranty terms and licence/insurance details so this section can say something more specific.",
+    "What you can expect when you book a repair with IOGAI.",
   items: [
     { k: "Swift response", v: "Technicians are ready to respond quickly and get your equipment back in operation without delays." },
     { k: "Certified team", v: "Technicians are certified and experienced across a wide range of brands and equipment types." },
-    { k: "Service warranty", v: "Repair and maintenance work is backed by a warranty. Ask the owner for the exact terms and length to publish here." },
+    { k: "Service warranty", v: "Repair and maintenance work is backed by a warranty." },
     { k: "Emergency service", v: "Emergency repairs are available to minimize downtime and keep equipment running." },
   ],
 };
