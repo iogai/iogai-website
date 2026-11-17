@@ -15,8 +15,8 @@ export const site = {
 };
 
 export const offer = {
-  badge: "Same-day service",
-  text: "Call now for your quote - we'll walk you through what to expect before a tech ever shows up. Diagnostics are free on every repair call.",
+  badge: "Same-day slots when available",
+  text: "Tell us what's going on. We'll explain the diagnostic fee before we send a technician and apply it toward your approved repair.",
   cta: "Call (424) 421-7771",
 };
 
@@ -68,7 +68,7 @@ export const nav = {
 export const hero = {
   eyebrow: "Refrigeration & HVAC repair - Orange County & LA",
   title: ["Cooling Solutions", "You Can Trust."],
-  sub: "Refrigerator, freezer, walk-in cooler, ice maker, marine, and HVAC repair for homes and businesses across Orange County and LA. Certified technicians, same-day dispatch.",
+  sub: "Refrigerator, freezer, walk-in cooler, ice maker, marine, and HVAC repair for homes and businesses across Orange County and LA. Certified technicians, with same-day slots when available.",
   ctaPrimary: "Book a Repair",
   ctaSecondary: "Get Estimate",
 };
@@ -91,7 +91,7 @@ export const trustbar = [
   "Swift Response",
   "Certified Technicians",
   "Service Warranty",
-  "Same-Day Dispatch",
+  "Same-Day Slots When Available",
 ];
 
 export const guarantees = {
@@ -185,7 +185,7 @@ export const process = {
     "Getting your equipment back on track is easier than you think - just five simple steps.",
   steps: [
     { no: "01", name: "Contact us", body: "Call or book online. Tell us the equipment and the symptom." },
-    { no: "02", name: "Pick a time", body: "Choose when we come - same-day windows where available." },
+    { no: "02", name: "Confirm your visit", body: "We'll get back to you with the next available windows and do our best to find a time that works for you." },
     { no: "03", name: "Get a service", body: "A certified tech diagnoses and fixes it, and quotes before any work." },
     { no: "04", name: "Pay safely", body: "Transparent pricing and secure payment - no surprises on the bill." },
     { no: "05", name: "Ready", body: "Your equipment back in operation, with a written record of the work." },
@@ -255,16 +255,16 @@ export const faq = {
 export const closing = {
   eyebrow: "Ready when you are",
   title: ["Cooling Solutions -", "We've Got This."],
-  sub: "Same-day refrigeration and HVAC repair. Trusted local service across Orange County and LA.",
+  sub: "Local refrigeration and HVAC repair across Orange County and LA. Ask us about same-day availability.",
   ctaPrimary: "Book a Repair",
   ctaSecondary: "Get Estimate",
 };
 
 export const contact = {
-  label: "Book online",
-  title: "Book your repair",
+  label: "Request service online",
+  title: "Request a service visit",
   intro:
-    "Three quick steps. Start with what you need - we ask for your details last, once you know we're the right fit.",
+    "Tell us what needs fixing and how to reach you. We'll follow up to confirm a time that works for you.",
   serviceStep: {
     heading: "What do you need help with?",
     options: [
