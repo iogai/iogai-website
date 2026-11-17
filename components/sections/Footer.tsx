@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { footer, site } from "@/lib/copy";
 
 export function Footer() {
@@ -65,10 +66,7 @@ export function Footer() {
 
         <div className="mt-16 border-t border-white/10 pt-10">
           <div className="flex flex-wrap items-end justify-between gap-4">
-            <div className="font-display text-[clamp(2.25rem,11vw,6rem)] font-bold leading-none tracking-tight text-paper">
-              {site.brand}
-              <span className="text-accent">{site.suffix}</span>
-            </div>
+            <Image src="/icon.png" alt={site.brand} width={128} height={128} className="rounded-xl" />
             <div className="text-right text-sm text-white/60">
               <a href={site.phoneHref} className="block transition-colors hover:text-paper">
                 {site.phoneDisplay}
