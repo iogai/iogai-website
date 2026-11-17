@@ -1,112 +1,111 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useTransform } from "framer-motion";
-import { useScrollProgress } from "@/lib/motion";
 import { services } from "@/lib/copy";
 
-// Four beats matching the video's own 0-3s / 3-6s / 6-9s / 9-12s structure.
-// The video is process/macro footage (tool, interior, compressor, resolved),
-// not shot per-service - so the real service list rides on top of it here
-// instead of living in a separate section, one name+line per beat.
-const BEATS = services.items.map((s, i) => ({ at: i * 0.25, title: s.name, body: s.body }));
-
-const DURATION = 12;
-
-function BeatText({ index, progress }: { index: number; progress: ReturnType<typeof useScrollProgress> }) {
-  const start = BEATS[index].at;
-  const end = index < BEATS.length - 1 ? BEATS[index + 1].at : 1;
-  const fade = 0.06;
-  const opacity = useTransform(
-    progress,
-    [Math.max(0, start), Math.min(1, start + fade), Math.max(0, end - fade), end],
-    [0, 1, 1, 0]
-  );
-  return (
-    <motion.div
-      style={{ opacity }}
-      className="absolute inset-x-0 bottom-16 mx-auto max-w-2xl px-5 text-center sm:px-8"
-    >
-      <span className="label !text-white/70 justify-center [&::before]:bg-accent-soft">
-        {String(index + 1).padStart(2, "0")}
-      </span>
-      <h3 className="display mt-3 text-[clamp(1.5rem,4.5vw,2.75rem)] font-semibold text-white">
-        {BEATS[index].title}
-      </h3>
-      <p className="mx-auto mt-3 max-w-lg text-sm text-white/75 sm:text-base">{BEATS[index].body}</p>
-    </motion.div>
-  );
-}
+const VIDEO = "/media/real/video/walkthrough-lite.mp4";
+const POSTER = "/media/real/video/walkthrough-poster.jpg";
 
 export function ScrollVideo() {
-  const trackRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [ready, setReady] = useState(false);
-  const progress = useScrollProgress(trackRef);
+  const wantsPlayback = useRef(false);
+  const visible = useRef(true);
+  const [playing, setPlaying] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
+  const [active, setActive] = useState(0);
 
-  // A <video> that only ever has its currentTime set, and is never played,
-  // paints nothing in several real browsers (Safari in particular) - a seek
-  // alone doesn't force the first frame to decode and composite. Kick it
-  // with a real play() -> immediate pause() once metadata is ready, THEN
-  // start scrubbing currentTime from scroll progress every frame.
+  function play() {
+    const video = videoRef.current;
+    if (!video) return;
+    if (!video.getAttribute("src")) video.src = VIDEO;
+    void video.play().catch(() => {
+      setPlaying(false);
+      setShowVideo(false);
+    });
+  }
+
   useEffect(() => {
-    const v = videoRef.current;
-    if (!v) return;
-    let cancelled = false;
-    async function prime() {
-      try {
-        await v!.play();
-        v!.pause();
-      } catch {
-        // Autoplay can be blocked before any user gesture - harmless here,
-        // the browser still decodes the frame at the seeked currentTime.
+    const video = videoRef.current;
+    const section = sectionRef.current;
+    if (!video || !section) return;
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const connection = (navigator as Navigator & {
+      connection?: { saveData?: boolean; effectiveType?: string };
+    }).connection;
+    wantsPlayback.current = !reduced.matches && !connection?.saveData &&
+      !["slow-2g", "2g", "3g"].includes(connection?.effectiveType ?? "");
+    const sync = () => {
+      if (wantsPlayback.current && visible.current && !document.hidden) play();
+      else video.pause();
+    };
+    const observer = new IntersectionObserver(([entry]) => {
+      visible.current = entry.isIntersecting;
+      sync();
+    }, { threshold: 0.15 });
+    observer.observe(section);
+    const onReduced = () => {
+      if (reduced.matches) {
+        wantsPlayback.current = false;
+        video.pause();
+        setShowVideo(false);
       }
-      if (!cancelled) setReady(true);
-    }
-    if (v.readyState >= 1) prime();
-    else v.addEventListener("loadedmetadata", prime, { once: true });
+    };
+    document.addEventListener("visibilitychange", sync);
+    reduced.addEventListener("change", onReduced);
     return () => {
-      cancelled = true;
-      v.removeEventListener("loadedmetadata", prime);
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", sync);
+      reduced.removeEventListener("change", onReduced);
+      video.pause();
     };
   }, []);
 
-  // Scrub the video's currentTime directly from scroll progress instead of
-  // letting it play on its own - the scroll position IS the timeline.
-  useEffect(() => {
-    let raf = 0;
-    function tick() {
-      const v = videoRef.current;
-      if (v && v.readyState >= 1) {
-        const t = progress.get() * DURATION;
-        // Avoid fighting the decoder with sub-frame seeks every tick.
-        if (Math.abs(v.currentTime - t) > 0.03) v.currentTime = t;
-      }
-      raf = requestAnimationFrame(tick);
-    }
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   return (
-    <div ref={trackRef} id="top" className="relative bg-night" style={{ height: "400svh" }}>
-      <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
-        <video
-          ref={videoRef}
-          src="/media/real/video/walkthrough.mp4"
-          poster="/media/real/video/walkthrough-poster.jpg"
-          muted
-          playsInline
-          preload="metadata"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        {!ready && <div className="absolute inset-0 bg-night" />}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30" />
-        {BEATS.map((b, i) => (
-          <BeatText key={b.title} index={i} progress={progress} />
-        ))}
+    <div ref={sectionRef} id="top" className="relative h-[100svh] min-h-[560px] overflow-hidden bg-night">
+      {/* Always show the lightweight poster while loading or if playback fails. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={POSTER} alt="" fetchPriority="high" className="absolute inset-0 h-full w-full object-cover" />
+      <video
+        ref={videoRef}
+        poster={POSTER}
+        muted
+        playsInline
+        loop
+        preload="none"
+        aria-label="IOGAI refrigeration repair walkthrough"
+        onPlaying={() => { setPlaying(true); setShowVideo(true); }}
+        onPause={() => setPlaying(false)}
+        onWaiting={() => setShowVideo(false)}
+        onError={() => { setPlaying(false); setShowVideo(false); }}
+        onTimeUpdate={(e) => {
+          const video = e.currentTarget;
+          if (Number.isFinite(video.duration) && video.duration > 0) {
+            setActive(Math.min(services.items.length - 1, Math.floor(video.currentTime / video.duration * services.items.length)));
+          }
+        }}
+        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 motion-reduce:transition-none ${showVideo ? "opacity-100" : "opacity-0"}`}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-black/40" />
+      <div className="absolute inset-x-0 bottom-24 mx-auto max-w-2xl px-5 text-center sm:px-8">
+        <div className="mb-4 flex justify-center gap-2" aria-label="Services">
+          {services.items.map((service, index) => (
+            <button key={service.slug} type="button" aria-label={service.name} aria-pressed={active === index}
+              onClick={() => { wantsPlayback.current = false; videoRef.current?.pause(); setActive(index); }}
+              className={`flex h-11 w-11 items-center justify-center rounded-full border text-sm ${active === index ? "border-accent bg-accent text-ink" : "border-white/40 bg-black/30 text-white"}`}>
+              {String(index + 1).padStart(2, "0")}
+            </button>
+          ))}
+        </div>
+        <h3 className="display text-[clamp(1.5rem,4.5vw,2.75rem)] font-semibold text-white">{services.items[active].name}</h3>
+        <p className="mx-auto mt-3 max-w-lg text-sm text-white/90 sm:text-base">{services.items[active].body}</p>
       </div>
+      <button type="button" onClick={() => {
+        wantsPlayback.current = !playing;
+        if (playing) videoRef.current?.pause(); else play();
+      }} className="absolute bottom-6 right-5 inline-flex min-h-11 items-center rounded-full border border-white/40 bg-black/50 px-5 text-sm text-white sm:right-8">
+        {playing ? "Pause video" : "Play video"}
+      </button>
     </div>
   );
 }
