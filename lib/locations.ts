@@ -1,8 +1,4 @@
-// Real cities from IOGAI's own Google Business Profile service area
-// (checked 5 Sept 2026) - trimmed from an earlier speculative 52-city list
-// down to exactly the 19 cities Igor configured on GBP himself. "Orange
-// County" is also listed there but isn't a city, so it isn't a page here -
-// it's already the region the rest of the site talks about.
+// Restored historical service areas while preserving all currently published cities.
 
 export type Region =
   | "Coastal Orange County"
@@ -24,33 +20,58 @@ const oc = (city: string, region: Region): Location => ({
 });
 
 export const locations: Location[] = [
-  // Orange County - coastal
   oc("Huntington Beach", "Coastal Orange County"),
   oc("Newport Beach", "Coastal Orange County"),
   oc("Costa Mesa", "Coastal Orange County"),
   oc("Fountain Valley", "Coastal Orange County"),
   oc("Seal Beach", "Coastal Orange County"),
   oc("Laguna Beach", "Coastal Orange County"),
-
-  // Orange County - north
+  oc("Dana Point", "Coastal Orange County"),
+  oc("San Clemente", "Coastal Orange County"),
   oc("Anaheim", "North Orange County"),
-
-  // Orange County - central
+  oc("Fullerton", "North Orange County"),
+  oc("Buena Park", "North Orange County"),
+  oc("La Habra", "North Orange County"),
+  oc("La Palma", "North Orange County"),
+  oc("Brea", "North Orange County"),
+  oc("Placentia", "North Orange County"),
+  oc("Yorba Linda", "North Orange County"),
+  oc("Cypress", "North Orange County"),
+  oc("Los Alamitos", "North Orange County"),
+  oc("Stanton", "North Orange County"),
   oc("Santa Ana", "Central Orange County"),
   oc("Garden Grove", "Central Orange County"),
+  oc("Orange", "Central Orange County"),
   oc("Westminster", "Central Orange County"),
   oc("Tustin", "Central Orange County"),
-
-  // Orange County - south
+  oc("Villa Park", "Central Orange County"),
   oc("Irvine", "South Orange County"),
+  oc("Mission Viejo", "South Orange County"),
+  oc("Lake Forest", "South Orange County"),
   oc("Laguna Niguel", "South Orange County"),
-
-  // South Bay / SE LA County
+  oc("Laguna Hills", "South Orange County"),
+  oc("Aliso Viejo", "South Orange County"),
+  oc("Rancho Santa Margarita", "South Orange County"),
+  oc("San Juan Capistrano", "South Orange County"),
+  oc("Laguna Woods", "South Orange County"),
   oc("Long Beach", "South Bay / SE Los Angeles County"),
+  oc("Signal Hill", "South Bay / SE Los Angeles County"),
+  oc("Lakewood", "South Bay / SE Los Angeles County"),
+  oc("Cerritos", "South Bay / SE Los Angeles County"),
+  oc("Bellflower", "South Bay / SE Los Angeles County"),
+  oc("Downey", "South Bay / SE Los Angeles County"),
+  oc("Norwalk", "South Bay / SE Los Angeles County"),
+  oc("Artesia", "South Bay / SE Los Angeles County"),
+  oc("La Mirada", "South Bay / SE Los Angeles County"),
+  oc("Compton", "South Bay / SE Los Angeles County"),
+  oc("Carson", "South Bay / SE Los Angeles County"),
   oc("Torrance", "South Bay / SE Los Angeles County"),
   oc("Redondo Beach", "South Bay / SE Los Angeles County"),
   oc("Hermosa Beach", "South Bay / SE Los Angeles County"),
   oc("Manhattan Beach", "South Bay / SE Los Angeles County"),
+  oc("Gardena", "South Bay / SE Los Angeles County"),
+  oc("Hawthorne", "South Bay / SE Los Angeles County"),
+  oc("El Segundo", "South Bay / SE Los Angeles County"),
   oc("Los Angeles", "South Bay / SE Los Angeles County"),
 ];
 
