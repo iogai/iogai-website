@@ -1,7 +1,7 @@
 # IOGAI
 
 > Refrigeration and HVAC repair for homes and businesses across Huntington Beach, Orange
-> County, and LA. 10+ years of experience, 5.0 average rating on Google (118 reviews).
+> County, and LA. 10+ years of experience, 5.0 average rating on Google (136 reviews).
 
 ## About
 IOGAI is an appliance and refrigeration repair company founded by Igor Ogai, serving Orange
@@ -28,7 +28,7 @@ Huntington Beach, Orange County, and Los Angeles.
 
 ## Why customers choose us
 - 10+ years repairing systems of any complexity.
-- 5.0/5 average rating across 118 Google reviews.
+- 5.0/5 average rating across 136 Google reviews.
 - Certified technicians, swift response, service warranty on repairs.
 - Emergency repair service available.
 
