@@ -268,7 +268,7 @@ export const contact = {
   serviceStep: {
     heading: "What do you need help with?",
     options: [
-      { id: "repair", label: "Repair", note: "It stopped working or isn't cooling right" },
+      { id: "repair", label: "Appliance Repair", note: "Built-in & high-end appliances, refrigerators, ovens, dishwashers, washers & dryers." },
       { id: "commercial", label: "Commercial", note: "Walk-in cooler, ice maker, or restaurant equipment" },
       { id: "hvac", label: "HVAC", note: "Heating or air conditioning issue" },
       { id: "specialty", label: "Marine / Mortuary", note: "Specialty refrigeration" },
