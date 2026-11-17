@@ -86,6 +86,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="bg-paper">
+      <div id="book" aria-hidden="true" />
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-5 py-24 sm:px-8 sm:py-32 lg:grid-cols-[0.85fr_1.15fr]">
         {/* Left: heading + direct contact */}
         <Reveal>
