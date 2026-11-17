@@ -264,7 +264,7 @@ export const contact = {
   label: "Request service online",
   title: "Request a service visit",
   intro:
-    "Tell us what needs fixing and how to reach you. We'll follow up to confirm a time that works for you.",
+    "Call or text us directly to arrange service. You can text a photo of the equipment and tell us what's going wrong.",
   serviceStep: {
     heading: "What do you need help with?",
     options: [
