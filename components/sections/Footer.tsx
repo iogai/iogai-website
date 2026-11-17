@@ -1,13 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { footer, site } from "@/lib/copy";
+import { track, trackContact } from "@/lib/track";
 
 export function Footer() {
-  const [subscribed, setSubscribed] = useState(false);
-
   return (
     <footer className="bg-night text-paper">
       <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
@@ -30,37 +28,29 @@ export function Footer() {
             </div>
           ))}
 
-          {/* Newsletter (v1: local confirmation, not wired to a backend) */}
           <div className="col-span-2">
             <h3 className="text-xs uppercase tracking-widest text-white/40">
-              {footer.newsletter.label}
+              REQUEST SERVICE
             </h3>
-            <p className="mt-5 text-sm text-white/75">{footer.tagline}</p>
-            {subscribed ? (
-              <p className="mt-4 text-sm text-accent-soft">Thanks — you&rsquo;re on the list.</p>
-            ) : (
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setSubscribed(true);
-                }}
-                className="mt-4 flex flex-col gap-3 sm:flex-row"
+            <p className="mt-5 text-sm text-white/75">
+              Tell us what needs repair. We will confirm availability and your arrival window.
+            </p>
+            <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="https://book.housecallpro.com/book/IOGAI---Refrigeration--Appliance-Repair-Service/a006141343ab4873908d442064b2ebc8?v2=true"
+                onClick={() => track("booking_link_click", { placement: "footer" })}
+                className="inline-flex min-h-11 items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-accent-strong"
               >
-                <input
-                  type="email"
-                  required
-                  aria-label="Email"
-                  placeholder={footer.newsletter.placeholderEmail}
-                  className="flex-1 border-b border-white/20 bg-transparent py-2 text-sm text-paper placeholder:text-white/40 focus:border-accent focus:outline-none"
-                />
-                <button
-                  type="submit"
-                  className="inline-flex h-11 items-center justify-center rounded-full bg-accent px-6 text-sm font-medium text-paper transition-colors hover:bg-accent-strong"
-                >
-                  {footer.newsletter.cta}
-                </button>
-              </form>
-            )}
+                Request service online
+              </a>
+              <a
+                href={site.phoneHref}
+                onClick={() => trackContact("phone")}
+                className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-medium text-paper transition-colors hover:border-white/60"
+              >
+                Call {site.phoneDisplay}
+              </a>
+            </div>
           </div>
         </div>
 
