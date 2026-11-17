@@ -5,6 +5,7 @@ export type Region =
   | "North Orange County"
   | "Central Orange County"
   | "South Orange County"
+  | "Westside Los Angeles County"
   | "South Bay / SE Los Angeles County";
 
 export type Location = {
@@ -73,6 +74,7 @@ export const locations: Location[] = [
   oc("Hawthorne", "South Bay / SE Los Angeles County"),
   oc("El Segundo", "South Bay / SE Los Angeles County"),
   oc("Los Angeles", "South Bay / SE Los Angeles County"),
+  oc("Santa Monica", "Westside Los Angeles County"),
 ];
 
 export function findLocation(slug: string): Location | undefined {
