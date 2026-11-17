@@ -2,7 +2,7 @@ import Image from "next/image";
 import { CTA } from "@/components/ui/CTA";
 import { Reveal } from "@/components/ui/Reveal";
 import { Parallax } from "@/components/ui/Parallax";
-import { closing } from "@/lib/copy";
+import { closing, site } from "@/lib/copy";
 
 export function ClosingBand() {
   return (
@@ -36,7 +36,7 @@ export function ClosingBand() {
                 <CTA href="#contact" variant="solid" className="h-14 px-8 text-base">
                   {closing.ctaPrimary}
                 </CTA>
-                <CTA href="#contact" variant="light" className="h-14 px-8 text-base">
+                <CTA href={site.phoneHref} variant="light" className="h-14 px-8 text-base">
                   {closing.ctaSecondary}
                 </CTA>
               </div>

@@ -55,7 +55,7 @@ export function Contact() {
           <div className="rounded-2xl border border-hairline bg-mist/40 p-6 sm:p-8">
             <h3 className="display text-2xl text-ink">Book online</h3>
             <p className="mt-3 max-w-md text-base leading-relaxed text-ink-2">
-              Continue to our Housecall Pro booking page to see available services and appointment options.
+              Tell us what needs repair and choose an available time. Your arrival window depends on the technician’s schedule. We’ll do our best to accommodate your preferred time.
             </p>
             <a
               href={bookingUrl}

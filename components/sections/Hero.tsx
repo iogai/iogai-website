@@ -5,7 +5,8 @@ import Image from "next/image";
 import { motion, useTransform } from "framer-motion";
 import { CTA } from "@/components/ui/CTA";
 import { Magnetic } from "@/components/ui/Magnetic";
-import { hero, rating } from "@/lib/copy";
+import { hero, rating, site } from "@/lib/copy";
+import { trackContact } from "@/lib/track";
 import { easeXdr, useScrollProgress } from "@/lib/motion";
 
 export function Hero() {
@@ -122,7 +123,7 @@ export function Hero() {
             </CTA>
           </Magnetic>
           <Magnetic>
-            <CTA href="#contact" variant="light" className="h-14 px-8 text-base">
+            <CTA href={site.phoneHref} onClick={() => trackContact("phone")} variant="light" className="h-14 px-8 text-base">
               {hero.ctaSecondary}
             </CTA>
           </Magnetic>

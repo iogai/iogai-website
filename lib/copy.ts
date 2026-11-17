@@ -66,11 +66,11 @@ export const nav = {
 };
 
 export const hero = {
-  eyebrow: "Refrigeration & HVAC repair - Orange County & LA",
-  title: ["Cooling Solutions", "You Can Trust."],
-  sub: "Refrigerator, freezer, walk-in cooler, ice maker, marine, and HVAC repair for homes and businesses across Orange County and LA. Certified technicians, with same-day slots when available.",
-  ctaPrimary: "Book a Repair",
-  ctaSecondary: "Get Estimate",
+  eyebrow: "Orange County & Los Angeles County",
+  title: ["Commercial Refrigeration", "& Appliance Repair"],
+  sub: "Walk-ins, commercial freezers, and ice machines for local businesses. Built-in refrigerators and major appliances for your home.",
+  ctaPrimary: "Request Service",
+  ctaSecondary: "Call for Commercial Service",
 };
 
 // "10+ years" is now verified - it's on iogai.com's own About page ("Over 10
@@ -257,7 +257,7 @@ export const closing = {
   title: ["Cooling Solutions -", "We've Got This."],
   sub: "Local refrigeration and HVAC repair across Orange County and LA. Ask us about same-day availability.",
   ctaPrimary: "Book a Repair",
-  ctaSecondary: "Get Estimate",
+  ctaSecondary: "Call IOGAI",
 };
 
 export const contact = {
