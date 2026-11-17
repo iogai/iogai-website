@@ -122,7 +122,7 @@ export function Hero() {
             </CTA>
           </Magnetic>
           <Magnetic>
-            <CTA href="#services" variant="light" className="h-14 px-8 text-base">
+            <CTA href="#contact" variant="light" className="h-14 px-8 text-base">
               {hero.ctaSecondary}
             </CTA>
           </Magnetic>

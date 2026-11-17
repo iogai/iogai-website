@@ -9,7 +9,7 @@ import { brands } from "@/lib/brands";
 export const metadata: Metadata = {
   title: "Service Areas | IOGAI Refrigeration & HVAC Repair",
   description:
-    "IOGAI serves Orange County and the South Bay / SE Los Angeles County area for refrigeration, HVAC, and specialty repair. Find your city.",
+    "IOGAI serves Orange County and parts of Los Angeles County for refrigeration, HVAC, and specialty repair. Find your city.",
   alternates: { canonical: "/service-areas" },
 };
 
@@ -33,7 +33,7 @@ export default function ServiceAreasPage() {
         <h1 className="display text-[clamp(2rem,5vw,3.25rem)] text-ink">Service Areas</h1>
         <p className="mt-6 max-w-2xl leading-relaxed text-ink-2">
           IOGAI is based in Huntington Beach and repairs refrigeration, HVAC, and specialty
-          equipment across Orange County and the South Bay / SE Los Angeles County area. Pick a
+          equipment across Orange County and parts of Los Angeles County. Pick a
           service, then your city.
         </p>
 

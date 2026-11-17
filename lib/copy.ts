@@ -53,7 +53,7 @@ export const maintenance = {
 
 // Google is the only platform with a verified count right now (Yelp shows 5.0 / 7 reviews,
 // but that count wasn't in the source pasted - left off rather than guessed).
-export const rating = { value: "5.0", count: "118", source: "Google" };
+export const rating = { value: "5.0", count: "136", source: "Google" };
 
 export const nav = {
   links: [
@@ -80,7 +80,7 @@ export const advantages = {
   title: "A team you can count on for cool, comfortable repairs",
   stats: [
     { value: "10", unit: "+", caption: "Years repairing systems of any complexity" },
-    { value: "5.0", unit: "/5", caption: "Average rating from 118 Google reviews" },
+    { value: "5.0", unit: "/5", caption: "Average rating from 136 Google reviews" },
     { value: "10", unit: "hr", caption: "Open daily, 8am to 6pm" },
   ],
 };
@@ -200,7 +200,7 @@ export const testimonials = {
   label: "Testimonials",
   title: "Look What Our Clients Say",
   intro:
-    "5.0 stars across 118 Google reviews. A few of them, word for word.",
+    "5.0 stars across 136 Google reviews. A few of them, word for word.",
   items: [
     {
       quote: "Igor's company very good work, good price & great customer service!",

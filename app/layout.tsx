@@ -28,7 +28,7 @@ const businessLd = {
   },
   areaServed: ["Huntington Beach", "Orange County", "Los Angeles"],
   serviceType: [...services.items.map((s) => s.name), "General Appliance Repair"],
-  aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "118" },
+  aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "136" },
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
