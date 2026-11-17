@@ -334,6 +334,7 @@ export const footer = {
         { label: "Instagram", href: "https://www.instagram.com/iogai_services" },
         { label: "Facebook", href: "https://www.facebook.com/iogai.services" },
         { label: "Yelp", href: "https://www.yelp.com/biz/iogai-refrigeration-huntington-beach" },
+        { label: "Thumbtack", href: "https://www.thumbtack.com/ca/huntington-beach/appliance-repair/igor-ogai-appliance-refrigeration-hvac-repair/service/499058102966788108" },
       ],
     },
   ],
