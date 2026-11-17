@@ -64,6 +64,18 @@ export function Contact() {
             >
               Continue to booking
             </a>
+            <div className="mt-5 border-t border-hairline pt-5">
+              <p className="text-sm leading-relaxed text-ink-2">
+                Having trouble booking or need a sooner visit? Call our team to request service.
+              </p>
+              <a
+                href={site.phoneHref}
+                onClick={() => track("Contact", { method: "phone", placement: "booking_help" })}
+                className="mt-3 inline-flex min-h-12 items-center justify-center rounded-full border border-ink/30 px-6 text-sm font-medium text-ink transition-colors hover:border-accent"
+              >
+                Call {site.phoneDisplay}
+              </a>
+            </div>
           </div>
         </Reveal>
       </div>
