@@ -11,12 +11,12 @@ export const site = {
   email: "support@iogai.com",
   emailHref: "mailto:support@iogai.com",
   address: "517 Frankfort Ave, Huntington Beach, CA 92648",
-  hours: "Mon-Sun, 8am-6pm", // confirmed by owner 2 Sept 2026, overrides old site (7am-11pm) and Yelp (7am-8pm)
+  hours: "Online requests 24/7; service visits by confirmed appointment",
 };
 
 export const offer = {
-  badge: "Same-day slots when available",
-  text: "Tell us what's going on. We'll explain the diagnostic fee before we send a technician and apply it toward your approved repair.",
+  badge: "Clear diagnostic pricing",
+  text: "Residential appliance service call: $100. Commercial refrigeration service call: $135. Applied toward your approved repair. Repair pricing is approved before work begins.",
   cta: "Call (424) 421-7771",
 };
 
@@ -81,7 +81,7 @@ export const advantages = {
   stats: [
     { value: "10", unit: "+", caption: "Years repairing systems of any complexity" },
     { value: "5.0", unit: "/5", caption: "Average rating from 136 Google reviews" },
-    { value: "10", unit: "hr", caption: "Open daily, 8am to 6pm" },
+    { value: "24", unit: "/7", caption: "Request service online anytime. We confirm your technician's arrival window." },
   ],
 };
 
@@ -103,7 +103,7 @@ export const guarantees = {
     { k: "Swift response", v: "Technicians are ready to respond quickly and get your equipment back in operation without delays." },
     { k: "Certified team", v: "Technicians are certified and experienced across a wide range of brands and equipment types." },
     { k: "Service warranty", v: "Repair and maintenance work is backed by a warranty." },
-    { k: "Emergency service", v: "Emergency repairs are available to minimize downtime and keep equipment running." },
+    { k: "Urgent commercial service", v: "Equipment warming up? Call to check the soonest technician availability. We confirm the arrival window and pricing before dispatch." },
   ],
 };
 
@@ -225,8 +225,8 @@ export const testimonials = {
   ],
 };
 
-// Questions and answers copied from the live iogai.com FAQ accordion word for
-// word (checked 2 Sept 2026) - already-published claims, not new ones.
+// Customer-facing service details, including owner-approved diagnostic prices
+// and 24/7 online intake (updated 17 Nov 2026). Visits require confirmation.
 export const faq = {
   label: "FAQ",
   title: "Frequently Asked Questions",
@@ -239,7 +239,15 @@ export const faq = {
     },
     {
       q: "Do you offer emergency repair services?",
-      a: "Yes, we provide fast emergency repair services to minimize downtime and keep your equipment running smoothly.",
+      a: "For urgent commercial refrigeration problems, call (424) 421-7771 so we can check the soonest available technician. You can request service online 24/7. Emergency and after-hours visits depend on technician availability; we confirm the arrival window and any additional charges before dispatch.",
+    },
+    {
+      q: "How much is the service call?",
+      a: "The service call is $100 for residential appliances and $135 for commercial refrigeration. It covers a diagnostic visit and is applied toward your approved repair. Repairs are quoted separately for your approval before work begins. Any additional diagnostic or access work requires your approval first.",
+    },
+    {
+      q: "Is my requested time the technician's arrival time?",
+      a: "Your requested time helps us plan your visit. The technician's arrival window depends on the current schedule and availability, so it may differ from your preference. We will confirm your window and do our best to find a time that works for you.",
     },
     {
       q: "Are your technicians certified?",

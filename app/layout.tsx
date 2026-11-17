@@ -13,7 +13,7 @@ const businessLd = {
   "@type": "HVACBusiness",
   "@id": "https://iogai.com/#business",
   name: "IOGAI - Appliance & Refrigeration Repair Service",
-  description: "Refrigeration and HVAC repair for homes and businesses across Huntington Beach, Orange County and LA.",
+  description: "Commercial refrigeration and appliance repair across Huntington Beach, Orange County and Los Angeles County. Online service requests 24/7; technician visits by confirmed appointment.",
   telephone: "+14244217771",
   email: "support@iogai.com",
   url: "https://iogai.com",
@@ -29,14 +29,6 @@ const businessLd = {
   areaServed: ["Huntington Beach", "Orange County", "Los Angeles"],
   serviceType: [...services.items.map((s) => s.name), "General Appliance Repair"],
   aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "136" },
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      opens: "08:00",
-      closes: "18:00",
-    },
-  ],
 };
 
 // FAQ structured data — Google FAQ rich results + high-value for AI answer engines.
@@ -103,9 +95,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "IOGAI — Refrigeration & HVAC Repair | Orange County & LA",
+  title: "IOGAI — Commercial Refrigeration & Appliance Repair | OC & LA",
   description:
-    "Refrigerator, freezer, walk-in cooler, ice maker, marine, and HVAC repair across Orange County and LA. Same-day dispatch, 5.0 stars on Google. Book online.",
+    "Commercial refrigeration and appliance repair in Orange County and LA. Residential service call $100; commercial $135. Request service online 24/7; visits confirmed.",
   metadataBase: new URL("https://iogai.com"),
   // Google Search Console site ownership verification (added 5 Sept 2026,
   // via HTML tag method - the property was otherwise unverified).
@@ -121,9 +113,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "IOGAI — Refrigeration & HVAC Repair | Orange County & LA",
+    title: "IOGAI — Commercial Refrigeration & Appliance Repair | OC & LA",
     description:
-      "Refrigeration and HVAC repair for homes and businesses. Certified technicians, same-day dispatch, 5.0 stars on Google.",
+      "Walk-ins, commercial freezers, ice machines and home appliances. Residential service call $100; commercial $135. Online requests 24/7; visits by confirmed appointment.",
     url: "https://iogai.com",
     siteName: "IOGAI",
     type: "website",
@@ -131,8 +123,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "IOGAI — Refrigeration & HVAC Repair | Orange County & LA",
-    description: "Refrigeration and HVAC repair. Certified technicians, same-day dispatch.",
+    title: "IOGAI — Commercial Refrigeration & Appliance Repair | OC & LA",
+    description: "Commercial refrigeration and home appliance repair. Request service online 24/7. We confirm your technician's arrival window.",
     images: ["/media/real/svc-refrigerator.jpg"],
   },
 };

@@ -17,7 +17,7 @@ export function Contact() {
         <Reveal>
           <Eyebrow>{contact.label}</Eyebrow>
           <h2 className="display mt-5 text-[clamp(2.25rem,5vw,3.5rem)] text-ink">{contact.title}</h2>
-          <p className="mt-6 max-w-md text-base leading-relaxed text-ink-2">Book online to request a visit. If you need urgent commercial refrigeration service, call us so we can check availability.</p>
+          <p className="mt-6 max-w-md text-base leading-relaxed text-ink-2">Request service online 24/7. For urgent commercial refrigeration problems, call us to check the soonest available technician. We confirm the arrival window before your visit.</p>
           <div className="mt-10 space-y-5">
             <div className="text-xs uppercase tracking-widest text-ink-3">{contact.directLabel}</div>
             <a
@@ -53,7 +53,7 @@ export function Contact() {
 
         <Reveal delay={0.06}>
           <div className="rounded-2xl border border-hairline bg-mist/40 p-6 sm:p-8">
-            <h3 className="display text-2xl text-ink">Book online</h3>
+            <h3 className="display text-2xl text-ink">Book online, anytime</h3>
             <p className="mt-3 max-w-md text-base leading-relaxed text-ink-2">
               Tell us what needs repair and choose an available time. Your arrival window depends on the technician’s schedule. We’ll do our best to accommodate your preferred time.
             </p>
