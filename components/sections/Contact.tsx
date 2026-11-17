@@ -7,6 +7,9 @@ import { track, trackContact } from "@/lib/track";
 
 const bookingUrl =
   "https://book.housecallpro.com/book/IOGAI---Refrigeration--Appliance-Repair-Service/a006141343ab4873908d442064b2ebc8?v2=true";
+const callbackUrl =
+  "https://book.housecallpro.com/lead-form/IOGAI---Refrigeration--Appliance-Repair-Service/c25a85484c894f1b88311995c8bcdc10";
+const smsUrl = site.phoneHref.replace("tel:", "sms:");
 
 export function Contact() {
   return (
@@ -33,7 +36,7 @@ export function Contact() {
             <div className="pt-1">
               <div className="text-xs uppercase tracking-widest text-ink-3">{contact.textUs.label}</div>
               <a
-                href={`sms:${site.phoneHref.replace("tel:", "")}?body=${encodeURIComponent(contact.textUs.prefill)}`}
+                href={`${smsUrl}?body=${encodeURIComponent(contact.textUs.prefill)}`}
                 onClick={() => trackContact("sms")}
                 className="mt-2 inline-flex h-11 items-center gap-2 rounded-md border border-hairline px-4 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent"
               >
@@ -53,27 +56,33 @@ export function Contact() {
 
         <Reveal delay={0.06}>
           <div className="rounded-2xl border border-hairline bg-mist/40 p-6 sm:p-8">
-            <h3 className="display text-2xl text-ink">Book online, anytime</h3>
+            <h3 className="display text-2xl text-ink">How would you like to book?</h3>
             <p className="mt-3 max-w-md text-base leading-relaxed text-ink-2">
-              Tell us what needs repair and choose an available time. Your arrival window depends on the technician’s schedule. We’ll do our best to accommodate your preferred time.
+              Text us your ZIP code and what needs repair, or leave your number for a callback.
             </p>
-            <a
-              href={bookingUrl}
-              onClick={() => track("booking_link_click")}
-              className="mt-6 inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-8 text-sm font-medium text-paper transition-colors hover:bg-accent-strong"
-            >
-              Continue to booking
-            </a>
-            <div className="mt-5 border-t border-hairline pt-5">
-              <p className="text-sm leading-relaxed text-ink-2">
-                Having trouble booking or need a sooner visit? Call our team to request service.
-              </p>
+            <div className="mt-6 flex flex-wrap gap-3">
               <a
-                href={site.phoneHref}
-                onClick={() => track("Contact", { method: "phone", placement: "booking_help" })}
-                className="mt-3 inline-flex min-h-12 items-center justify-center rounded-full border border-ink/30 px-6 text-sm font-medium text-ink transition-colors hover:border-accent"
+                href={smsUrl}
+                onClick={() => track("Contact", { method: "sms", placement: "booking_help" })}
+                className="inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-6 text-sm font-semibold text-ink transition-colors hover:bg-accent-strong hover:text-paper"
               >
-                Call {site.phoneDisplay}
+                Text our team
+              </a>
+              <a
+                href={callbackUrl}
+                onClick={() => track("callback_link_click", { placement: "contact" })}
+                className="inline-flex min-h-12 items-center justify-center rounded-full border border-ink/30 px-6 text-sm font-medium text-ink transition-colors hover:border-accent"
+              >
+                Request a callback
+              </a>
+            </div>
+            <div className="mt-5 border-t border-hairline pt-5">
+              <a
+                href={bookingUrl}
+                onClick={() => track("booking_link_click")}
+                className="inline-flex min-h-11 items-center text-sm font-medium text-ink underline underline-offset-4 hover:text-accent"
+              >
+                See available appointment times
               </a>
             </div>
           </div>

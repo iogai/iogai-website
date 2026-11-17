@@ -36,13 +36,13 @@ export function Footer() {
               Tell us what needs repair. We will confirm availability and your arrival window.
             </p>
             <div className="mt-4 flex flex-col gap-3 sm:flex-row">
-              <a
-                href="https://book.housecallpro.com/book/IOGAI---Refrigeration--Appliance-Repair-Service/a006141343ab4873908d442064b2ebc8?v2=true"
-                onClick={() => track("booking_link_click", { placement: "footer" })}
+              <Link
+                href="/#contact"
+                onClick={() => track("service_options_click", { placement: "footer" })}
                 className="inline-flex min-h-11 items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-accent-strong"
               >
                 Request service online
-              </a>
+              </Link>
               <a
                 href={site.phoneHref}
                 onClick={() => trackContact("phone")}
