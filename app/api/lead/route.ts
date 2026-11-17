@@ -1,6 +1,4 @@
 import { NextResponse } from "next/server";
-import { appendFile, mkdir, writeFile } from "node:fs/promises";
-import path from "node:path";
 import { z } from "zod";
 
 export const runtime = "nodejs";
@@ -15,7 +13,7 @@ const SMS_GATEWAY_DOMAINS = [
   "tmomail.net", // T-Mobile
 ];
 const isSmsGateway = SMS_GATEWAY_DOMAINS.some((d) => LEAD_EMAIL.toLowerCase().endsWith(`@${d}`));
-const MAX_PHOTO = 8 * 1024 * 1024; // 8MB
+const MAX_PHOTO = 4 * 1024 * 1024; // Leave room for multipart fields below the platform request limit.
 
 const Lead = z.object({
   service: z.string().max(40).optional(),
@@ -54,27 +52,15 @@ export async function POST(req: Request) {
   const photo = form.get("photo");
   if (photo && typeof photo === "object" && "arrayBuffer" in photo) {
     const file = photo as File;
-    if (file.size > 0 && file.size <= MAX_PHOTO && file.type.startsWith("image/")) {
+    if (file.size > MAX_PHOTO || (file.size > 0 && !file.type.startsWith("image/"))) {
+      return NextResponse.json({ ok: false, error: "invalid photo" }, { status: 422 });
+    }
+    if (file.size > 0) {
       photoBuf = Buffer.from(await file.arrayBuffer());
       const safe = file.name.replace(/[^a-zA-Z0-9._-]/g, "_").slice(-60);
       photoName = `${Date.now()}-${safe}`;
-      try {
-        const dir = path.join(process.cwd(), "uploads");
-        await mkdir(dir, { recursive: true });
-        await writeFile(path.join(dir, photoName), photoBuf);
-      } catch (e) {
-        console.error("photo save failed", e);
-      }
+
     }
-  }
-
-  const record = { ...lead, photo: photoName, at: new Date().toISOString() };
-
-  // Persist (v1: JSONL — swap for a DB when volume warrants)
-  try {
-    await appendFile(path.join(process.cwd(), "leads.jsonl"), JSON.stringify(record) + "\n", "utf8");
-  } catch (e) {
-    console.error("lead persist failed", e);
   }
 
   // Carrier SMS gateways drop long messages and attachments silently — keep
@@ -92,8 +78,11 @@ export async function POST(req: Request) {
       const transport = nodemailer.createTransport({
         service: "gmail",
         auth: { user: GMAIL_USER, pass: GMAIL_APP_PASSWORD },
+        connectionTimeout: 10000,
+        greetingTimeout: 10000,
+        socketTimeout: 15000,
       });
-      await transport.sendMail({
+      const result = await transport.sendMail({
         from: `IOGAI Website <${GMAIL_USER}>`,
         to: LEAD_EMAIL,
         replyTo: lead.email,
@@ -101,14 +90,12 @@ export async function POST(req: Request) {
         text: summary,
         attachments: !isSmsGateway && photoBuf && photoName ? [{ filename: photoName, content: photoBuf }] : [],
       });
-    } catch (e) {
-      console.error("email send failed", e);
+      if (result.accepted.length > 0) return NextResponse.json({ ok: true });
+    } catch {
+      console.error("Lead notification failed");
     }
   }
 
-  if (!GMAIL_USER) {
-    console.info("lead received (notification disabled — set GMAIL_USER + GMAIL_APP_PASSWORD):", record);
-  }
-
-  return NextResponse.json({ ok: true });
+  // Never claim receipt when no delivery service accepted the request.
+  return NextResponse.json({ ok: false, error: "delivery unavailable" }, { status: 503 });
 }
