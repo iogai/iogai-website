@@ -26,6 +26,8 @@ export function Contact() {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
+  const [company, setCompany] = useState("");
+  const [photoError, setPhotoError] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const fileRef = useRef<HTMLInputElement>(null);
 
@@ -39,12 +41,19 @@ export function Contact() {
 
   function onPhoto(e: React.ChangeEvent<HTMLInputElement>) {
     const f = e.target.files?.[0] ?? null;
+    if (f && (f.size > 4 * 1024 * 1024 || !f.type.startsWith("image/"))) {
+      setPhotoError("Choose an image smaller than 4 MB, or send your photo by text.");
+      e.target.value = "";
+      return;
+    }
+    setPhotoError("");
     if (preview) URL.revokeObjectURL(preview);
     setPhoto(f);
     setPreview(f ? URL.createObjectURL(f) : null);
   }
 
   async function submit() {
+    if (!contactValid || status === "sending") return;
     setStatus("sending");
     try {
       const fd = new FormData();
@@ -55,27 +64,24 @@ export function Contact() {
       fd.append("phone", phone);
       fd.append("email", email);
       fd.append("address", address);
-      fd.append("company", ""); // honeypot
+      fd.append("company", company); // honeypot
       if (photo) fd.append("photo", photo);
       const res = await fetch("/api/lead", { method: "POST", body: fd });
-      if (!res.ok) throw new Error();
+      if (!res.ok || (await res.json()).ok !== true) throw new Error();
       trackLead(service); // conversion event for Meta/Google Ads
       setStatus("ok");
 
-      // Same pattern as rimrepairjoes.com: the API call above is a silent
-      // backup, but the real notification is the customer's own phone -
-      // redirect to sms: with the details pre-filled so they text IOGAI
-      // directly (and can attach the photo right in Messages, which a web
-      // form can't forward into a text). No SMS API, no cost, no delay.
-      const serviceLabel =
-        contact.serviceStep.options.find((o) => o.id === service)?.label ?? "repair";
-      const smsBody = `Hi IOGAI, I need a ${serviceLabel.toLowerCase()} quote.\n\nName: ${first} ${last}\nPhone: ${phone}\nAddress: ${address}\n${message ? `Issue: ${message}\n` : ""}\n(Attaching a photo below)`;
-      const sep = /android/i.test(navigator.userAgent) ? "?" : "&";
-      const smsHref = `sms:${site.phoneHref.replace("tel:", "")}${sep}body=${encodeURIComponent(smsBody)}`;
-      window.location.href = smsHref;
     } catch {
       setStatus("error");
     }
+  }
+
+  function textRequest() {
+    const serviceLabel = contact.serviceStep.options.find((o) => o.id === service)?.label ?? "repair";
+    const body = `Hi IOGAI, I need ${serviceLabel.toLowerCase()}.\nName: ${first} ${last}\nPhone: ${phone}\nEmail: ${email}\nAddress: ${address}\n${message ? `Issue: ${message}\n` : ""}`;
+    const separator = /android/i.test(navigator.userAgent) ? "?" : "&";
+    trackContact("sms");
+    window.location.href = `sms:${site.phoneHref.replace("tel:", "")}${separator}body=${encodeURIComponent(body)}`;
   }
 
   return (
@@ -259,7 +265,8 @@ export function Contact() {
                             <span aria-hidden>＋</span> {contact.detailStep.photoCta}
                           </button>
                         )}
-                        <p className="mt-2 text-xs text-ink-3">{contact.detailStep.photoHint}</p>
+                        <p className="mt-2 text-xs text-ink-3">{contact.detailStep.photoHint} Maximum 4 MB.</p>
+                        {photoError && <p role="alert" className="mt-2 text-sm text-accent-strong">{photoError}</p>}
                       </div>
 
                       <div className="mt-8 flex items-center justify-between">
@@ -290,7 +297,7 @@ export function Contact() {
                         {contact.contactStep.heading}
                       </h3>
                       {/* Honeypot */}
-                      <input type="text" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
+                      <input type="text" name="company" value={company} onChange={(e) => setCompany(e.target.value)} tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
                       <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
                         <label className="block">
                           <span className="text-xs uppercase tracking-widest text-ink-3">
@@ -324,15 +331,22 @@ export function Contact() {
                         </label>
                       </div>
                       <p className="mt-4 text-xs text-ink-3">{contact.contactStep.consent}</p>
+                      {status === "error" && (
+                        <div role="alert" className="mt-5 rounded-xl border border-hairline bg-paper p-4">
+                          <p className="text-sm text-ink">We couldn’t confirm your request. Your details are still here. Text us or call to arrange service.</p>
+                          <div className="mt-3 flex flex-wrap gap-3">
+                            <button type="button" onClick={textRequest} className="inline-flex min-h-11 items-center rounded-full bg-accent px-5 text-sm font-medium text-paper">Text my request</button>
+                            <a href={site.phoneHref} onClick={() => trackContact("phone")} className="inline-flex min-h-11 items-center rounded-full border border-hairline px-5 text-sm font-medium text-ink">Call {site.phoneDisplay}</a>
+                          </div>
+                          <p className="mt-3 text-xs text-ink-2">Texting opens Messages. Press Send there to deliver your request. Attach your photo in Messages if needed.</p>
+                        </div>
+                      )}
 
                       <div className="mt-8 flex items-center justify-between gap-4">
                         <button type="button" onClick={() => setStep(1)} className="text-sm text-ink-2 hover:text-ink">
                           ← {contact.back}
                         </button>
                         <div className="flex items-center gap-4">
-                          {status === "error" && (
-                            <span className="text-sm text-accent-strong">{contact.error}</span>
-                          )}
                           <button
                             type="button"
                             onClick={submit}
