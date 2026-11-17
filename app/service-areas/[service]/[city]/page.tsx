@@ -13,6 +13,7 @@ const REGION_BLURB: Record<Region, string> = {
   "North Orange County": "north Orange County, along the 91/57 corridor",
   "Central Orange County": "central Orange County, near the 5/22 interchange",
   "South Orange County": "south Orange County, along the 5/241 corridor",
+  "Westside Los Angeles County": "the Westside of Los Angeles County",
   "South Bay / SE Los Angeles County":
     "the South Bay and southeast Los Angeles County, along the 405/605 corridor",
 };
