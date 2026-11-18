@@ -57,10 +57,10 @@ export const rating = { value: "5.0", count: "136", source: "Google" };
 
 export const nav = {
   links: [
-    { label: "Services", href: "#services" },
-    { label: "How it works", href: "#process" },
-    { label: "Reviews", href: "#testimonials" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Services", href: "/service-areas" },
+    { label: "How it works", href: "/#process" },
+    { label: "Reviews", href: "/#testimonials" },
+    { label: "FAQ", href: "/#faq" },
   ],
   cta: "Book a Repair",
 };
@@ -165,7 +165,6 @@ export const services = {
       body: "Heating and air conditioning repair for homes and small businesses, done right the first time.",
       image: "/media/real/svc-hvac.jpg",
     },
-
   ],
 };
 
@@ -319,10 +318,10 @@ export const footer = {
     {
       title: "Quick links",
       links: [
-        { label: "Services", href: "#services" },
-        { label: "How it works", href: "#process" },
-        { label: "Reviews", href: "#testimonials" },
-        { label: "FAQ", href: "#faq" },
+        { label: "Services", href: "/service-areas" },
+        { label: "How it works", href: "/#process" },
+        { label: "Reviews", href: "/#testimonials" },
+        { label: "FAQ", href: "/#faq" },
         { label: "Service Areas", href: "/service-areas" },
         { label: "Maintenance Contracts", href: "/maintenance-contracts" },
       ],
