@@ -3,8 +3,27 @@
 import { useEffect, useRef, useState } from "react";
 import { services } from "@/lib/copy";
 
-const VIDEO = "/media/real/video/walkthrough-lite.mp4";
-const POSTER = "/media/real/video/walkthrough-poster.jpg";
+// Three encodes of the same 12 s flight (H.264, faststart, keyframe every 1 s)
+// so it starts within a second on any device and network:
+//   360p ≈ 0.5 MB — Save-Data, 2G/3G   · 720p ≈ 2.4 MB — phones/tablets
+//   1080p ≈ 4.1 MB — wide screens on fast connections
+const VIDEO = {
+  sm: "/media/real/video/hero-360.mp4",
+  md: "/media/real/video/hero-720.mp4",
+  lg: "/media/real/video/hero-1080.mp4",
+};
+const POSTER = "/media/real/video/hero-poster.jpg";
+
+function pickSource() {
+  const connection = (navigator as Navigator & {
+    connection?: { saveData?: boolean; effectiveType?: string; downlink?: number };
+  }).connection;
+  const type = connection?.effectiveType ?? "4g";
+  if (connection?.saveData || ["slow-2g", "2g", "3g"].includes(type)) return VIDEO.sm;
+  const wide = window.innerWidth * (window.devicePixelRatio || 1) >= 2200;
+  const fast = (connection?.downlink ?? 10) >= 5;
+  return wide && fast ? VIDEO.lg : VIDEO.md;
+}
 
 export function ScrollVideo() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -18,7 +37,7 @@ export function ScrollVideo() {
   function play() {
     const video = videoRef.current;
     if (!video) return;
-    if (!video.getAttribute("src")) video.src = VIDEO;
+    if (!video.getAttribute("src")) video.src = pickSource();
     void video.play().catch(() => {
       setPlaying(false);
       setShowVideo(false);
@@ -30,11 +49,10 @@ export function ScrollVideo() {
     const section = sectionRef.current;
     if (!video || !section) return;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const connection = (navigator as Navigator & {
-      connection?: { saveData?: boolean; effectiveType?: string };
-    }).connection;
-    wantsPlayback.current = !reduced.matches && !connection?.saveData &&
-      !["slow-2g", "2g", "3g"].includes(connection?.effectiveType ?? "");
+    // Play for everyone except reduced-motion; slow networks get the 360p file.
+    wantsPlayback.current = !reduced.matches;
+    // Start fetching right away (the flight is the first thing people see).
+    if (wantsPlayback.current) play();
     const sync = () => {
       if (wantsPlayback.current && visible.current && !document.hidden) play();
       else video.pause();
@@ -72,11 +90,10 @@ export function ScrollVideo() {
         muted
         playsInline
         loop
-        preload="none"
+        preload="auto"
         aria-label="IOGAI refrigeration repair walkthrough"
         onPlaying={() => { setPlaying(true); setShowVideo(true); }}
         onPause={() => setPlaying(false)}
-        onWaiting={() => setShowVideo(false)}
         onError={() => { setPlaying(false); setShowVideo(false); }}
         onTimeUpdate={(e) => {
           const video = e.currentTarget;
