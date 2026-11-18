@@ -14,15 +14,13 @@ const VIDEO = {
 };
 const POSTER = "/media/real/video/hero-poster.jpg";
 
-function pickSource() {
+// Slow or data-saving connections: swap to the 360p file before much loads.
+function isSlowNetwork() {
   const connection = (navigator as Navigator & {
-    connection?: { saveData?: boolean; effectiveType?: string; downlink?: number };
+    connection?: { saveData?: boolean; effectiveType?: string };
   }).connection;
-  const type = connection?.effectiveType ?? "4g";
-  if (connection?.saveData || ["slow-2g", "2g", "3g"].includes(type)) return VIDEO.sm;
-  const wide = window.innerWidth * (window.devicePixelRatio || 1) >= 2200;
-  const fast = (connection?.downlink ?? 10) >= 5;
-  return wide && fast ? VIDEO.lg : VIDEO.md;
+  return !!connection?.saveData ||
+    ["slow-2g", "2g", "3g"].includes(connection?.effectiveType ?? "");
 }
 
 export function ScrollVideo() {
@@ -37,7 +35,6 @@ export function ScrollVideo() {
   function play() {
     const video = videoRef.current;
     if (!video) return;
-    if (!video.getAttribute("src")) video.src = pickSource();
     void video.play().catch(() => {
       setPlaying(false);
       setShowVideo(false);
@@ -49,10 +46,16 @@ export function ScrollVideo() {
     const section = sectionRef.current;
     if (!video || !section) return;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-    // Play for everyone except reduced-motion; slow networks get the 360p file.
+    // The <video> is server-rendered with autoPlay and <source media> picks,
+    // so the browser starts downloading during HTML parse, before any JS runs.
     wantsPlayback.current = !reduced.matches;
-    // Start fetching right away (the flight is the first thing people see).
+    if (!wantsPlayback.current) video.pause();
+    else if (isSlowNetwork() && !video.currentSrc.includes("hero-360")) {
+      video.src = VIDEO.sm;
+      video.load();
+    }
     if (wantsPlayback.current) play();
+    if (!video.paused && video.readyState >= 2) { setPlaying(true); setShowVideo(true); }
     const sync = () => {
       if (wantsPlayback.current && visible.current && !document.hidden) play();
       else video.pause();
@@ -90,6 +93,7 @@ export function ScrollVideo() {
         muted
         playsInline
         loop
+        autoPlay
         preload="auto"
         aria-label="IOGAI refrigeration repair walkthrough"
         onPlaying={() => { setPlaying(true); setShowVideo(true); }}
@@ -102,7 +106,10 @@ export function ScrollVideo() {
           }
         }}
         className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 motion-reduce:transition-none ${showVideo ? "opacity-100" : "opacity-0"}`}
-      />
+      >
+        <source src={VIDEO.lg} type="video/mp4" media="(min-width: 1440px)" />
+        <source src={VIDEO.md} type="video/mp4" />
+      </video>
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-black/40" />
       <div className="absolute inset-x-0 bottom-24 mx-auto max-w-2xl px-5 text-center sm:px-8">
         <div className="mb-4 flex justify-center gap-2" aria-label="Services">
