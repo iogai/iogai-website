@@ -13,7 +13,7 @@ type Params = Record<string, unknown>;
 // gives "AW-XXXXXXXXX/LABEL"). Set the label part only, as env vars:
 //   NEXT_PUBLIC_ADS_LEAD_LABEL — "Website contact (text, callback, booking)"
 // Phone calls are measured by the "Calls from website" config in Analytics.tsx.
-const ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || "AW-16865151406";
+const ADS_ID = "AW-16865151406"; // see Analytics.tsx
 const ADS_LEAD_LABEL = process.env.NEXT_PUBLIC_ADS_LEAD_LABEL || "fcP1CMmKybodEK6T9-k-";
 
 export function track(event: string, params?: Params) {
