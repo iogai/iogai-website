@@ -8,8 +8,10 @@ import Script from "next/script";
 export function Analytics() {
   const fb = process.env.NEXT_PUBLIC_FB_PIXEL_ID;
   const ga = process.env.NEXT_PUBLIC_GA_ID;
-  // Google Ads account tag for iogai inc. Not a secret; env var can override.
-  const ads = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || "AW-16865151406";
+  // Google Ads tag for the "iogai inc" account (Goals → Conversions → Tag setup).
+  // Hardcoded on purpose: the NEXT_PUBLIC_GOOGLE_ADS_ID env var in Vercel held
+  // a wrong ID (AW-236112119684), so Google Ads saw the tag as not installed.
+  const ads = "AW-16865151406";
   // "Calls from website" action: Google swaps the phone number on the page for
   // a forwarding number for ad visitors and counts real calls.
   const callLabel = process.env.NEXT_PUBLIC_ADS_CALL_LABEL || "xl5JCIjQ9u4cEK6T9-k-";
