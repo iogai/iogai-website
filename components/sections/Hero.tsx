@@ -41,7 +41,6 @@ export function Hero() {
           src="/media/real/svc-refrigerator.jpg"
           alt=""
           fill
-          priority
           sizes="100vw"
           className="object-cover"
         />

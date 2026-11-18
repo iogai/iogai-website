@@ -120,6 +120,7 @@ export const brands = {
   note: "Appliances, commercial refrigeration, and ice makers — tell us your equipment type and the problem.",
   names: [
     "Refrigerators",
+    "Built-In & High-End Appliances",
     "Commercial Refrigeration",
     "Walk-In Coolers",
     "Freezers",
@@ -151,6 +152,14 @@ export const services = {
     },
     {
       no: "02",
+      slug: "built-in-high-end-appliance-repair",
+      name: "Built-In & High-End Appliance Repair",
+      titleName: "High-End Appliance Repair",
+      body: "Sub-Zero, Viking, Thermador, Wolf, Miele, Monogram and other luxury built-ins — refrigerators, wine coolers, ranges, wall ovens and dishwashers — repaired with care by refrigeration specialists.",
+      image: "/media/real/svc-specialty.jpg",
+    },
+    {
+      no: "03",
       slug: "commercial-refrigeration",
       name: "Commercial Refrigeration & Restaurant Equipment",
       titleName: "Commercial Refrigeration",
@@ -158,7 +167,7 @@ export const services = {
       image: "/media/real/svc-walkin.jpg",
     },
     {
-      no: "03",
+      no: "04",
       slug: "hvac-repair",
       name: "HVAC Repair",
       titleName: "HVAC Repair",
