@@ -13,7 +13,7 @@ const businessLd = {
   "@type": "HVACBusiness",
   "@id": "https://iogai.com/#business",
   name: "IOGAI - Appliance & Refrigeration Repair Service",
-  description: "Commercial refrigeration and appliance repair across Huntington Beach, Orange County and Los Angeles County. Online service requests 24/7; technician visits by confirmed appointment.",
+  description: "High-end and built-in appliance repair (Sub-Zero, Viking, Thermador, Wolf, Miele) and commercial refrigeration across Huntington Beach, Orange County and Los Angeles County. $100 service call. Online requests 24/7.",
   telephone: "+14244217771",
   email: "support@iogai.com",
   url: "https://iogai.com",
@@ -100,16 +100,20 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "IOGAI — Commercial Refrigeration & Appliance Repair | OC & LA",
+  title: "IOGAI — High-End & Built-In Appliance Repair | Orange County",
   description:
-    "Commercial refrigeration and appliance repair in Orange County and LA. Service call $100 for homes and businesses, applied to the repair. Request service online 24/7; visits confirmed.",
+    "Sub-Zero, Viking, Thermador, Wolf & Miele repair by refrigeration specialists in Orange County & LA. $100 service call, applied to the repair. Book online 24/7.",
   metadataBase: new URL("https://iogai.com"),
   // Google Search Console site ownership verification (added 5 Sept 2026,
   // via HTML tag method - the property was otherwise unverified).
   verification: { google: "Zaqug4w0xnCIJGjh2PJnH3daafBuzwxMMcwgD4tUXkc" },
   keywords: [
+    "Sub-Zero repair Orange County",
+    "Viking appliance repair",
+    "Thermador repair",
+    "high-end appliance repair Newport Beach",
+    "built-in refrigerator repair",
     "refrigerator repair Huntington Beach",
-    "HVAC repair Orange County",
     "commercial refrigeration repair",
     "walk-in cooler repair",
     "ice maker repair",
@@ -118,9 +122,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "IOGAI — Commercial Refrigeration & Appliance Repair | OC & LA",
+    title: "IOGAI — High-End & Built-In Appliance Repair | Orange County",
     description:
-      "Walk-ins, commercial freezers, ice machines and home appliances. Service call $100 for homes and businesses. Online requests 24/7; visits by confirmed appointment.",
+      "High-end and built-in appliance repair — Sub-Zero, Viking, Thermador, Wolf, Miele — plus commercial refrigeration. $100 service call. Book online 24/7.",
     url: "https://iogai.com",
     siteName: "IOGAI",
     type: "website",
@@ -128,8 +132,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "IOGAI — Commercial Refrigeration & Appliance Repair | OC & LA",
-    description: "Commercial refrigeration and home appliance repair. Request service online 24/7. We confirm your technician's arrival window.",
+    title: "IOGAI — High-End & Built-In Appliance Repair | Orange County",
+    description: "High-end & built-in appliance repair in Orange County. Sub-Zero, Viking, Thermador, Wolf, Miele. $100 service call.",
     images: ["/media/real/svc-refrigerator.jpg"],
   },
 };
