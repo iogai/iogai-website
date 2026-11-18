@@ -27,7 +27,7 @@ export const maintenance = {
   label: "Maintenance Contracts",
   title: "Annual Maintenance Contracts for Restaurants",
   intro:
-    "For restaurant chains and independent restaurants that need their refrigeration running every day, not just fixed when it breaks. One contract, a set schedule, no surprise downtime.",
+    "For restaurant chains and independent restaurants that need their refrigeration running every day, not just fixed when it breaks. A planned maintenance schedule to help reduce avoidable downtime.",
   schedule: [
     {
       k: "Every 3 months",
@@ -57,7 +57,7 @@ export const rating = { value: "5.0", count: "136", source: "Google" };
 
 export const nav = {
   links: [
-    { label: "Services", href: "#top" },
+    { label: "Services", href: "#services" },
     { label: "How it works", href: "#process" },
     { label: "Reviews", href: "#testimonials" },
     { label: "FAQ", href: "#faq" },
@@ -79,7 +79,7 @@ export const advantages = {
   label: "Our advantages",
   title: "A team you can count on for cool, comfortable repairs",
   stats: [
-    { value: "10", unit: "+", caption: "Years repairing systems of any complexity" },
+    { value: "10", unit: "+", caption: "Years of hands-on repair experience — Igor Ogai" },
     { value: "5.0", unit: "/5", caption: "Average rating from 136 Google reviews" },
     { value: "24", unit: "/7", caption: "Request service online anytime. We confirm your technician's arrival window." },
   ],
@@ -89,8 +89,8 @@ export const advantages = {
 // made by the business, not new ones invented for this redesign.
 export const trustbar = [
   "Swift Response",
-  "Certified Technicians",
-  "Service Warranty",
+  "Clear Repair Estimates",
+  "Written Service Details",
   "Same-Day Slots When Available",
 ];
 
@@ -100,9 +100,9 @@ export const guarantees = {
   intro:
     "What you can expect when you book a repair with IOGAI.",
   items: [
-    { k: "Swift response", v: "Technicians are ready to respond quickly and get your equipment back in operation without delays." },
-    { k: "Certified team", v: "Technicians are certified and experienced across a wide range of brands and equipment types." },
-    { k: "Service warranty", v: "Repair and maintenance work is backed by a warranty." },
+    { k: "Swift response", v: "Call or text us with your equipment issue. We confirm technician availability before scheduling your visit." },
+    { k: "Clear repair estimates", v: "Diagnosis comes first. Review the scope and price before approving a repair." },
+    { k: "Written service details", v: "Ask for the warranty coverage, duration, and exclusions for your specific repair in writing before approving the work." },
     { k: "Urgent commercial service", v: "Equipment warming up? Call to check the soonest technician availability. We confirm the arrival window and pricing before dispatch." },
   ],
 };
@@ -117,7 +117,7 @@ export const guarantees = {
 // positioning the rest of the site is built around.
 export const brands = {
   label: "What we service",
-  note: "From single refrigerators to mortuary and marine units - see the full list below.",
+  note: "Appliances, commercial refrigeration, and ice makers — tell us your equipment type and the problem.",
   names: [
     "Refrigerators",
     "Commercial Refrigeration",
@@ -125,8 +125,6 @@ export const brands = {
     "Freezers",
     "Ice Makers",
     "Restaurant Equipment",
-    "Marine Refrigeration & AC",
-    "Mortuary Refrigeration",
     "HVAC Systems",
     "Washers & Dryers",
     "Ovens & Stoves",
@@ -136,7 +134,7 @@ export const brands = {
 
 export const services = {
   label: "Our services",
-  title: "Everything Your Equipment Could Ever Need",
+  title: "Repair & Maintenance Services",
   intro:
     "From a warm fridge to a down walk-in cooler, we handle it. Explore the repair and maintenance services IOGAI offers across Orange County and LA.",
   items: [
@@ -148,7 +146,7 @@ export const services = {
       // [longest city]" blows past 60 chars; the full name still shows
       // in on-page copy.
       titleName: "Refrigerator Repair",
-      body: "Residential and commercial refrigerators and freezers, diagnosed and fixed - usually the same visit.",
+      body: "Residential and commercial refrigerators and freezers, diagnosed on site, with repair options and pricing explained before work begins.",
       image: "/media/real/svc-refrigerator.jpg",
     },
     {
@@ -167,14 +165,7 @@ export const services = {
       body: "Heating and air conditioning repair for homes and small businesses, done right the first time.",
       image: "/media/real/svc-hvac.jpg",
     },
-    {
-      no: "04",
-      slug: "marine-mortuary-refrigeration",
-      name: "Specialty Refrigeration",
-      titleName: "Specialty Refrigeration",
-      body: "Marine refrigeration & AC, mortuary refrigeration, shock freezers, and hospital/medical freezers - equipment most repair companies won't touch.",
-      image: "/media/real/svc-specialty.jpg",
-    },
+
   ],
 };
 
@@ -186,7 +177,7 @@ export const process = {
   steps: [
     { no: "01", name: "Contact us", body: "Call or book online. Tell us the equipment and the symptom." },
     { no: "02", name: "Confirm your visit", body: "We'll get back to you with the next available windows and do our best to find a time that works for you." },
-    { no: "03", name: "Get a service", body: "A certified tech diagnoses and fixes it, and quotes before any work." },
+    { no: "03", name: "Get a service", body: "A technician diagnoses the issue and explains repair options and pricing for your approval." },
     { no: "04", name: "Pay safely", body: "Transparent pricing and secure payment - no surprises on the bill." },
     { no: "05", name: "Ready", body: "Your equipment back in operation, with a written record of the work." },
   ],
@@ -250,12 +241,12 @@ export const faq = {
       a: "Your requested time helps us plan your visit. The technician's arrival window depends on the current schedule and availability, so it may differ from your preference. We will confirm your window and do our best to find a time that works for you.",
     },
     {
-      q: "Are your technicians certified?",
-      a: "Our technicians are certified and experienced in handling repairs for a wide range of brands and equipment types.",
+      q: "Can you service my equipment?",
+      a: "Send the equipment type, brand, model, and ZIP code. We will confirm whether we can accept the work before scheduling. Ask for any registration or license information relevant to your project.",
     },
     {
       q: "Do you provide a warranty for your services?",
-      a: "Yes, we offer a warranty on our repair and maintenance services.",
+      a: "Ask for the written warranty terms for your specific repair, including coverage, duration, and exclusions, before approving the work.",
     },
   ],
 };
@@ -328,7 +319,7 @@ export const footer = {
     {
       title: "Quick links",
       links: [
-        { label: "Services", href: "#top" },
+        { label: "Services", href: "#services" },
         { label: "How it works", href: "#process" },
         { label: "Reviews", href: "#testimonials" },
         { label: "FAQ", href: "#faq" },
@@ -342,7 +333,7 @@ export const footer = {
         { label: "Instagram", href: "https://www.instagram.com/iogai_services" },
         { label: "Facebook", href: "https://www.facebook.com/iogai.services" },
         { label: "Yelp", href: "https://www.yelp.com/biz/iogai-refrigeration-huntington-beach" },
-        { label: "Thumbtack", href: "https://www.thumbtack.com/ca/huntington-beach/appliance-repair/igor-ogai-appliance-refrigeration-hvac-repair/service/499058102966788108" },
+        { label: "Thumbtack", href: "https://www.thumbtack.com/ca/huntington-beach/appliance-repair/iogai-appliance-refrigeration-repair-service/service/499058102966788108" },
       ],
     },
   ],

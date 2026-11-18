@@ -12,6 +12,8 @@ const nextConfig: NextConfig = {
   // the closest real equivalent page rather than a blanket homepage dump.
   async redirects() {
     return [
+      // Specialty services stay off public offer until scope and qualifications are verified.
+      { source: "/service-areas/marine-mortuary-refrigeration/:city", destination: "/service-areas", permanent: false },
       { source: "/about-us", destination: "/", permanent: true },
       { source: "/contact", destination: "/#contact", permanent: true },
       { source: "/cases", destination: "/", permanent: true },
