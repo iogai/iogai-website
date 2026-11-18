@@ -16,7 +16,7 @@ export const site = {
 
 export const offer = {
   badge: "Clear diagnostic pricing",
-  text: "Residential appliance service call: $100. Commercial refrigeration service call: $135. Applied toward your approved repair. Repair pricing is approved before work begins.",
+  text: "Service call: $100 for homes and businesses. Applied toward your approved repair. Repair pricing is approved before work begins.",
   cta: "Call (424) 421-7771",
 };
 
@@ -233,7 +233,7 @@ export const faq = {
     },
     {
       q: "How much is the service call?",
-      a: "The service call is $100 for residential appliances and $135 for commercial refrigeration. It covers a diagnostic visit and is applied toward your approved repair. Repairs are quoted separately for your approval before work begins. Any additional diagnostic or access work requires your approval first.",
+      a: "The service call is $100 for both homes and businesses. It covers a diagnostic visit and is applied toward your approved repair. Repairs are quoted separately for your approval before work begins. Any additional diagnostic or access work requires your approval first.",
     },
     {
       q: "Is my requested time the technician's arrival time?",
@@ -331,7 +331,7 @@ export const footer = {
       links: [
         { label: "Instagram", href: "https://www.instagram.com/iogai_services" },
         { label: "Facebook", href: "https://www.facebook.com/iogai.services" },
-        { label: "Yelp", href: "https://www.yelp.com/biz/iogai-refrigeration-huntington-beach" },
+        { label: "Find us on Yelp", href: "https://www.yelp.com/biz/iogai-refrigeration-huntington-beach" },
         { label: "Thumbtack", href: "https://www.thumbtack.com/ca/huntington-beach/appliance-repair/iogai-appliance-refrigeration-repair-service/service/499058102966788108" },
       ],
     },
