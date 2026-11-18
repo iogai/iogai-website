@@ -8,7 +8,11 @@ import Script from "next/script";
 export function Analytics() {
   const fb = process.env.NEXT_PUBLIC_FB_PIXEL_ID;
   const ga = process.env.NEXT_PUBLIC_GA_ID;
-  const ads = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
+  // Google Ads account tag for iogai inc. Not a secret; env var can override.
+  const ads = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || "AW-16865151406";
+  // "Calls from website" action: Google swaps the phone number on the page for
+  // a forwarding number for ad visitors and counts real calls.
+  const callLabel = process.env.NEXT_PUBLIC_ADS_CALL_LABEL || "xl5JCIjQ9u4cEK6T9-k-";
   // gtag.js is one shared loader - load it once off whichever ID exists,
   // then config every Google ID present (GA4's G- and/or Ads' AW-) on it.
   const gtagLoaderId = ga || ads;
@@ -22,7 +26,7 @@ export function Analytics() {
             strategy="afterInteractive"
           />
           <Script id="ga4" strategy="afterInteractive">
-            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());${ga ? `gtag('config','${ga}');` : ""}${ads ? `gtag('config','${ads}');` : ""}`}
+            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());${ga ? `gtag('config','${ga}');` : ""}${ads ? `gtag('config','${ads}');` : ""}${ads && callLabel ? `gtag('config','${ads}/${callLabel}',{phone_conversion_number:'(424) 421-7771'});` : ""}`}
           </Script>
         </>
       )}
