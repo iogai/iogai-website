@@ -17,6 +17,11 @@ const businessLd = {
   telephone: "+14244217771",
   email: "support@iogai.com",
   url: "https://iogai.com",
+  sameAs: [
+    "https://maps.google.com/maps?cid=4798157204614235950",
+    "https://www.facebook.com/iogai.services",
+    "https://www.instagram.com/iogai_services",
+  ],
   image: "https://iogai.com/media/real/svc-refrigerator.jpg",
   address: {
     "@type": "PostalAddress",
