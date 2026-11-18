@@ -63,14 +63,14 @@ export function Contact() {
             <div className="mt-6 flex flex-wrap gap-3">
               <a
                 href={smsUrl}
-                onClick={() => track("Contact", { method: "sms", placement: "booking_help" })}
+                onClick={() => trackContact("sms")}
                 className="inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-6 text-sm font-semibold text-ink transition-colors hover:bg-accent-strong hover:text-paper"
               >
                 Text our team
               </a>
               <a
                 href={callbackUrl}
-                onClick={() => track("callback_link_click", { placement: "contact" })}
+                onClick={() => { track("callback_link_click", { placement: "contact" }); trackContact("callback"); }}
                 className="inline-flex min-h-12 items-center justify-center rounded-full border border-ink/30 px-6 text-sm font-medium text-ink transition-colors hover:border-accent"
               >
                 Request a callback
@@ -79,7 +79,7 @@ export function Contact() {
             <div className="mt-5 border-t border-hairline pt-5">
               <a
                 href={bookingUrl}
-                onClick={() => track("booking_link_click")}
+                onClick={() => { track("booking_link_click"); trackContact("booking"); }}
                 className="inline-flex min-h-11 items-center text-sm font-medium text-ink underline underline-offset-4 hover:text-accent"
               >
                 See available appointment times

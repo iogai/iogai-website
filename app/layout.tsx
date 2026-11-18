@@ -102,7 +102,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "IOGAI — Commercial Refrigeration & Appliance Repair | OC & LA",
   description:
-    "Commercial refrigeration and appliance repair in Orange County and LA. Residential service call $100; commercial $135. Request service online 24/7; visits confirmed.",
+    "Commercial refrigeration and appliance repair in Orange County and LA. Service call $100 for homes and businesses, applied to the repair. Request service online 24/7; visits confirmed.",
   metadataBase: new URL("https://iogai.com"),
   // Google Search Console site ownership verification (added 5 Sept 2026,
   // via HTML tag method - the property was otherwise unverified).
@@ -120,7 +120,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "IOGAI — Commercial Refrigeration & Appliance Repair | OC & LA",
     description:
-      "Walk-ins, commercial freezers, ice machines and home appliances. Residential service call $100; commercial $135. Online requests 24/7; visits by confirmed appointment.",
+      "Walk-ins, commercial freezers, ice machines and home appliances. Service call $100 for homes and businesses. Online requests 24/7; visits by confirmed appointment.",
     url: "https://iogai.com",
     siteName: "IOGAI",
     type: "website",
