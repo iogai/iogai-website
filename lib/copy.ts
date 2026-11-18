@@ -163,7 +163,7 @@ export const services = {
       slug: "commercial-refrigeration",
       name: "Commercial Refrigeration & Restaurant Equipment",
       titleName: "Commercial Refrigeration",
-      body: "Walk-in coolers, ice makers, and restaurant equipment kept running for businesses that can't afford downtime.",
+      body: "Ice machines (Hoshizaki, Manitowoc, Scotsman), walk-in coolers and freezers, reach-ins, prep tables and bar coolers — kept running for restaurants, bars and markets that can't afford downtime.",
       image: "/media/real/svc-walkin.jpg",
     },
     {
@@ -234,7 +234,7 @@ export const faq = {
   items: [
     {
       q: "What types of equipment do you repair?",
-      a: "We specialize in repairing commercial and residential refrigeration units, HVAC systems, freezers, walk-in coolers, and ice makers.",
+      a: "We specialize in ice machines (Hoshizaki, Manitowoc, Scotsman), walk-in coolers and freezers, commercial and home refrigerators, high-end built-ins like Sub-Zero, and HVAC.",
     },
     {
       q: "Do you offer emergency repair services?",
