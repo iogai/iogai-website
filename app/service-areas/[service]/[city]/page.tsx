@@ -106,7 +106,7 @@ export default async function ServiceAreaPage({
         <p className="mt-6 text-lg leading-relaxed text-ink-2">{svc.body}</p>
         <p className="mt-4 leading-relaxed text-ink-2">
           IOGAI is based at {site.address} and serves {loc.city} as part of {REGION_BLURB[loc.region]}.
-          {" "}{site.hours}. Same-day visits are subject to technician availability.
+          {" "}Hours: {site.hours}. Same-day visits are subject to technician availability.
           {" "}Rated {rating.value} stars across {rating.count} Google reviews.
         </p>
 

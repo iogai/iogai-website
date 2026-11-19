@@ -20,7 +20,17 @@ const businessLd = {
   sameAs: [
     "https://maps.google.com/maps?cid=4798157204614235950",
     "https://www.instagram.com/iogai_services",
+    "https://www.facebook.com/iogai.inc",
   ],
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "18:00",
+    },
+  ],
+  priceRange: "$100 service call",
   image: "https://iogai.com/media/real/svc-refrigerator.jpg",
   address: {
     "@type": "PostalAddress",
