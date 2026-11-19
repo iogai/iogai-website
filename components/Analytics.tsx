@@ -32,6 +32,15 @@ export function Analytics() {
           </Script>
         </>
       )}
+      {/* Housecall Pro chat bubble: website chat goes to the HCP inbox, where
+          CSR AI (chat is included in the plan) answers and books jobs 24/7. */}
+      <Script
+        id="housecall-pro-chat-bubble"
+        src="https://chat.housecallpro.com/proChat.js"
+        strategy="lazyOnload"
+        data-color="#0E6FBE"
+        data-organization="75634934-2b81-4f7f-a686-ed5168f75944"
+      />
       {fb && (
         <Script id="meta-pixel" strategy="afterInteractive">
           {`!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${fb}');fbq('track','PageView');`}
