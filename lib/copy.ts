@@ -340,6 +340,8 @@ export const footer = {
       links: [
         { label: "Instagram", href: "https://www.instagram.com/iogai_services" },
         { label: "Facebook", href: "https://www.facebook.com/iogai.services" },
+        { label: "YouTube", href: "https://www.youtube.com/@IOGAI_services" },
+        { label: "TikTok", href: "https://www.tiktok.com/@iogai_services" },
         { label: "Find us on Yelp", href: "https://www.yelp.com/biz/iogai-refrigeration-huntington-beach" },
         { label: "Thumbtack", href: "https://www.thumbtack.com/ca/huntington-beach/appliance-repair/iogai-appliance-refrigeration-repair-service/service/499058102966788108" },
       ],
