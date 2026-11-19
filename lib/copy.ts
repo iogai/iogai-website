@@ -102,7 +102,7 @@ export const guarantees = {
   items: [
     { k: "Swift response", v: "Call or text us with your equipment issue. We confirm technician availability before scheduling your visit." },
     { k: "Clear repair estimates", v: "Diagnosis comes first. Review the scope and price before approving a repair." },
-    { k: "Written warranty", v: "Every completed repair comes with our written workmanship warranty. The terms are listed on your invoice." },
+    { k: "Written warranty", v: "Every completed repair is covered: 30 days on labor and 90 days on parts, in writing on your invoice." },
     { k: "Urgent commercial service", v: "Equipment warming up? Call to check the soonest technician availability. We confirm the arrival window and pricing before dispatch." },
   ],
 };
@@ -184,7 +184,7 @@ export const process = {
     "Getting your equipment back on track is easier than you think - just five simple steps.",
   steps: [
     { no: "01", name: "Contact us", body: "Call or book online. Tell us the equipment and the symptom." },
-    { no: "02", name: "Confirm your visit", body: "We text you a confirmed 3-hour arrival window. Same-day and next-day visits are often available." },
+    { no: "02", name: "Confirm your visit", body: "Pick a morning (8 AM–12 PM) or afternoon (12–4 PM) window. We text you when the technician is 30 minutes away." },
     { no: "03", name: "Get a service", body: "A technician diagnoses the issue and explains repair options and pricing for your approval." },
     { no: "04", name: "Pay safely", body: "Transparent pricing and secure payment - no surprises on the bill." },
     { no: "05", name: "Ready", body: "Your equipment back in operation, with a written record of the work." },
@@ -246,7 +246,7 @@ export const faq = {
     },
     {
       q: "Is my requested time the technician's arrival time?",
-      a: "We confirm a 3-hour arrival window by text before your visit. Same-day and next-day visits are often available, Monday to Friday, 8 AM to 6 PM.",
+      a: "Choose a morning (8 AM–12 PM) or afternoon (12–4 PM) window, Monday to Friday. Your technician texts you 30 minutes before arrival, so you don't have to wait by the door. Same-day and next-day visits are often available.",
     },
     {
       q: "Can you service my equipment?",
@@ -254,7 +254,7 @@ export const faq = {
     },
     {
       q: "Do you provide a warranty for your services?",
-      a: "Yes. Completed repairs carry our written workmanship warranty, and new parts carry the manufacturer's warranty. The exact terms are listed on your invoice.",
+      a: "Yes. Every completed repair is covered for 30 days on labor and 90 days on parts, in writing on your invoice.",
     },
   ],
 };
