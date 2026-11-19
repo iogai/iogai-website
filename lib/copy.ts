@@ -184,7 +184,7 @@ export const process = {
     "Getting your equipment back on track is easier than you think - just five simple steps.",
   steps: [
     { no: "01", name: "Contact us", body: "Call or book online. Tell us the equipment and the symptom." },
-    { no: "02", name: "Confirm your visit", body: "Pick a morning (8 AM–12 PM) or afternoon (12–4 PM) window. We text you when the technician is 30 minutes away." },
+    { no: "02", name: "Confirm your visit", body: "Pick a 2-hour arrival window: 8–10, 10–12, 12–2, 2–4 or 4–6. We text you when the technician is 30 minutes away." },
     { no: "03", name: "Get a service", body: "A technician diagnoses the issue and explains repair options and pricing for your approval." },
     { no: "04", name: "Pay safely", body: "Transparent pricing and secure payment - no surprises on the bill." },
     { no: "05", name: "Ready", body: "Your equipment back in operation, with a written record of the work." },
@@ -246,7 +246,7 @@ export const faq = {
     },
     {
       q: "Is my requested time the technician's arrival time?",
-      a: "Choose a morning (8 AM–12 PM) or afternoon (12–4 PM) window, Monday to Friday. Your technician texts you 30 minutes before arrival, so you don't have to wait by the door. Same-day and next-day visits are often available.",
+      a: "Choose a 2-hour arrival window, Monday to Friday: 8–10 AM, 10 AM–12 PM, 12–2 PM, 2–4 PM or 4–6 PM. Your technician texts you 30 minutes before arrival, so you don't have to wait by the door. Same-day and next-day visits are often available.",
     },
     {
       q: "Can you service my equipment?",
