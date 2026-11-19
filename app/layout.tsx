@@ -19,7 +19,7 @@ const businessLd = {
   url: "https://iogai.com",
   sameAs: [
     "https://maps.google.com/maps?cid=4798157204614235950",
-    "https://www.instagram.com/iogai_services",
+    "https://www.instagram.com/iogai.services",
     "https://www.youtube.com/@IOGAI_services",
     "https://www.tiktok.com/@iogai.services",
     "https://www.yelp.com/biz/iogai-refrigeration-huntington-beach",
