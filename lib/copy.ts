@@ -79,7 +79,7 @@ export const advantages = {
   label: "Our advantages",
   title: "A team you can count on for cool, comfortable repairs",
   stats: [
-    { value: "10", unit: "+", caption: "Years of hands-on repair experience — Igor Ogai" },
+    { value: "13", unit: "+", caption: "Years of hands-on refrigeration experience — Igor Ogai" },
     { value: "5.0", unit: "/5", caption: "Average rating from 136 Google reviews" },
     { value: "24", unit: "/7", caption: "Request service online anytime. We confirm your technician's arrival window." },
   ],
@@ -91,7 +91,7 @@ export const trustbar = [
   "Swift Response",
   "Clear Repair Estimates",
   "Written Service Details",
-  "Same-Day Slots When Available",
+  "Same-Day Visits Available",
 ];
 
 export const guarantees = {
@@ -102,7 +102,7 @@ export const guarantees = {
   items: [
     { k: "Swift response", v: "Call or text us with your equipment issue. We confirm technician availability before scheduling your visit." },
     { k: "Clear repair estimates", v: "Diagnosis comes first. Review the scope and price before approving a repair." },
-    { k: "Written service details", v: "Ask for the warranty coverage, duration, and exclusions for your specific repair in writing before approving the work." },
+    { k: "Written warranty", v: "Every completed repair comes with our written workmanship warranty. The terms are listed on your invoice." },
     { k: "Urgent commercial service", v: "Equipment warming up? Call to check the soonest technician availability. We confirm the arrival window and pricing before dispatch." },
   ],
 };
@@ -184,7 +184,7 @@ export const process = {
     "Getting your equipment back on track is easier than you think - just five simple steps.",
   steps: [
     { no: "01", name: "Contact us", body: "Call or book online. Tell us the equipment and the symptom." },
-    { no: "02", name: "Confirm your visit", body: "We'll get back to you with the next available windows and do our best to find a time that works for you." },
+    { no: "02", name: "Confirm your visit", body: "We text you a confirmed 3-hour arrival window. Same-day and next-day visits are often available." },
     { no: "03", name: "Get a service", body: "A technician diagnoses the issue and explains repair options and pricing for your approval." },
     { no: "04", name: "Pay safely", body: "Transparent pricing and secure payment - no surprises on the bill." },
     { no: "05", name: "Ready", body: "Your equipment back in operation, with a written record of the work." },
@@ -238,15 +238,15 @@ export const faq = {
     },
     {
       q: "Do you offer emergency repair services?",
-      a: "For urgent commercial refrigeration problems, call (424) 421-7771 so we can check the soonest available technician. You can request service online 24/7. Emergency and after-hours visits depend on technician availability; we confirm the arrival window and any additional charges before dispatch.",
+      a: "For urgent commercial refrigeration problems, call (424) 421-7771 so we can check the soonest available technician. Phone hours: Monday to Friday, 8 AM to 6 PM; online requests 24/7. Emergency and after-hours visits depend on technician availability; we confirm the arrival window and any additional charges before dispatch.",
     },
     {
       q: "How much is the service call?",
-      a: "The service call is $100 for both homes and businesses. It covers a diagnostic visit and is applied toward your approved repair. Repairs are quoted separately for your approval before work begins. Any additional diagnostic or access work requires your approval first.",
+      a: "The service call is $100 for both homes and businesses. It covers a diagnostic visit and is applied toward your approved repair. Repairs are quoted separately for your approval before work begins. Any additional diagnostic or access work requires your approval first. If you decide not to repair, the $100 service call is all you pay.",
     },
     {
       q: "Is my requested time the technician's arrival time?",
-      a: "Your requested time helps us plan your visit. The technician's arrival window depends on the current schedule and availability, so it may differ from your preference. We will confirm your window and do our best to find a time that works for you.",
+      a: "We confirm a 3-hour arrival window by text before your visit. Same-day and next-day visits are often available, Monday to Friday, 8 AM to 6 PM.",
     },
     {
       q: "Can you service my equipment?",
@@ -254,7 +254,7 @@ export const faq = {
     },
     {
       q: "Do you provide a warranty for your services?",
-      a: "Ask for the written warranty terms for your specific repair, including coverage, duration, and exclusions, before approving the work.",
+      a: "Yes. Completed repairs carry our written workmanship warranty, and new parts carry the manufacturer's warranty. The exact terms are listed on your invoice.",
     },
   ],
 };
@@ -262,7 +262,7 @@ export const faq = {
 export const closing = {
   eyebrow: "Ready when you are",
   title: ["Cooling Solutions -", "We've Got This."],
-  sub: "Local refrigeration and HVAC repair across Orange County and LA. Ask us about same-day availability.",
+  sub: "High-end appliance and refrigeration repair across Orange County and LA. Same-day visits available.",
   ctaPrimary: "Book a Repair",
   ctaSecondary: "Call IOGAI",
 };
