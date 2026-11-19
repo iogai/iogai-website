@@ -338,7 +338,7 @@ export const footer = {
     {
       title: "Social",
       links: [
-        { label: "Instagram", href: "https://www.instagram.com/iogai_services" },
+        { label: "Instagram", href: "https://www.instagram.com/iogai.services" },
         { label: "Facebook", href: "https://www.facebook.com/iogai.services" },
         { label: "YouTube", href: "https://www.youtube.com/@IOGAI_services" },
         { label: "TikTok", href: "https://www.tiktok.com/@iogai.services" },
