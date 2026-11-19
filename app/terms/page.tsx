@@ -31,9 +31,11 @@ export default function TermsPage() {
 
       <h2>Workmanship &amp; warranties</h2>
       <p>
-        We stand behind our work with a workmanship warranty on completed repairs. New installations
-        carry the applicable manufacturer parts warranty in addition to ours. Warranty details are
-        provided with your service documentation.
+        Every completed repair is covered for 30 days on labor and 90 days on parts we install,
+        stated in writing on your invoice. New installations also carry the manufacturer's parts
+        warranty. We give you a written estimate and get your approval before any repair work, and
+        we never charge above the approved estimate without your consent. Replaced parts are
+        returned to you on request.
       </p>
 
       <h2>Your responsibilities</h2>
