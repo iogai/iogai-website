@@ -11,12 +11,12 @@ export const site = {
   email: "support@iogai.com",
   emailHref: "mailto:support@iogai.com",
   address: "517 Frankfort Ave, Huntington Beach, CA 92648",
-  hours: "Online requests 24/7; service visits by confirmed appointment",
+  hours: "Mon–Fri 8 AM–6 PM · Book online 24/7",
 };
 
 export const offer = {
   badge: "Clear diagnostic pricing",
-  text: "Service call: $100 for homes and businesses. Applied toward your approved repair. Repair pricing is approved before work begins.",
+  text: "Service call: $100 for homes and businesses. Applied toward your approved repair. Decline the repair and $100 is all you pay.",
   cta: "Call (424) 421-7771",
 };
 
