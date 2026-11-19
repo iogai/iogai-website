@@ -3,9 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { services } from "@/lib/copy";
 
-// Hero slides: core services only (high-end, commercial, refrigerators).
-// HVAC keeps its own pages but is not featured in the hero.
-const slides = services.items.filter((s) => s.slug !== "hvac-repair");
+// Hero slides: all four services, same as the Yelp listing (HVAC is 04).
+const slides = services.items;
 
 // Three encodes of the same 12 s flight (H.264, faststart, keyframe every 1 s)
 // so it starts within a second on any device and network:
