@@ -20,7 +20,7 @@ const businessLd = {
   sameAs: [
     "https://maps.google.com/maps?cid=4798157204614235950",
     "https://www.instagram.com/iogai_services",
-    "https://www.facebook.com/iogai.inc",
+    "https://www.facebook.com/iogai.services",
   ],
   openingHoursSpecification: [
     {
