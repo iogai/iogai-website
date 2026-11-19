@@ -3,6 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import { services } from "@/lib/copy";
 
+// Hero slides: core services only (high-end, commercial, refrigerators).
+// HVAC keeps its own pages but is not featured in the hero.
+const slides = services.items.filter((s) => s.slug !== "hvac-repair");
+
 // Three encodes of the same 12 s flight (H.264, faststart, keyframe every 1 s)
 // so it starts within a second on any device and network:
 //   360p ≈ 0.5 MB — Save-Data, 2G/3G   · 720p ≈ 2.4 MB — phones/tablets
@@ -102,7 +106,7 @@ export function ScrollVideo() {
         onTimeUpdate={(e) => {
           const video = e.currentTarget;
           if (Number.isFinite(video.duration) && video.duration > 0) {
-            setActive(Math.min(services.items.length - 1, Math.floor(video.currentTime / video.duration * services.items.length)));
+            setActive(Math.min(slides.length - 1, Math.floor(video.currentTime / video.duration * slides.length)));
           }
         }}
         className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 motion-reduce:transition-none ${showVideo ? "opacity-100" : "opacity-0"}`}
@@ -113,7 +117,7 @@ export function ScrollVideo() {
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-black/40" />
       <div className="absolute inset-x-0 bottom-24 mx-auto max-w-2xl px-5 text-center sm:px-8">
         <div className="mb-4 flex justify-center gap-2" aria-label="Services">
-          {services.items.map((service, index) => (
+          {slides.map((service, index) => (
             <button key={service.slug} type="button" aria-label={service.name} aria-pressed={active === index}
               onClick={() => { wantsPlayback.current = false; videoRef.current?.pause(); setActive(index); }}
               className={`flex h-11 w-11 items-center justify-center rounded-full border text-sm ${active === index ? "border-accent bg-accent text-ink" : "border-white/40 bg-black/30 text-white"}`}>
@@ -121,13 +125,13 @@ export function ScrollVideo() {
             </button>
           ))}
         </div>
-        <h3 className="display text-[clamp(1.5rem,4.5vw,2.75rem)] font-semibold text-white">{services.items[active].name}</h3>
-        <p className="mx-auto mt-3 max-w-lg text-sm text-white/90 sm:text-base">{services.items[active].body}</p>
+        <h3 className="display text-[clamp(1.5rem,4.5vw,2.75rem)] font-semibold text-white">{slides[active].name}</h3>
+        <p className="mx-auto mt-3 max-w-lg text-sm text-white/90 sm:text-base">{slides[active].body}</p>
       </div>
       <button type="button" onClick={() => {
         wantsPlayback.current = !playing;
         if (playing) videoRef.current?.pause(); else play();
-      }} className="absolute bottom-6 right-5 inline-flex min-h-11 items-center rounded-full border border-white/40 bg-black/50 px-5 text-sm text-white sm:right-8">
+      }} className="absolute bottom-6 left-5 inline-flex min-h-11 items-center rounded-full border border-white/40 bg-black/50 px-5 text-sm text-white sm:left-8">
         {playing ? "Pause video" : "Play video"}
       </button>
     </div>

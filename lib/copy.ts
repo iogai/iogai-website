@@ -141,6 +141,22 @@ export const services = {
   items: [
     {
       no: "01",
+      slug: "built-in-high-end-appliance-repair",
+      name: "Built-In & High-End Appliance Repair",
+      titleName: "High-End Appliance Repair",
+      body: "Sub-Zero, Viking, Thermador, Wolf, Miele, Monogram and other luxury built-ins — refrigerators, wine coolers, ranges, wall ovens and dishwashers — repaired with care by refrigeration specialists.",
+      image: "/media/real/svc-specialty.jpg",
+    },
+    {
+      no: "02",
+      slug: "commercial-refrigeration",
+      name: "Commercial Refrigeration & Restaurant Equipment",
+      titleName: "Commercial Refrigeration",
+      body: "Ice machines (Hoshizaki, Manitowoc, Scotsman), walk-in coolers and freezers, reach-ins, prep tables and bar coolers — kept running for restaurants, bars and markets that can't afford downtime.",
+      image: "/media/real/svc-walkin.jpg",
+    },
+    {
+      no: "03",
       slug: "refrigerator-freezer-repair",
       name: "Refrigerator & Freezer Repair",
       // Short label for title tags - "Refrigerator & Freezer Repair in
@@ -149,22 +165,6 @@ export const services = {
       titleName: "Refrigerator Repair",
       body: "Residential and commercial refrigerators and freezers, diagnosed on site, with repair options and pricing explained before work begins.",
       image: "/media/real/svc-refrigerator.jpg",
-    },
-    {
-      no: "02",
-      slug: "built-in-high-end-appliance-repair",
-      name: "Built-In & High-End Appliance Repair",
-      titleName: "High-End Appliance Repair",
-      body: "Sub-Zero, Viking, Thermador, Wolf, Miele, Monogram and other luxury built-ins — refrigerators, wine coolers, ranges, wall ovens and dishwashers — repaired with care by refrigeration specialists.",
-      image: "/media/real/svc-specialty.jpg",
-    },
-    {
-      no: "03",
-      slug: "commercial-refrigeration",
-      name: "Commercial Refrigeration & Restaurant Equipment",
-      titleName: "Commercial Refrigeration",
-      body: "Ice machines (Hoshizaki, Manitowoc, Scotsman), walk-in coolers and freezers, reach-ins, prep tables and bar coolers — kept running for restaurants, bars and markets that can't afford downtime.",
-      image: "/media/real/svc-walkin.jpg",
     },
     {
       no: "04",
