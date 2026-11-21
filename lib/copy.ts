@@ -12,6 +12,11 @@ export const site = {
   emailHref: "mailto:support@iogai.com",
   address: "517 Frankfort Ave, Huntington Beach, CA 92648",
   hours: "Mon–Fri 8 AM–6 PM · Book online 24/7",
+  // State registration confirmed by the owner (BHGS / BEAR Major Appliance
+  // Repair, status Clear, expires 31 Mar 2027). Shown so customers can verify.
+  license: "CA BHGS Service Dealer Reg. #A50829",
+  licenseHref:
+    "https://search.dca.ca.gov/details/3900/A/50829/74c24905a98775ee65175f3b0bbdfcbf",
 };
 
 export const offer = {
