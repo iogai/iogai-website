@@ -1,13 +1,13 @@
 import type { MetadataRoute } from "next";
 import { services } from "@/lib/copy";
-import { locations } from "@/lib/locations";
+import { focusLocations } from "@/lib/locations";
 import { brands } from "@/lib/brands";
 
 const base = "https://iogai.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const serviceAreaPages = services.items.flatMap((svc) =>
-    locations.map((loc) => ({
+    focusLocations.map((loc) => ({
       url: `${base}/service-areas/${svc.slug}/${loc.slug}`,
       changeFrequency: "monthly" as const,
       priority: 0.6,

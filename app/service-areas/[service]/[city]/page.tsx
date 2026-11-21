@@ -50,6 +50,9 @@ export async function generateMetadata({
     title,
     description,
     alternates: { canonical: `/service-areas/${svc.slug}/${loc.slug}` },
+    // Only core-market cities are indexed; the rest stay live for visitors
+    // and pass link value, without competing as near-duplicate pages.
+    ...(loc.focus ? {} : { robots: { index: false, follow: true } }),
   };
 }
 
@@ -68,9 +71,12 @@ export default async function ServiceAreaPage({
   const { svc, loc } = data;
 
   const otherServices = services.items.filter((s) => s.slug !== svc.slug);
+  // Link to core-market cities first so link value flows to indexed pages.
   const nearbyCities = locations
-    .filter((l) => l.region === loc.region && l.slug !== loc.slug)
+    .filter((l) => l.slug !== loc.slug && (l.focus || l.region === loc.region))
+    .sort((a, b) => Number(!!b.focus) - Number(!!a.focus))
     .slice(0, 8);
+  const localCopy = svc.slug === "commercial-refrigeration" ? loc.commercial : loc.home;
 
   const serviceLd = {
     "@context": "https://schema.org",
@@ -104,6 +110,7 @@ export default async function ServiceAreaPage({
           {svc.name} in {loc.city}, CA
         </h1>
         <p className="mt-6 text-lg leading-relaxed text-ink-2">{svc.body}</p>
+        {localCopy && <p className="mt-4 leading-relaxed text-ink-2">{localCopy}</p>}
         <p className="mt-4 leading-relaxed text-ink-2">
           IOGAI is based at {site.address} and serves {loc.city} as part of {REGION_BLURB[loc.region]}.
           {" "}Hours: {site.hours}. Same-day visits are subject to technician availability.
