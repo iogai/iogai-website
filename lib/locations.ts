@@ -12,6 +12,12 @@ export type Location = {
   slug: string;
   city: string;
   region: Region;
+  /** Core market: indexed, in the sitemap, with its own local copy. */
+  focus?: boolean;
+  /** Unique local paragraph for home-appliance pages. */
+  home?: string;
+  /** Unique local paragraph for commercial refrigeration pages. */
+  commercial?: string;
 };
 
 const oc = (city: string, region: Region): Location => ({
@@ -76,6 +82,67 @@ export const locations: Location[] = [
   oc("Los Angeles", "South Bay / SE Los Angeles County"),
   oc("Santa Monica", "Westside Los Angeles County"),
 ];
+
+// Core markets: close to the Huntington Beach base, high-end homes and dense
+// restaurant corridors. Only these city pages are indexed and listed in the
+// sitemap — one strong, unique page per city beats dozens of near-copies.
+const FOCUS: Record<string, { home: string; commercial: string }> = {
+  "huntington-beach": {
+    home: "Huntington Beach is our home base — the shop is on Frankfort Ave, a few minutes from most neighborhoods, from Huntington Harbour to the homes off Goldenwest and Brookhurst. Salt air this close to the ocean is hard on condenser coils and electrical connections, so we check both on every refrigerator call.",
+    commercial: "From Main Street and Pacific City to the plazas along Beach Blvd and Brookhurst, Huntington Beach kitchens run hard all summer. Our shop is on Frankfort Ave, so walk-ins, ice machines and reach-ins in town get some of our shortest drive times.",
+  },
+  "newport-beach": {
+    home: "Newport Coast, Corona del Mar, Balboa Island and Dover Shores homes are full of built-in Sub-Zero, Thermador, Wolf and Miele kitchens — exactly the equipment we focus on. Marine air speeds up coil and connector corrosion, which is behind many of the 'fridge is warm' calls we get near the water.",
+    commercial: "Restaurants and bars from Lido Marina Village and the Balboa Peninsula to Fashion Island and Westcliff depend on ice machines and walk-ins that can't go down on a weekend. We service Newport Beach from our Huntington Beach shop, one city over.",
+  },
+  "costa-mesa": {
+    home: "Costa Mesa sits right next to our Huntington Beach shop. Mesa Verde, Eastside and College Park homes often have older refrigerators worth repairing instead of replacing — we tell you honestly which side of that line yours is on.",
+    commercial: "The South Coast Plaza area, The LAB and the 17th Street and Harbor Blvd corridors are packed with kitchens and bars. We keep their ice machines, prep tables and walk-ins running, minutes from our Huntington Beach base.",
+  },
+  "fountain-valley": {
+    home: "Fountain Valley borders Huntington Beach, so it's one of the quickest areas for us to reach. We repair refrigerators, freezers and built-in appliances in homes across the city, with a written estimate before any work starts.",
+    commercial: "Restaurants, cafés and markets along Brookhurst, Magnolia and Warner are close to our Huntington Beach shop, which helps when an ice machine or walk-in cooler goes down mid-shift.",
+  },
+  "seal-beach": {
+    home: "Seal Beach homes near the water deal with the same salt air that wears down condenser coils and fan motors. We service refrigerators, freezers and high-end built-ins across town, from Old Town to College Park East.",
+    commercial: "Main Street Seal Beach and the shopping centers along PCH have tight kitchens where a failed reach-in or ice machine stops service fast. We're just up the coast in Huntington Beach.",
+  },
+  "laguna-beach": {
+    home: "Laguna Beach hillside and oceanfront homes often have premium built-in refrigeration and wine storage. Salt air and limited access make careful work important — we confirm parts and the visit window before we come out.",
+    commercial: "Restaurants and galleries along Coast Highway and Forest Ave rely on bar coolers, ice machines and walk-ins through the busy season. We plan visits around service hours where we can.",
+  },
+  irvine: {
+    home: "Many Irvine homes, from Turtle Rock and Shady Canyon to the newer villages, came with built-in appliance packages from Sub-Zero, Thermador, Monogram and Miele. We repair those brands and explain repair-vs-replace honestly.",
+    commercial: "Irvine Spectrum, the Diamond Jamboree and Business District kitchens and the campus-area restaurants run high volumes, so we focus on finding the root cause — not just resetting the unit.",
+  },
+  "dana-point": {
+    home: "Monarch Beach, Capistrano Beach and the homes above the harbor see constant ocean air. We repair refrigerators, wine coolers and built-in appliances, and check for corrosion that shortens equipment life on the coast.",
+    commercial: "Dana Point Harbor restaurants and the hospitality kitchens along PCH need ice and cold storage every day. We service commercial refrigeration across south Orange County by appointment.",
+  },
+  "long-beach": {
+    home: "From Naples and Belmont Shore to Bixby Knolls and Los Altos, Long Beach has a mix of classic homes and remodeled kitchens with high-end built-ins. We service refrigerators, freezers and premium appliances across the city.",
+    commercial: "2nd Street in Belmont Shore, Pine Ave downtown and the Bixby Knolls corridor are full of restaurants and bars. We keep their walk-ins, ice machines and bar coolers running, with clear pricing before work starts.",
+  },
+  westminster: {
+    home: "Westminster borders Huntington Beach, making it one of our fastest service areas. We repair home refrigerators, freezers and built-in appliances with a written estimate first.",
+    commercial: "Little Saigon along Bolsa Ave and Brookhurst is one of the densest restaurant and market districts in Orange County — and walk-ins, display cases and ice machines there work hard every day. We're right next door in Huntington Beach.",
+  },
+  "garden-grove": {
+    home: "We repair refrigerators, freezers and built-in appliances across Garden Grove, a short drive from our Huntington Beach shop, with the price explained before any work begins.",
+    commercial: "Garden Grove Blvd's restaurant row, the Brookhurst corridor and the hotel kitchens near Harbor Blvd all rely on dependable cold storage and ice. We service walk-ins, reach-ins and ice machines across the city.",
+  },
+  "santa-ana": {
+    home: "From Floral Park and French Park to Riverview West, Santa Ana homes range from historic houses to remodeled kitchens. We repair refrigerators, freezers and premium built-ins with honest repair-vs-replace advice.",
+    commercial: "Downtown Santa Ana's 4th Street dining and the busy corridors along Bristol, Main and 17th keep commercial kitchens running long hours. We service their refrigeration by appointment, with pricing confirmed up front.",
+  },
+};
+
+for (const loc of locations) {
+  const f = FOCUS[loc.slug];
+  if (f) Object.assign(loc, { focus: true, ...f });
+}
+
+export const focusLocations = locations.filter((l) => l.focus);
 
 export function findLocation(slug: string): Location | undefined {
   return locations.find((l) => l.slug === slug);
