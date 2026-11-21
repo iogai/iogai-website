@@ -53,12 +53,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/marine-refrigerator-ac-service",
-        destination: "/service-areas/marine-mortuary-refrigeration/huntington-beach",
+        destination: "/service-areas",
         permanent: true,
       },
       {
         source: "/mortuary-refrigerator-service",
-        destination: "/service-areas/marine-mortuary-refrigeration/huntington-beach",
+        destination: "/service-areas",
         permanent: true,
       },
     ];
