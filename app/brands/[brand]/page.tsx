@@ -6,7 +6,13 @@ import { Footer } from "@/components/sections/Footer";
 import { CTA } from "@/components/ui/CTA";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { site, rating } from "@/lib/copy";
-import { brands, findBrand } from "@/lib/brands";
+import { brands, findBrand, type Brand } from "@/lib/brands";
+
+function brandHeading(b: Brand) {
+  return b.kind === "residential"
+    ? `${b.name} Appliance Repair in Orange County`
+    : `${b.name} Commercial Refrigeration Repair`;
+}
 
 export function generateStaticParams() {
   return brands.map((b) => ({ brand: b.slug }));
@@ -20,9 +26,10 @@ export async function generateMetadata({
   const { brand: slug } = await params;
   const brand = findBrand(slug);
   if (!brand) return {};
+  const heading = brandHeading(brand);
   return {
-    title: `${brand.name} Commercial Refrigeration Repair | IOGAI`,
-    description: `IOGAI repairs ${brand.name} ${brand.blurb} Same-day dispatch across Orange County and LA. Call ${site.phoneDisplay}.`,
+    title: `${heading} | IOGAI`,
+    description: `IOGAI repairs ${brand.name} ${brand.blurb} ${brand.kind === "residential" ? "Homes" : "Businesses"} across Orange County and LA. $100 service call. Call ${site.phoneDisplay}.`,
     alternates: { canonical: `/brands/${brand.slug}` },
   };
 }
@@ -39,13 +46,16 @@ export default async function BrandPage({
   const serviceLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: `${brand.name} Commercial Refrigeration Repair`,
+    name: brandHeading(brand),
     description: `Repair for ${brand.name} ${brand.blurb}`,
     provider: { "@id": "https://iogai.com/#business" },
     areaServed: ["Huntington Beach", "Orange County", "Los Angeles"],
   };
 
-  const otherBrands = brands.filter((b) => b.slug !== brand.slug);
+  // Same-kind brands first (luxury pages link to luxury pages).
+  const otherBrands = brands
+    .filter((b) => b.slug !== brand.slug)
+    .sort((a, b) => Number(b.kind === brand.kind) - Number(a.kind === brand.kind));
 
   return (
     <>
@@ -67,12 +77,22 @@ export default async function BrandPage({
       <main id="main" className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-20">
         <Eyebrow>Brand Repair</Eyebrow>
         <h1 className="display mt-5 text-[clamp(2rem,5vw,3.25rem)] text-ink">
-          {brand.name} Commercial Refrigeration Repair
+          {brandHeading(brand)}
         </h1>
         <p className="mt-6 text-lg leading-relaxed text-ink-2">
-          IOGAI repairs {brand.name} {brand.blurb} Serving restaurants, commercial kitchens, and
-          businesses across Orange County and LA with same-day dispatch where available and a{" "}
-          {rating.value}-star average across {rating.count} Google reviews.
+          IOGAI repairs {brand.name} {brand.blurb}{" "}
+          {brand.kind === "residential"
+            ? "Serving homeowners across Orange County and LA — Newport Beach, Laguna Beach, Irvine, Huntington Beach and nearby — with careful work in finished kitchens"
+            : "Serving restaurants, commercial kitchens, and businesses across Orange County and LA with same-day dispatch where available"}{" "}
+          and a {rating.value}-star average across {rating.count} Google reviews.
+        </p>
+        <p className="mt-4 leading-relaxed text-ink-2">
+          $100 service call, applied to the approved repair. Written estimate before any work. 30-day
+          labor / 90-day parts warranty.
+        </p>
+        <p className="mt-4 text-xs leading-relaxed text-ink-3">
+          {brand.name} is a trademark of its owner. IOGAI is an independent repair service and is not
+          affiliated with or authorized by {brand.name}.
         </p>
 
         <div className="mt-10 flex flex-wrap gap-3">
