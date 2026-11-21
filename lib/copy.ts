@@ -354,6 +354,7 @@ export const footer = {
   ],
   legal: `© ${new Date().getFullYear()} IOGAI. All rights reserved.`,
   legalLinks: [
+    { label: "Founder: Igor Ogai", href: "/igor-ogai" },
     { label: "Careers", href: "/careers" },
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
