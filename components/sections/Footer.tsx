@@ -65,6 +65,14 @@ export function Footer() {
                 {site.email}
               </a>
               <span className="block text-white/40">{site.domain}</span>
+              <a
+                href={site.licenseHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-white/40 transition-colors hover:text-paper"
+              >
+                {site.license} · verify
+              </a>
             </div>
           </div>
           <div className="mt-8 flex flex-col gap-4 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
