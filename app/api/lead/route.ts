@@ -3,16 +3,22 @@ import { z } from "zod";
 
 export const runtime = "nodejs";
 
-// Default destination is Igor's phone via the Verizon email-to-SMS gateway
-// (owner confirmed 3 Sept 2026: (424) 421-7771, Verizon) — no SMS API/cost,
-// just an email sent to a carrier address that arrives as a text.
+// Leads go to the team inbox (dispatcher works them) with full detail + photo,
+// and a short copy goes to Igor's phone via the Verizon email-to-SMS gateway
+// (owner confirmed 3 Sept 2026: (424) 421-7771, Verizon) — no SMS API/cost.
+// A lead counts as delivered if either destination accepts it.
+const TEAM_LEAD_EMAIL = process.env.TEAM_LEAD_EMAIL || "support@iogai.com";
 const LEAD_EMAIL = process.env.LEAD_EMAIL || "4244217771@vtext.com";
 const SMS_GATEWAY_DOMAINS = [
   "vtext.com", // Verizon
   "txt.att.net", // AT&T
   "tmomail.net", // T-Mobile
 ];
-const isSmsGateway = SMS_GATEWAY_DOMAINS.some((d) => LEAD_EMAIL.toLowerCase().endsWith(`@${d}`));
+const isSmsAddress = (addr: string) =>
+  SMS_GATEWAY_DOMAINS.some((d) => addr.toLowerCase().endsWith(`@${d}`));
+const RECIPIENTS = Array.from(
+  new Set([TEAM_LEAD_EMAIL, LEAD_EMAIL].map((a) => a.trim()).filter(Boolean)),
+);
 const MAX_PHOTO = 4 * 1024 * 1024; // Leave room for multipart fields below the platform request limit.
 
 const Lead = z.object({
@@ -65,12 +71,10 @@ export async function POST(req: Request) {
 
   // Carrier SMS gateways drop long messages and attachments silently — keep
   // it to the essentials when texting, full detail when it's a real inbox.
-  const summary = isSmsGateway
-    ? `IOGAI lead: ${lead.firstName} ${lead.lastName}, ${lead.phone}, ${lead.service ?? "service"}${lead.address ? `, ${lead.address}` : ""}`
-    : `New IOGAI booking\nService: ${lead.service ?? "-"}\n${lead.firstName} ${lead.lastName}\n${lead.phone} · ${lead.email}\n${lead.address ? `Address: ${lead.address}\n` : ""}${lead.message ?? ""}`;
+  const smsText = `IOGAI lead: ${lead.firstName} ${lead.lastName}, ${lead.phone}, ${lead.service ?? "service"}${lead.address ? `, ${lead.address}` : ""}`;
+  const fullText = `New IOGAI booking\nService: ${lead.service ?? "-"}\n${lead.firstName} ${lead.lastName}\n${lead.phone} · ${lead.email}\n${lead.address ? `Address: ${lead.address}\n` : ""}${lead.message ?? ""}`;
 
-  // Email the lead to the business inbox / SMS gateway (nodemailer) — needs
-  // GMAIL creds, else skip.
+  // Email the lead to each destination (nodemailer) — needs GMAIL creds, else skip.
   const { GMAIL_USER, GMAIL_APP_PASSWORD } = process.env;
   if (GMAIL_USER && GMAIL_APP_PASSWORD) {
     try {
@@ -82,15 +86,25 @@ export async function POST(req: Request) {
         greetingTimeout: 10000,
         socketTimeout: 15000,
       });
-      const result = await transport.sendMail({
-        from: `IOGAI Website <${GMAIL_USER}>`,
-        to: LEAD_EMAIL,
-        replyTo: lead.email,
-        subject: isSmsGateway ? "" : `New booking — ${lead.firstName} ${lead.lastName} (${lead.service ?? "service"})`,
-        text: summary,
-        attachments: !isSmsGateway && photoBuf && photoName ? [{ filename: photoName, content: photoBuf }] : [],
+      const results = await Promise.allSettled(
+        RECIPIENTS.map((to) => {
+          const sms = isSmsAddress(to);
+          return transport.sendMail({
+            from: `IOGAI Website <${GMAIL_USER}>`,
+            to,
+            replyTo: lead.email,
+            subject: sms ? "" : `New booking — ${lead.firstName} ${lead.lastName} (${lead.service ?? "service"})`,
+            text: sms ? smsText : fullText,
+            attachments: !sms && photoBuf && photoName ? [{ filename: photoName, content: photoBuf }] : [],
+          });
+        }),
+      );
+      results.forEach((r) => {
+        if (r.status === "rejected") console.error("Lead notification failed for one destination");
       });
-      if (result.accepted.length > 0) return NextResponse.json({ ok: true });
+      if (results.some((r) => r.status === "fulfilled" && r.value.accepted.length > 0)) {
+        return NextResponse.json({ ok: true });
+      }
     } catch {
       console.error("Lead notification failed");
     }
