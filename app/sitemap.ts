@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/service-areas`, changeFrequency: "monthly", priority: 0.7 },
     ...serviceAreaPages,
     ...brandPages,
+    { url: `${base}/careers`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/privacy`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${base}/terms`, changeFrequency: "yearly", priority: 0.3 },
   ];
