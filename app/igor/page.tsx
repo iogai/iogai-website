@@ -16,10 +16,8 @@ const chapters = [
     place: "Aksay, West Kazakhstan",
     title: "Roots",
     body: [
-      "I was born in Aksay, West Kazakhstan. A boy who, for a long time, didn't quite understand how the human world works. Honestly, he still doesn't. So he learned to fix what he could understand: things that are cold, broken and waiting for someone who cares.",
-      "Life kept moving our family. New cities, new schools, Almaty, then Uralsk, where I graduated from School No. 3. Every move taught me how people think in a new place. I came to love it. Every place I landed, I built as if I'd stay forever.",
-      "I studied finance for four and a half years and earned my bachelor's degree. It taught me numbers and discipline. My hands chose something else.",
-      "I've spent my life diagnosing things the way a refrigeration tech does: find the real cause, not the symptom. One day I turned that search on myself. It led me to roots deeper than I knew.",
+      "Born in Aksay. A boy who didn't quite understand how the human world works. Honestly, he still doesn't. So he learned to fix what he could: things that are cold, broken and waiting for someone who cares.",
+      "Life kept moving our family: Almaty, then Uralsk, School No. 3. Every place I landed, I built as if I'd stay forever. Bachelor's degree in finance. My hands chose refrigeration.",
     ],
   },
   {
@@ -27,8 +25,7 @@ const chapters = [
     place: "West Kazakhstan",
     title: "Trust",
     body: [
-      "For more than four years I took care of the drink coolers for Tassay across West Kazakhstan, along with brands like Maxi Chai and Holiday: one-door, two-door, three-door and big glass-door units.",
-      "When a supervisor called about a breakdown, I closed it within two hours or the same day. I cared about every detail, even the light inside the glass, because a bright, cold cooler sells. A whole region learned it could count on me.",
+      "Four-plus years keeping Tassay's drink coolers running across the region. Breakdowns closed within two hours or the same day. Even the light inside the glass mattered, because a bright, cold cooler sells.",
     ],
   },
   {
@@ -36,9 +33,8 @@ const chapters = [
     place: "Moscow",
     title: "From zero",
     body: [
-      "I came to Moscow with no clients and no name. I started on Profi.ru and earned more than 280 reviews with my own hands. Soon there were two crews.",
-      "Restaurants in the heart of the city waited for me. I carried every part I might need, so a fridge other techs called dead often came back to life in minutes.",
-      "I named the company after my family name. Ogai sounds like pomogai, Russian for “help.” That word became my calling.",
+      "No clients, no name. 280+ reviews earned with my own hands, then two crews. Restaurants in the heart of the city waited for me, and fridges other techs called dead came back to life.",
+      "Ogai sounds like pomogai, Russian for \u201chelp.\u201d That word became my calling.",
     ],
   },
   {
@@ -46,11 +42,17 @@ const chapters = [
     place: "California",
     title: "Home",
     body: [
-      "Life moved me once more, to the place I believe is closest to paradise. The people here are kind, inside and out. It inspires me every day.",
-      "Here I founded IOGAI. I'm not here to take. I'm here to build: honest service, strong technicians, and a community that does the work right.",
-      "Off the clock, you'll find me at Jackrabbit Boxing Academy in Long Beach. My home away from home. The ring teaches the same thing the job does: show up, stay humble, finish what you start.",
+      "The place I believe is closest to paradise. Here I founded IOGAI: honest service, strong technicians, work done right.",
+      "Off the clock: Jackrabbit Boxing Academy, Long Beach. Show up, stay humble, finish what you start.",
     ],
   },
+];
+
+const bigJobs = [
+  { t: "Supermarkets", d: "During the pandemic, when everyone stayed home, my crew kept a hypermarket's refrigeration running." },
+  { t: "Blast freezers & morgues", d: "In Moscow we built blast-freezer rooms, morgue refrigeration and freezers for medical equipment." },
+  { t: "Transport", d: "Truck refrigeration: compressor replacement, pressure testing, leak repair." },
+  { t: "Next", d: "Medical equipment service across California. Reefer trucks and port equipment of Long Beach." },
 ];
 
 export default function IgorPreview() {
@@ -79,7 +81,8 @@ export default function IgorPreview() {
         </div>
         <div className="relative">
           <div className="absolute -inset-3 rounded-[2rem] border border-accent/30" />
-          <Image src="/media/real/igor-ogai-founder.jpg" alt="Igor Ogai" width={640} height={640} priority className="relative w-full rounded-3xl object-cover grayscale-[15%]" />
+          <Image src="/media/real/igor-ogai-founder.jpg" alt="Igor Ogai next to a repaired refrigeration system" width={640} height={640} priority className="relative w-full rounded-3xl object-cover" />
+          <p className="relative mt-3 text-center text-sm text-white/50">Frost on the lines. Fixed and running.</p>
         </div>
       </section>
 
@@ -99,6 +102,21 @@ export default function IgorPreview() {
         </section>
       ))}
 
+      <section id="big-jobs" className="bg-[#020f2e]">
+        <div className="mx-auto max-w-5xl px-5 py-24 sm:px-8">
+          <p className="text-xs uppercase tracking-[0.3em] text-accent-soft">Big jobs</p>
+          <h2 className="display mt-3 text-4xl">We take the hard ones. Our systems run for decades.</h2>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2">
+            {bigJobs.map((j) => (
+              <div key={j.t} className="rounded-2xl border border-white/10 p-6">
+                <div className="text-lg font-semibold text-accent-soft">{j.t}</div>
+                <p className="mt-2 text-white/70">{j.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="way" className="border-y border-accent/20">
         <div className="mx-auto max-w-4xl px-5 py-28 text-center sm:px-8">
           <p className="text-xs uppercase tracking-[0.3em] text-accent-soft">My way of working</p>
@@ -106,8 +124,7 @@ export default function IgorPreview() {
             &ldquo;When I touch a piece of equipment, it becomes mine until it runs and makes me proud. Then I hand it back.&rdquo;
           </blockquote>
           <p className="mx-auto mt-8 max-w-2xl text-lg text-white/70">
-            A leak fixed once is fixed for good. I started with household refrigerators and have repaired them in the tens of thousands.
-            Early mornings, late nights, no days off. It was never routine. It&rsquo;s a craft and a life&rsquo;s meaning.
+            A leak fixed once is fixed for good. Tens of thousands of refrigerators. Early mornings, late nights, no days off. Not a routine — a life&rsquo;s meaning.
           </p>
         </div>
       </section>
@@ -127,6 +144,7 @@ export default function IgorPreview() {
         <div className="mx-auto max-w-5xl px-5 py-24 sm:px-8">
           <p className="text-xs uppercase tracking-[0.3em] text-accent-soft">Voices</p>
           <h2 className="display mt-3 text-4xl">They said it better than I could.</h2>
+          <blockquote className="mt-6 max-w-2xl border-l-2 border-accent pl-5 text-lg italic text-white/75">&ldquo;I fix it like it&rsquo;s mine. When your equipment starts to satisfy me, it will make you happy for a long time.&rdquo;<span className="mt-2 block text-sm not-italic text-white/40">My promise on Profi.ru, Moscow</span></blockquote>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {["Video review — Moscow", "Video review — Moscow", "Video review — California"].map((t, i) => (
               <div key={i} className="flex aspect-[9/16] items-center justify-center rounded-2xl border border-white/10 text-sm text-white/40">{t}</div>
