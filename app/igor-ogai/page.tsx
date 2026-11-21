@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { LegalShell } from "@/components/LegalShell";
+import { Logo } from "@/components/Logo";
+import { Footer } from "@/components/sections/Footer";
 import { site } from "@/lib/copy";
 
 export const metadata: Metadata = {
-  title: "Igor Ogai — Founder of IOGAI, Refrigeration Technician",
+  title: "Igor Ogai — Founder & Strategist, IOGAI",
   description:
     "Igor Ogai is the founder of IOGAI (Iogai Refrigeration Inc), an appliance and commercial refrigeration repair company in Huntington Beach, California, with 13 years of hands-on field experience.",
   alternates: { canonical: "https://iogai.com/igor-ogai" },
@@ -47,48 +48,114 @@ const personLd = {
   ],
 };
 
+const stats = [
+  { v: "13", l: "years in the field" },
+  { v: "3", l: "countries: Kazakhstan, Russia, USA" },
+  { v: "100+", l: "five-star reviews" },
+  { v: "5.0", l: "average rating" },
+];
+
+const principles = [
+  { t: "Care is strength", d: "Every decision starts with the person in front of us: the restaurant owner losing product, the family with a warm fridge, the technician building a career." },
+  { t: "Decide, then execute", d: "Test before touching. Find the real cause. Fix it right the first time. No guessing, no shortcuts." },
+  { t: "Systems over chaos", d: "Clear levels, clear pay, clear standards. A company that runs on discipline, not luck." },
+  { t: "Long game", d: "Reputation is built one job at a time and protected every day. Every promise kept is an investment." },
+];
+
+const path = [
+  { y: "West Kazakhstan", d: "Started on the tools in commercial refrigeration." },
+  { y: "Moscow region", d: "Industrial and commercial systems at scale." },
+  { y: "California", d: "Orange County & Los Angeles: restaurants, businesses, high-end homes." },
+  { y: "IOGAI", d: "Founded Iogai Refrigeration Inc — a disciplined, growing service company with a team of technicians." },
+];
+
 export default function IgorOgaiPage() {
   return (
-    <LegalShell title="Igor Ogai" updated="November 21, 2026">
+    <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }} />
-      <Image
-        src="/media/real/igor-ogai-founder.jpg"
-        alt="Igor Ogai, founder of IOGAI"
-        width={640}
-        height={640}
-        className="rounded-2xl"
-        priority
-      />
-      <p>
-        <strong>Igor Ogai</strong> is a refrigeration technician and the founder of{" "}
-        <Link href="/">IOGAI</Link> (Iogai Refrigeration Inc), an appliance and commercial
-        refrigeration repair company based in Huntington Beach, California.
-      </p>
+      <header className="bg-night">
+        <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-5 sm:px-8">
+          <Link href="/"><Logo /></Link>
+          <a href={site.phoneHref} className="text-sm text-white/70 hover:text-accent-soft">{site.phoneDisplay}</a>
+        </div>
+      </header>
+      <main id="main">
+        <section className="bg-night text-paper">
+          <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-24 pt-12 sm:px-8 md:grid-cols-[1.2fr_1fr]">
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-accent-soft">Founder · Strategist · Technician</p>
+              <h1 className="display mt-5 text-[clamp(3rem,8vw,6rem)] leading-[0.95]">Igor Ogai</h1>
+              <p className="mt-6 max-w-xl text-lg text-white/75">
+                Founder of IOGAI. Thirteen years building trust in refrigeration across three countries.
+                Decisive in strategy, uncompromising in standards — and driven by sincere care for every
+                customer and every person on the team.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a href={site.phoneHref} className="inline-flex min-h-11 items-center rounded-full bg-accent px-6 py-3 text-sm font-medium text-paper hover:bg-accent-strong">Contact Igor</a>
+                <Link href="/" className="inline-flex min-h-11 items-center rounded-full border border-white/30 px-6 py-3 text-sm font-medium hover:border-white/60">Visit IOGAI</Link>
+              </div>
+            </div>
+            <Image src="/media/real/igor-ogai-founder.jpg" alt="Igor Ogai, founder of IOGAI" width={640} height={640} priority className="w-full rounded-3xl border border-accent/40 object-cover" />
+          </div>
+        </section>
 
-      <h2>13 years in the field</h2>
-      <p>
-        Igor has worked in refrigeration his entire career, across three countries: West Kazakhstan,
-        Moscow, and now Southern California. He started on the tools and still diagnoses jobs himself:
-        walk-in coolers, restaurant refrigeration, ice machines, and high-end residential refrigerators.
-      </p>
+        <section className="border-b border-hairline bg-paper">
+          <div className="mx-auto grid max-w-6xl grid-cols-2 gap-8 px-5 py-14 sm:px-8 md:grid-cols-4">
+            {stats.map((s) => (
+              <div key={s.l}>
+                <div className="font-display text-5xl font-bold text-accent">{s.v}</div>
+                <div className="mt-2 text-sm text-ink-2">{s.l}</div>
+              </div>
+            ))}
+          </div>
+        </section>
 
-      <h2>IOGAI</h2>
-      <p>
-        IOGAI serves restaurants, businesses and homeowners across Orange County and Los Angeles County.
-        The standard is simple: test before touching, find the real cause, fix it right the first time.
-      </p>
-      <ul>
-        <li>Commercial refrigeration — walk-ins, reach-ins, prep tables, ice machines</li>
-        <li>Residential refrigerators and freezers, including built-in brands</li>
-        <li>Maintenance contracts for restaurants and businesses</li>
-      </ul>
+        <section className="bg-paper">
+          <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
+            <h2 className="display text-[clamp(2rem,4.5vw,3rem)] text-ink">Principles</h2>
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              {principles.map((p) => (
+                <div key={p.t} className="rounded-2xl border border-hairline p-7">
+                  <h3 className="text-xl font-semibold text-ink">{p.t}</h3>
+                  <p className="mt-3 text-ink-2">{p.d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-      <h2>Contact</h2>
-      <p>
-        Call or text <a href={site.phoneHref}>{site.phoneDisplay}</a> · <a href={site.emailHref}>{site.email}</a>
-        <br />
-        Book online at <Link href="/">iogai.com</Link> · Careers: <Link href="/careers">iogai.com/careers</Link>
-      </p>
-    </LegalShell>
+        <section className="bg-mist">
+          <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
+            <h2 className="display text-[clamp(2rem,4.5vw,3rem)] text-ink">The path</h2>
+            <ol className="mt-10 space-y-8 border-l-2 border-accent pl-8">
+              {path.map((p) => (
+                <li key={p.y}>
+                  <div className="text-sm uppercase tracking-widest text-accent">{p.y}</div>
+                  <p className="mt-1 text-lg text-ink">{p.d}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        <section className="bg-night text-paper">
+          <div className="mx-auto max-w-6xl px-5 py-20 text-center sm:px-8">
+            <h2 className="display text-[clamp(2rem,4.5vw,3rem)]">Partnerships & press</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-white/70">
+              For business partnerships, media and speaking, contact Igor directly.
+            </p>
+            <p className="mt-6 text-lg">
+              <a href={site.phoneHref} className="text-accent-soft hover:underline">{site.phoneDisplay}</a>
+              {" · "}
+              <a href={site.emailHref} className="text-accent-soft hover:underline">{site.email}</a>
+            </p>
+            <p className="mt-6 text-sm text-white/50">
+              <Link href="/careers" className="hover:text-white">Join the team</Link>
+            </p>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
   );
 }
