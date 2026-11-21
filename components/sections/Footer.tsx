@@ -56,7 +56,7 @@ export function Footer() {
 
         <div className="mt-16 border-t border-white/10 pt-10">
           <div className="flex flex-wrap items-end justify-between gap-4">
-            <Image src="/icon.png" alt={site.brand} width={128} height={128} className="rounded-xl" />
+            <Image src="/media/real/logo-full.jpg" alt="IOGAI Appliance Repair Services logo" width={200} height={200} className="rounded-xl" />
             <div className="text-right text-sm text-white/60">
               <a href={site.phoneHref} className="block transition-colors hover:text-paper">
                 {site.phoneDisplay}

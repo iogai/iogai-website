@@ -18,9 +18,44 @@ const levels = [
 
 const smsHref = "sms:+14244217771?body=" + encodeURIComponent("Hi, I want to apply for the technician job. My level and experience: ");
 
+const jobLd = {
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  title: "Refrigeration & Appliance Repair Technician",
+  description:
+    "<p>IOGAI is hiring refrigeration and appliance repair technicians in Long Beach and Orange County. W-2, Monday–Friday, no weekend shifts. Steady dispatched calls.</p><p>Pay: Junior $25/hr + 12% of each job; Technician (EPA 608) $30/hr + 17%; Senior (EPA Universal) $36/hr + 20%. Strong technicians earn $70,000–$125,000+ per year.</p><p>Requirements: valid California driver's license; EPA 608 for Technician and Senior levels.</p>",
+  datePosted: "2026-11-21",
+  validThrough: "2027-02-28T23:59",
+  employmentType: "FULL_TIME",
+  hiringOrganization: {
+    "@type": "Organization",
+    name: "IOGAI - Appliance & Refrigeration Repair Service",
+    sameAs: "https://iogai.com",
+    logo: "https://iogai.com/media/real/logo-full.jpg",
+  },
+  jobLocation: {
+    "@type": "Place",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "517 Frankfort Ave",
+      addressLocality: "Huntington Beach",
+      addressRegion: "CA",
+      postalCode: "92648",
+      addressCountry: "US",
+    },
+  },
+  baseSalary: {
+    "@type": "MonetaryAmount",
+    currency: "USD",
+    value: { "@type": "QuantitativeValue", minValue: 25, maxValue: 36, unitText: "HOUR" },
+  },
+  directApply: false,
+};
+
 export default function CareersPage() {
   return (
     <LegalShell title="We're hiring technicians" updated="November 21, 2026">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jobLd) }} />
       <p>
         IOGAI repairs refrigerators, freezers and commercial refrigeration across Long Beach and
         Orange County. The owner is a technician with 13 years in the field. We bring the jobs; you do

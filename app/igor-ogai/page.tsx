@@ -41,6 +41,8 @@ const personLd = {
   sameAs: [
     "https://www.facebook.com/iogai.services",
     "https://www.instagram.com/iogai.services",
+    "https://www.youtube.com/@iogai.services",
+    "https://www.tiktok.com/@iogai.services",
     "https://www.thumbtack.com/ca/huntington-beach/appliance-repair/iogai-appliance-refrigeration-repair-service/service/499058102966788108",
   ],
 };
