@@ -64,7 +64,7 @@ const principles = [
 
 const path = [
   { y: "West Kazakhstan", d: "Kept a region's commercial coolers running. Breakdowns closed the same day, often within two hours." },
-  { y: "From zero", d: "Started with no clients and no name. Earned 280+ reviews with his own hands, built two crews, served restaurants in the heart of the city." },
+  { y: "From zero", d: "Started with no clients and no name. Earned 350 client reviews with his own hands, rated 4.8 out of 5, built two crews, served restaurants in the heart of the city." },
   { y: "California", d: "Orange County & Los Angeles: restaurants, businesses, estates and high-end homes." },
   { y: "IOGAI", d: "Founded Iogai Refrigeration Inc — a quiet, disciplined service company that does the work once, and does it right." },
 ];
