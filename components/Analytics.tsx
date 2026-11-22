@@ -32,6 +32,14 @@ export function Analytics() {
           </Script>
         </>
       )}
+      {/* Vercel Web Analytics (cookieless): visitors, pages and referrers -
+          e.g. how many people came from YouTube / Instagram videos. Served
+          by Vercel itself once Analytics is enabled for the project; the
+          same snippet @vercel/analytics injects, without the dependency. */}
+      <Script id="vercel-analytics-queue" strategy="afterInteractive">
+        {`window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};`}
+      </Script>
+      <Script src="/_vercel/insights/script.js" strategy="afterInteractive" />
       {/* Housecall Pro chat bubble: website chat goes to the HCP inbox, where
           CSR AI (chat is included in the plan) answers and books jobs 24/7. */}
       <Script
