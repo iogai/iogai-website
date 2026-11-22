@@ -17,6 +17,7 @@ const chapters = [
     title: "Roots",
     body: [
       "Born in Aksay. A boy who didn't quite understand how the human world works. Honestly, he still doesn't. So he learned to fix what he could: things that are cold, broken and waiting for someone who cares.",
+      "I grew up next to Karachaganak, one of the world's great energy projects, built with American partners. America felt familiar long before I arrived.",
       "Life kept moving our family: Almaty, then Uralsk, School No. 3. Every place I landed, I built as if I'd stay forever. Bachelor's degree in finance. My hands chose refrigeration.",
     ],
   },
@@ -43,6 +44,7 @@ const chapters = [
     title: "Home",
     body: [
       "The place I believe is closest to paradise. Here I founded IOGAI: honest service, strong technicians, work done right.",
+      "When things break, I stay. Storms, outages, emergencies: I carry it.",
       "Off the clock: Jackrabbit Boxing Academy, Long Beach. Show up, stay humble, finish what you start.",
     ],
   },
