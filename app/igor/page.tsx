@@ -30,12 +30,12 @@ const chapters = [
     ],
   },
   {
-    id: "moscow",
-    place: "Moscow",
+    id: "from-zero",
+    place: "A new city",
     title: "From zero",
     body: [
       "No clients, no name. 280+ reviews earned with my own hands, then two crews. Restaurants in the heart of the city waited for me, and fridges other techs called dead came back to life.",
-      "Ogai sounds like pomogai, Russian for \u201chelp.\u201d That word became my calling.",
+      "In my native language, Ogai sounds like pomogai \u2014 \u201chelp.\u201d That word became my calling.",
     ],
   },
   {
@@ -52,7 +52,7 @@ const chapters = [
 
 const bigJobs = [
   { t: "Supermarkets", d: "During the pandemic, when everyone stayed home, my crew kept a hypermarket's refrigeration running." },
-  { t: "Blast freezers & morgues", d: "In Moscow we built blast-freezer rooms, morgue refrigeration and freezers for medical equipment." },
+  { t: "Blast freezers & morgues", d: "We built blast-freezer rooms, morgue refrigeration and freezers for medical equipment." },
   { t: "Transport", d: "Truck refrigeration: compressor replacement, pressure testing, leak repair." },
   { t: "Next", d: "Medical equipment service across California. Reefer trucks and port equipment of Long Beach." },
 ];
@@ -161,9 +161,9 @@ export default function IgorPreview() {
         <div className="mx-auto max-w-5xl px-5 py-24 sm:px-8">
           <p className="text-xs uppercase tracking-[0.3em] text-accent-soft">Voices</p>
           <h2 className="display mt-3 text-4xl">They said it better than I could.</h2>
-          <blockquote className="mt-6 max-w-2xl border-l-2 border-accent pl-5 text-lg italic text-white/75">&ldquo;I fix it like it&rsquo;s mine. When your equipment starts to satisfy me, it will make you happy for a long time.&rdquo;<span className="mt-2 block text-sm not-italic text-white/40">My promise on Profi.ru, Moscow</span></blockquote>
+          <blockquote className="mt-6 max-w-2xl border-l-2 border-accent pl-5 text-lg italic text-white/75">&ldquo;I fix it like it&rsquo;s mine. When your equipment starts to satisfy me, it will make you happy for a long time.&rdquo;<span className="mt-2 block text-sm not-italic text-white/40">My promise to clients, from my first 280+ reviews</span></blockquote>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {["Video review — Moscow", "Video review — Moscow", "Video review — California"].map((t, i) => (
+            {["Video review", "Video review", "Video review — California"].map((t, i) => (
               <div key={i} className="flex aspect-[9/16] items-center justify-center rounded-2xl border border-white/10 text-sm text-white/40">{t}</div>
             ))}
           </div>
