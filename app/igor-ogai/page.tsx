@@ -140,9 +140,9 @@ export default function IgorOgaiPage() {
 
         <section className="bg-night text-paper">
           <div className="mx-auto max-w-6xl px-5 py-20 text-center sm:px-8">
-            <h2 className="display text-[clamp(2rem,4.5vw,3rem)]">Partnerships & press</h2>
+            <h2 className="display text-[clamp(2rem,4.5vw,3rem)]">Partnerships</h2>
             <p className="mx-auto mt-4 max-w-2xl text-white/70">
-              For business partnerships, media and speaking, contact Igor directly.
+              For partnerships, property portfolios and private clients, Igor answers personally.
             </p>
             <p className="mt-6 text-lg">
               <a href={site.phoneHref} className="text-accent-soft hover:underline">{site.phoneDisplay}</a>

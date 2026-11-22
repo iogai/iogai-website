@@ -71,7 +71,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="block text-white/40 transition-colors hover:text-paper"
               >
-                {site.license} · verify
+                {site.license} · Verified by the State of California
               </a>
             </div>
           </div>
