@@ -74,7 +74,7 @@ export default function IgorPreview() {
           <h1 className="display text-[clamp(3.25rem,9vw,6.5rem)] leading-[0.92]">Igor<br />Ogai</h1>
           <p className="mt-6 text-xl italic text-accent-soft">Done with heart. Done right. Done for good.</p>
           <p className="mt-6 max-w-md text-lg text-white/70">
-            I help people keep what matters running: their food, their business, their peace of mind.
+            The surgeon of refrigeration. I keep what matters running: your food, your business, your peace of mind.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <a href="#roots" className="inline-flex min-h-11 items-center rounded-full bg-accent px-6 py-3 text-sm font-medium hover:bg-accent-strong">Follow my journey</a>
@@ -85,6 +85,21 @@ export default function IgorPreview() {
           <div className="absolute -inset-3 rounded-[2rem] border border-accent/30" />
           <Image src="/media/real/igor-ogai-founder.jpg" alt="Igor Ogai next to a repaired refrigeration system" width={640} height={640} priority className="relative w-full rounded-3xl object-cover" />
           <p className="relative mt-3 text-center text-sm text-white/50">Frost on the lines. Fixed and running.</p>
+        </div>
+      </section>
+
+      <section id="american-story" className="border-y border-accent/20">
+        <div className="mx-auto max-w-3xl px-5 py-24 text-center sm:px-8">
+          <p className="text-xs uppercase tracking-[0.3em] text-accent-soft">A new American story</p>
+          <p className="display mt-6 text-[clamp(1.6rem,3.6vw,2.4rem)] leading-snug">
+            Maybe it was your grandfather. Maybe your mother. Someone arrived with skilled hands, a clear word, and nothing to fall back on.
+          </p>
+          <p className="mt-6 text-lg leading-relaxed text-white/75">
+            They worked before sunrise. They kept every promise. They built a life one honest job at a time, and the country grew stronger because they came. That is the oldest American story. It is mine too.
+          </p>
+          <p className="mt-6 text-lg leading-relaxed text-white/75">
+            I am kind to every customer and every person on my team. And I am serious about the work: I don&rsquo;t cut corners, I don&rsquo;t back down from a hard job, and I don&rsquo;t leave until it&rsquo;s cold.
+          </p>
         </div>
       </section>
 
@@ -121,12 +136,12 @@ export default function IgorPreview() {
 
       <section id="way" className="border-y border-accent/20">
         <div className="mx-auto max-w-4xl px-5 py-28 text-center sm:px-8">
-          <p className="text-xs uppercase tracking-[0.3em] text-accent-soft">My way of working</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-accent-soft">The surgeon of refrigeration</p>
           <blockquote className="display mt-6 text-[clamp(1.8rem,4.5vw,3rem)] leading-tight">
             &ldquo;When I touch a piece of equipment, it becomes mine until it runs and makes me proud. Then I hand it back.&rdquo;
           </blockquote>
           <p className="mx-auto mt-8 max-w-2xl text-lg text-white/70">
-            A leak fixed once is fixed for good. Tens of thousands of refrigerators. Early mornings, late nights, no days off. Not a routine — a life&rsquo;s meaning.
+            Precise diagnosis. Clean repair. A leak fixed once is fixed for good. Tens of thousands of refrigerators. Early mornings, late nights, no days off. Not a routine — a life&rsquo;s meaning.
           </p>
         </div>
       </section>
@@ -165,7 +180,7 @@ export default function IgorPreview() {
       <section id="together" className="border-t border-accent/20">
         <div className="mx-auto max-w-4xl px-5 py-28 text-center sm:px-8">
           <h2 className="display text-[clamp(2.2rem,5vw,3.5rem)]">Let&rsquo;s work together</h2>
-          <p className="mx-auto mt-5 max-w-xl text-lg text-white/70">Customers, technicians, partners: if you share these values, I want to hear from you.</p>
+          <p className="mx-auto mt-5 max-w-xl text-lg text-white/70">Fast, clean, cold — and a team that leaves you smiling. Customers, technicians, partners: if you share these values, I want to hear from you.</p>
           <p className="mt-8 text-xl">
             <a href={site.phoneHref} className="text-accent-soft hover:underline">{site.phoneDisplay}</a>
             <span className="mx-3 text-white/30">·</span>
