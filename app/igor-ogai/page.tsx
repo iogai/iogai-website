@@ -63,10 +63,16 @@ const principles = [
 ];
 
 const path = [
-  { y: "West Kazakhstan", d: "Started on the tools in commercial refrigeration." },
-  { y: "Moscow region", d: "Industrial and commercial systems at scale." },
-  { y: "California", d: "Orange County & Los Angeles: restaurants, businesses, high-end homes." },
-  { y: "IOGAI", d: "Founded Iogai Refrigeration Inc — a disciplined, growing service company with a team of technicians." },
+  { y: "West Kazakhstan", d: "Kept a region's commercial coolers running. Breakdowns closed the same day, often within two hours." },
+  { y: "Moscow", d: "Started from zero. Earned 280+ reviews with his own hands, built two crews, served restaurants in the heart of the city." },
+  { y: "California", d: "Orange County & Los Angeles: restaurants, businesses, estates and high-end homes." },
+  { y: "IOGAI", d: "Founded Iogai Refrigeration Inc — a quiet, disciplined service company that does the work once, and does it right." },
+];
+
+const privateClients = [
+  { t: "Estates & private homes", d: "Built-in and high-end refrigeration, wine storage, ice makers. Discreet, on time, clean." },
+  { t: "Restaurant groups", d: "Scheduled maintenance for walk-ins, reach-ins and ice machines — before Friday night, not after." },
+  { t: "Property portfolios", d: "One accountable partner for every unit. Clear reports, fixed standards, a direct line to the founder." },
 ];
 
 export default function IgorOgaiPage() {
@@ -83,12 +89,12 @@ export default function IgorOgaiPage() {
         <section className="bg-night text-paper">
           <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-24 pt-12 sm:px-8 md:grid-cols-[1.2fr_1fr]">
             <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-accent-soft">Founder · Strategist · Technician</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-accent-soft">Founder · Strategist · Craftsman</p>
               <h1 className="display mt-5 text-[clamp(3rem,8vw,6rem)] leading-[0.95]">Igor Ogai</h1>
               <p className="mt-6 max-w-xl text-lg text-white/75">
-                Founder of IOGAI. Thirteen years building trust in refrigeration across three countries.
-                Decisive in strategy, uncompromising in standards — and driven by sincere care for every
-                customer and every person on the team.
+                Quiet strength. Perfect work. Founder of IOGAI — thirteen years building trust in
+                refrigeration across three countries. Decisive in strategy, uncompromising in standards,
+                and driven by sincere care for every client and every person on the team.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href={site.phoneHref} className="inline-flex min-h-11 items-center rounded-full bg-accent px-6 py-3 text-sm font-medium text-paper hover:bg-accent-strong">Contact Igor</a>
@@ -138,11 +144,26 @@ export default function IgorOgaiPage() {
           </div>
         </section>
 
+        <section className="bg-paper">
+          <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
+            <h2 className="display text-[clamp(2rem,4.5vw,3rem)] text-ink">Private clients</h2>
+            <p className="mt-4 max-w-2xl text-ink-2">A limited number of long-term clients, served personally by Igor&rsquo;s team.</p>
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              {privateClients.map((c) => (
+                <div key={c.t} className="rounded-2xl border border-hairline p-7">
+                  <h3 className="text-xl font-semibold text-ink">{c.t}</h3>
+                  <p className="mt-3 text-ink-2">{c.d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="bg-night text-paper">
           <div className="mx-auto max-w-6xl px-5 py-20 text-center sm:px-8">
-            <h2 className="display text-[clamp(2rem,4.5vw,3rem)]">Partnerships & press</h2>
+            <h2 className="display text-[clamp(2rem,4.5vw,3rem)]">Partnerships</h2>
             <p className="mx-auto mt-4 max-w-2xl text-white/70">
-              For business partnerships, media and speaking, contact Igor directly.
+              For partnerships, property portfolios and private clients, Igor answers personally.
             </p>
             <p className="mt-6 text-lg">
               <a href={site.phoneHref} className="text-accent-soft hover:underline">{site.phoneDisplay}</a>
