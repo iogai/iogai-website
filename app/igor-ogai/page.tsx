@@ -51,8 +51,8 @@ const personLd = {
 const stats = [
   { v: "13", l: "years in the field" },
   { v: "3", l: "countries, one standard" },
-  { v: "350", l: "client reviews, rated 4.84" },
   { v: "5.0", l: "Google rating in California" },
+  { v: "136", l: "Google reviews" },
 ];
 
 const principles = [
@@ -66,7 +66,7 @@ const principles = [
 
 const path = [
   { y: "West Kazakhstan", d: "Kept a region's commercial coolers running. Breakdowns closed the same day, often within two hours." },
-  { y: "From zero", d: "Started with no clients and no name. 350 client reviews, rated 4.84 out of 5 — 280+ of them for his own hands-on work. Built two crews, served restaurants in the heart of the city." },
+  { y: "From zero", d: "Started with no clients and no name. Hundreds of client reviews, earned with his own hands. Built two crews, served restaurants in the heart of the city." },
   { y: "California", d: "Orange County & Los Angeles: restaurants, businesses, estates and high-end homes." },
   { y: "IOGAI", d: "Founded Iogai Refrigeration Inc — a quiet, disciplined service company that does the work once, and does it right." },
 ];
@@ -100,7 +100,7 @@ export default function IgorOgaiPage() {
                 every person on the team.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a href={site.phoneHref} className="inline-flex min-h-11 items-center rounded-full bg-accent px-6 py-3 text-sm font-medium text-paper hover:bg-accent-strong">Contact Igor</a>
+                <a href="#meet" className="inline-flex min-h-11 items-center rounded-full bg-accent px-6 py-3 text-sm font-medium text-paper hover:bg-accent-strong">Meet Igor</a>
                 <Link href="/" className="inline-flex min-h-11 items-center rounded-full border border-white/30 px-6 py-3 text-sm font-medium hover:border-white/60">Visit IOGAI</Link>
               </div>
             </div>
@@ -162,12 +162,19 @@ export default function IgorOgaiPage() {
           </div>
         </section>
 
-        <section className="bg-night text-paper">
+        <section id="meet" className="bg-night text-paper">
           <div className="mx-auto max-w-6xl px-5 py-20 text-center sm:px-8">
-            <h2 className="display text-[clamp(2rem,4.5vw,3rem)]">Partnerships</h2>
+            <h2 className="display text-[clamp(2rem,4.5vw,3rem)]">Meet Igor in person</h2>
             <p className="mx-auto mt-4 max-w-2xl text-white/70">
-              For partnerships, property portfolios and private clients, Igor answers personally.
+              Estates, restaurant groups, property portfolios and partners: tell Igor a little about
+              your property or project, and he will reply personally to arrange a meeting.
             </p>
+            <a
+              href={`${site.emailHref}?subject=${encodeURIComponent("Meeting with Igor Ogai")}`}
+              className="mt-8 inline-flex min-h-12 items-center rounded-full bg-accent px-7 py-3 text-sm font-medium text-paper hover:bg-accent-strong"
+            >
+              Request a meeting
+            </a>
             <p className="mt-6 text-lg">
               <a href={site.phoneHref} className="text-accent-soft hover:underline">{site.phoneDisplay}</a>
               {" · "}
