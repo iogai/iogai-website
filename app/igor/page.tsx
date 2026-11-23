@@ -161,7 +161,7 @@ export default function IgorPreview() {
         <div className="mx-auto max-w-5xl px-5 py-24 sm:px-8">
           <p className="text-xs uppercase tracking-[0.3em] text-accent-soft">Voices</p>
           <h2 className="display mt-3 text-4xl">They said it better than I could.</h2>
-          <blockquote className="mt-6 max-w-2xl border-l-2 border-accent pl-5 text-lg italic text-white/75">&ldquo;I fix it like it&rsquo;s mine. When your equipment starts to satisfy me, it will make you happy for a long time.&rdquo;<span className="mt-2 block text-sm not-italic text-white/40">My promise to clients, from 350 client reviews</span></blockquote>
+          <blockquote className="mt-6 max-w-2xl border-l-2 border-accent pl-5 text-lg italic text-white/75">&ldquo;I fix it like it&rsquo;s mine. When your equipment starts to satisfy me, it will make you happy for a long time.&rdquo;<span className="mt-2 block text-sm not-italic text-white/40">My promise to every client</span></blockquote>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {["Video review", "Video review", "Video review — California"].map((t, i) => (
               <div key={i} className="flex aspect-[9/16] items-center justify-center rounded-2xl border border-white/10 text-sm text-white/40">{t}</div>
