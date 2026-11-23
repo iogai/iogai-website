@@ -51,8 +51,8 @@ const personLd = {
 const stats = [
   { v: "13", l: "years in the field" },
   { v: "3", l: "countries: Kazakhstan, Russia, USA" },
-  { v: "100+", l: "five-star reviews" },
-  { v: "5.0", l: "average rating" },
+  { v: "350", l: "reviews on Profi.ru, rated 4.84" },
+  { v: "5.0", l: "Google rating" },
 ];
 
 const principles = [
@@ -64,7 +64,7 @@ const principles = [
 
 const path = [
   { y: "West Kazakhstan", d: "Kept a region's commercial coolers running. Breakdowns closed the same day, often within two hours." },
-  { y: "Moscow", d: "Started from zero. Earned 280+ reviews with his own hands, built two crews, served restaurants in the heart of the city." },
+  { y: "Moscow", d: "Started from zero. 350 reviews on Profi.ru, rated 4.84 — 280+ of them for his own hands-on work. Built two crews, served restaurants in the heart of the city." },
   { y: "California", d: "Orange County & Los Angeles: restaurants, businesses, estates and high-end homes." },
   { y: "IOGAI", d: "Founded Iogai Refrigeration Inc — a quiet, disciplined service company that does the work once, and does it right." },
 ];

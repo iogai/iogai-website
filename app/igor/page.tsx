@@ -34,7 +34,7 @@ const chapters = [
     place: "Moscow",
     title: "From zero",
     body: [
-      "No clients, no name. 280+ reviews earned with my own hands, then two crews. Restaurants in the heart of the city waited for me, and fridges other techs called dead came back to life.",
+      "No clients, no name. 350 reviews on Profi.ru, rated 4.84 — 280+ of them for my own hands-on work. Then two crews. Restaurants in the heart of the city waited for me, and fridges other techs called dead came back to life.",
       "Ogai sounds like pomogai, Russian for \u201chelp.\u201d That word became my calling.",
     ],
   },
