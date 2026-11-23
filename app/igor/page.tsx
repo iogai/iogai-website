@@ -34,7 +34,7 @@ const chapters = [
     place: "A new city",
     title: "From zero",
     body: [
-      "No clients, no name. 350 client reviews earned with my own hands, rated 4.8 out of 5, then two crews. Restaurants in the heart of the city waited for me, and fridges other techs called dead came back to life.",
+      "No clients, no name. 350 client reviews, rated 4.84 out of 5 — 280+ of them for my own hands-on work. Then two crews. Restaurants in the heart of the city waited for me, and fridges other techs called dead came back to life.",
       "In my native language, Ogai sounds like pomogai \u2014 \u201chelp.\u201d That word became my calling.",
     ],
   },
