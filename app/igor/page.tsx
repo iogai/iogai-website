@@ -59,7 +59,7 @@ const bigJobs = [
 
 export default function IgorPreview() {
   return (
-    <div className="bg-night text-paper">
+    <div className="bg-[#0b0b0c] text-paper">
       <header className="mx-auto flex h-20 max-w-5xl items-center justify-between px-5 sm:px-8">
         <span className="font-display text-xl tracking-[0.25em] text-accent-soft">IGOR OGAI</span>
         <nav className="hidden gap-6 text-sm text-white/60 sm:flex">
@@ -77,8 +77,8 @@ export default function IgorPreview() {
             The surgeon of refrigeration. I keep what matters running: your food, your business, your peace of mind.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <a href="#roots" className="inline-flex min-h-11 items-center rounded-full bg-accent px-6 py-3 text-sm font-medium hover:bg-accent-strong">Follow my journey</a>
-            <a href="#together" className="inline-flex min-h-11 items-center rounded-full border border-white/30 px-6 py-3 text-sm font-medium hover:border-white/60">Work with me</a>
+            <a href="#roots" className="inline-flex min-h-11 items-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-black hover:bg-accent-soft">Follow my journey</a>
+            <a href="#together" className="inline-flex min-h-11 items-center rounded-full border border-accent/60 px-6 py-3 text-sm font-medium text-accent-soft hover:border-accent">Work with me</a>
           </div>
         </div>
         <div className="relative">
@@ -104,7 +104,7 @@ export default function IgorPreview() {
       </section>
 
       {chapters.map((c, i) => (
-        <section key={c.id} id={c.id} className={i % 2 ? "bg-[#020f2e]" : ""}>
+        <section key={c.id} id={c.id} className={i % 2 ? "bg-[#15130f]" : ""}>
           <div className="mx-auto grid max-w-5xl gap-10 px-5 py-24 sm:px-8 md:grid-cols-[220px_1fr]">
             <div>
               <div className="font-display text-6xl text-accent/40">{String(i + 1).padStart(2, "0")}</div>
@@ -119,7 +119,7 @@ export default function IgorPreview() {
         </section>
       ))}
 
-      <section id="big-jobs" className="bg-[#020f2e]">
+      <section id="big-jobs" className="bg-[#15130f]">
         <div className="mx-auto max-w-5xl px-5 py-24 sm:px-8">
           <p className="text-xs uppercase tracking-[0.3em] text-accent-soft">Big jobs</p>
           <h2 className="display mt-3 text-4xl">We take the hard ones. And we finish them.</h2>
@@ -156,7 +156,7 @@ export default function IgorPreview() {
         </div>
       </section>
 
-      <section className="bg-[#020f2e]">
+      <section className="bg-[#15130f]">
         <div className="mx-auto max-w-5xl px-5 py-24 sm:px-8">
           <p className="text-xs uppercase tracking-[0.3em] text-accent-soft">My word</p>
           <h2 className="display mt-3 text-4xl">One promise, kept on every call.</h2>
@@ -168,7 +168,7 @@ export default function IgorPreview() {
         <p className="text-xs uppercase tracking-[0.3em] text-accent-soft">Coming soon</p>
         <h2 className="display mt-3 text-4xl">The Igor Ogai Method</h2>
         <p className="mt-5 max-w-2xl text-lg text-white/70">A training course for technicians: diagnose fast, fix for good, and bring joy to every call.</p>
-        <a href={`${site.emailHref}?subject=Igor%20Ogai%20Method%20waitlist`} className="mt-8 inline-flex min-h-11 items-center rounded-full border border-accent px-6 py-3 text-sm font-medium text-accent-soft hover:bg-accent hover:text-paper">Join the waitlist</a>
+        <a href={`${site.emailHref}?subject=Igor%20Ogai%20Method%20waitlist`} className="mt-8 inline-flex min-h-11 items-center rounded-full border border-accent px-6 py-3 text-sm font-medium text-accent-soft hover:bg-accent hover:text-black">Join the waitlist</a>
       </section>
 
       <section id="together" className="border-t border-accent/20">
