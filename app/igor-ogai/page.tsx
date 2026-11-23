@@ -50,9 +50,9 @@ const personLd = {
 
 const stats = [
   { v: "13", l: "years in the field" },
-  { v: "3", l: "countries: Kazakhstan, Russia, USA" },
-  { v: "136", l: "Google reviews" },
-  { v: "5.0", l: "average rating" },
+  { v: "3", l: "countries, one standard" },
+  { v: "350", l: "client reviews, rated 4.84" },
+  { v: "5.0", l: "Google rating in California" },
 ];
 
 const principles = [
@@ -60,13 +60,13 @@ const principles = [
   { t: "Decide, then execute", d: "Test before touching. Find the real cause. Fix it right the first time. No guessing, no shortcuts." },
   { t: "Systems over chaos", d: "Clear levels, clear pay, clear standards. A company that runs on discipline, not luck." },
   { t: "Long game", d: "Reputation is built one job at a time and protected every day. Every promise kept is an investment." },
-  { t: "When it breaks, he stays", d: "Storms, outages, emergencies. No panic, no excuses. The work continues until it runs cold again." },
+  { t: "When it stops, he stays", d: "Storms, outages, emergencies. No panic, no excuses. He stays until it runs again. Quietly, and to the end." },
   { t: "Few words, kept", d: "No big promises. A clear price, a clear time, and the work done exactly as agreed." },
 ];
 
 const path = [
   { y: "West Kazakhstan", d: "Kept a region's commercial coolers running. Breakdowns closed the same day, often within two hours." },
-  { y: "Moscow", d: "Started from zero. Earned 280+ reviews with his own hands, built two crews, served restaurants in the heart of the city." },
+  { y: "From zero", d: "Started with no clients and no name. 350 client reviews, rated 4.84 out of 5 — 280+ of them for his own hands-on work. Built two crews, served restaurants in the heart of the city." },
   { y: "California", d: "Orange County & Los Angeles: restaurants, businesses, estates and high-end homes." },
   { y: "IOGAI", d: "Founded Iogai Refrigeration Inc — a quiet, disciplined service company that does the work once, and does it right." },
 ];

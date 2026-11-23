@@ -30,12 +30,12 @@ const chapters = [
     ],
   },
   {
-    id: "moscow",
-    place: "Moscow",
+    id: "from-zero",
+    place: "A new city",
     title: "From zero",
     body: [
-      "No clients, no name. 280+ reviews earned with my own hands, then two crews. Restaurants in the heart of the city waited for me, and fridges other techs called dead came back to life.",
-      "Ogai sounds like pomogai, Russian for \u201chelp.\u201d That word became my calling.",
+      "No clients, no name. 350 client reviews, rated 4.84 out of 5 — 280+ of them for my own hands-on work. Then two crews. Restaurants in the heart of the city waited for me, and fridges other techs called dead came back to life.",
+      "In my native language, Ogai sounds like pomogai \u2014 \u201chelp.\u201d That word became my calling.",
     ],
   },
   {
@@ -44,7 +44,7 @@ const chapters = [
     title: "Home",
     body: [
       "The place I believe is closest to paradise. Here I founded IOGAI: honest service, strong technicians, work done right.",
-      "When things break, I stay. Storms, outages, emergencies: I carry it.",
+      "When something important stops, I stay until it runs again. Quietly, and to the end.",
       "Off the clock: Jackrabbit Boxing Academy, Long Beach. Show up, stay humble, finish what you start.",
     ],
   },
@@ -52,7 +52,7 @@ const chapters = [
 
 const bigJobs = [
   { t: "Supermarkets", d: "During the pandemic, when everyone stayed home, my crew kept a hypermarket's refrigeration running." },
-  { t: "Blast freezers & morgues", d: "In Moscow we built blast-freezer rooms, morgue refrigeration and freezers for medical equipment." },
+  { t: "Blast freezers & morgues", d: "We built blast-freezer rooms, morgue refrigeration and freezers for medical equipment." },
   { t: "Transport", d: "Truck refrigeration: compressor replacement, pressure testing, leak repair." },
   { t: "Next", d: "Medical equipment service across California. Reefer trucks and port equipment of Long Beach." },
 ];
@@ -122,7 +122,7 @@ export default function IgorPreview() {
       <section id="big-jobs" className="bg-[#020f2e]">
         <div className="mx-auto max-w-5xl px-5 py-24 sm:px-8">
           <p className="text-xs uppercase tracking-[0.3em] text-accent-soft">Big jobs</p>
-          <h2 className="display mt-3 text-4xl">We take the hard ones. Our systems run for decades.</h2>
+          <h2 className="display mt-3 text-4xl">We take the hard ones. And we finish them.</h2>
           <div className="mt-10 grid gap-5 sm:grid-cols-2">
             {bigJobs.map((j) => (
               <div key={j.t} className="rounded-2xl border border-white/10 p-6">
@@ -141,7 +141,7 @@ export default function IgorPreview() {
             &ldquo;When I touch a piece of equipment, it becomes mine until it runs and makes me proud. Then I hand it back.&rdquo;
           </blockquote>
           <p className="mx-auto mt-8 max-w-2xl text-lg text-white/70">
-            Precise diagnosis. Clean repair. A leak fixed once is fixed for good. Tens of thousands of refrigerators. Early mornings, late nights, no days off. Not a routine — a life&rsquo;s meaning.
+            Precise diagnosis. Clean repair. A leak fixed once is fixed for good. Not a routine — a life&rsquo;s meaning.
           </p>
         </div>
       </section>
@@ -159,8 +159,8 @@ export default function IgorPreview() {
       <section className="bg-[#020f2e]">
         <div className="mx-auto max-w-5xl px-5 py-24 sm:px-8">
           <p className="text-xs uppercase tracking-[0.3em] text-accent-soft">My word</p>
-          <h2 className="display mt-3 text-4xl">The same promise, in every country.</h2>
-          <blockquote className="mt-6 max-w-2xl border-l-2 border-accent pl-5 text-lg italic text-white/75">&ldquo;I fix it like it&rsquo;s mine. When your equipment starts to satisfy me, it will make you happy for a long time.&rdquo;<span className="mt-2 block text-sm not-italic text-white/40">My promise on Profi.ru, Moscow</span></blockquote>
+          <h2 className="display mt-3 text-4xl">One promise, kept on every call.</h2>
+          <blockquote className="mt-6 max-w-2xl border-l-2 border-accent pl-5 text-lg italic text-white/75">&ldquo;I fix it like it&rsquo;s mine. When your equipment starts to satisfy me, it will make you happy for a long time.&rdquo;<span className="mt-2 block text-sm not-italic text-white/40">My promise to every client</span></blockquote>
         </div>
       </section>
 
