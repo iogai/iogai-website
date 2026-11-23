@@ -51,7 +51,7 @@ const personLd = {
 const stats = [
   { v: "13", l: "years in the field" },
   { v: "3", l: "countries: Kazakhstan, Russia, USA" },
-  { v: "100+", l: "five-star reviews" },
+  { v: "136", l: "Google reviews" },
   { v: "5.0", l: "average rating" },
 ];
 
@@ -60,6 +60,8 @@ const principles = [
   { t: "Decide, then execute", d: "Test before touching. Find the real cause. Fix it right the first time. No guessing, no shortcuts." },
   { t: "Systems over chaos", d: "Clear levels, clear pay, clear standards. A company that runs on discipline, not luck." },
   { t: "Long game", d: "Reputation is built one job at a time and protected every day. Every promise kept is an investment." },
+  { t: "When it breaks, he stays", d: "Storms, outages, emergencies. No panic, no excuses. The work continues until it runs cold again." },
+  { t: "Few words, kept", d: "No big promises. A clear price, a clear time, and the work done exactly as agreed." },
 ];
 
 const path = [
@@ -89,12 +91,13 @@ export default function IgorOgaiPage() {
         <section className="bg-night text-paper">
           <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-24 pt-12 sm:px-8 md:grid-cols-[1.2fr_1fr]">
             <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-accent-soft">Founder · Strategist · Craftsman</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-accent-soft">Founder of IOGAI · Craftsman · Strategist</p>
               <h1 className="display mt-5 text-[clamp(3rem,8vw,6rem)] leading-[0.95]">Igor Ogai</h1>
+              <p className="mt-6 text-xl italic text-accent-soft">Done right. Done for good.</p>
               <p className="mt-6 max-w-xl text-lg text-white/75">
-                Quiet strength. Perfect work. Founder of IOGAI — thirteen years building trust in
-                refrigeration across three countries. Decisive in strategy, uncompromising in standards,
-                and driven by sincere care for every client and every person on the team.
+                Thirteen years in refrigeration across three countries. Calm under pressure, exact in
+                the work, steady in every promise. Founder of IOGAI, built on care for every client and
+                every person on the team.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href={site.phoneHref} className="inline-flex min-h-11 items-center rounded-full bg-accent px-6 py-3 text-sm font-medium text-paper hover:bg-accent-strong">Contact Igor</a>
@@ -147,7 +150,7 @@ export default function IgorOgaiPage() {
         <section className="bg-paper">
           <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
             <h2 className="display text-[clamp(2rem,4.5vw,3rem)] text-ink">Private clients</h2>
-            <p className="mt-4 max-w-2xl text-ink-2">A limited number of long-term clients, served personally by Igor&rsquo;s team.</p>
+            <p className="mt-4 max-w-2xl text-ink-2">A limited number of long-term clients, served personally by Igor&rsquo;s team. Quietly, on schedule, without reminders.</p>
             <div className="mt-10 grid gap-6 md:grid-cols-3">
               {privateClients.map((c) => (
                 <div key={c.t} className="rounded-2xl border border-hairline p-7">

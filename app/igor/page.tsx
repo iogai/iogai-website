@@ -153,20 +153,14 @@ export default function IgorPreview() {
         </div>
         <div className="space-y-5 text-lg text-white/70">
           <p>Discipline shows before a word is said. In the field it&rsquo;s clean tools and a tested meter. Everywhere else, it&rsquo;s a well-cut suit.</p>
-          <p className="text-sm text-white/40">[Photo in a suit — coming soon]</p>
         </div>
       </section>
 
       <section className="bg-[#020f2e]">
         <div className="mx-auto max-w-5xl px-5 py-24 sm:px-8">
-          <p className="text-xs uppercase tracking-[0.3em] text-accent-soft">Voices</p>
-          <h2 className="display mt-3 text-4xl">They said it better than I could.</h2>
+          <p className="text-xs uppercase tracking-[0.3em] text-accent-soft">My word</p>
+          <h2 className="display mt-3 text-4xl">The same promise, in every country.</h2>
           <blockquote className="mt-6 max-w-2xl border-l-2 border-accent pl-5 text-lg italic text-white/75">&ldquo;I fix it like it&rsquo;s mine. When your equipment starts to satisfy me, it will make you happy for a long time.&rdquo;<span className="mt-2 block text-sm not-italic text-white/40">My promise on Profi.ru, Moscow</span></blockquote>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {["Video review — Moscow", "Video review — Moscow", "Video review — California"].map((t, i) => (
-              <div key={i} className="flex aspect-[9/16] items-center justify-center rounded-2xl border border-white/10 text-sm text-white/40">{t}</div>
-            ))}
-          </div>
         </div>
       </section>
 
