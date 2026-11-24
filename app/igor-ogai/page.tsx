@@ -9,11 +9,11 @@ import { site } from "@/lib/copy";
 export const metadata: Metadata = {
   title: "Igor Ogai — Done with heart. Done right. Done for good.",
   description:
-    "Igor Ogai, refrigeration craftsman and founder of IOGAI (Iogai Refrigeration Inc) in California. Thirteen years in the field across three countries. Meet Igor in person.",
+    "Igor Ogai, refrigeration craftsman and founder of IOGAI (Iogai Refrigeration Inc) in Huntington Beach, Orange County, California. Thirteen years in the field across three countries. Meet Igor in person.",
   alternates: { canonical: "https://iogai.com/igor-ogai" },
   openGraph: {
     title: "Igor Ogai — Done with heart. Done right. Done for good.",
-    description: "Refrigeration craftsman and founder of IOGAI, California.",
+    description: "Refrigeration craftsman and founder of IOGAI, Huntington Beach, Orange County.",
     url: "https://iogai.com/igor-ogai",
     type: "profile",
     images: ["https://iogai.com/media/real/igor-ogai-founder.jpg"],
@@ -39,7 +39,7 @@ const personLd = {
     "Sealed system repair",
     "EPA 608 refrigerant handling",
   ],
-  homeLocation: { "@type": "Place", name: "Long Beach, California" },
+  homeLocation: { "@type": "Place", name: "Huntington Beach, California" },
   sameAs: [
     "https://www.facebook.com/iogai.services",
     "https://www.instagram.com/iogai.services",
@@ -94,7 +94,7 @@ const chapters = [
     body: [
       "The place I believe is closest to paradise. Here I founded IOGAI: honest service, strong technicians, work done right.",
       "When something important stops, I stay until it runs again. Quietly, and to the end.",
-      "Off the clock: Jackrabbit Boxing Academy, Long Beach. Show up, stay humble, finish what you start.",
+      "Off the clock: Jackrabbit Boxing Academy. Show up, stay humble, finish what you start.",
     ],
   },
 ];
@@ -113,7 +113,7 @@ const bigJobs = [
 ];
 
 const circles = [
-  { t: "Estates & private homes", d: "Built-in and high-end refrigeration, wine storage, ice makers. Discreet, on time, clean." },
+  { t: "Estates & private homes", d: "Built-in and high-end refrigeration, wine storage, ice makers along the Orange County coast: Newport Beach, Laguna Beach, Huntington Beach. Discreet, on time, clean." },
   { t: "Restaurant groups", d: "Scheduled maintenance for walk-ins, reach-ins and ice machines, before Friday night, not after." },
   { t: "Property portfolios", d: "One accountable partner for every unit. Clear reports, fixed standards, a direct line to the founder." },
 ];
@@ -146,12 +146,12 @@ export default function IgorOgaiPage() {
         {/* Hero */}
         <section id="top" className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-24 pt-8 sm:px-8 md:grid-cols-[1.15fr_1fr]">
           <div>
-            <Label>Founder of IOGAI · Refrigeration craftsman</Label>
+            <Label>Founder of IOGAI · Huntington Beach, Orange County</Label>
             <h1 className="display mt-6 text-[clamp(3.25rem,9vw,6.5rem)] leading-[0.92]">Igor<br />Ogai</h1>
             <p className={`mt-6 text-xl italic ${GOLD}`}>Done with heart. Done right. Done for good.</p>
             <p className="mt-6 max-w-md text-lg leading-relaxed text-white/70">
-              Thirteen years keeping what matters cold, across three countries. Calm under pressure,
-              exact in the work, steady in every promise.
+              Refrigeration craftsman. Thirteen years keeping what matters cold, across three countries,
+              now home in Orange County. Calm under pressure, exact in the work, steady in every promise.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <a href="#meet" className="inline-flex min-h-12 items-center rounded-full bg-[#b8912f] px-7 py-3 text-sm font-semibold text-black hover:bg-[#e3c268]">Meet Igor</a>
@@ -290,7 +290,7 @@ export default function IgorOgaiPage() {
             <h2 className="display text-[clamp(2.2rem,5vw,3.5rem)]">Meet Igor in person</h2>
             <p className="mx-auto mt-5 max-w-xl text-lg text-white/70">
               Estates, restaurant groups, property portfolios and partners: tell Igor a little about your
-              property or project, and he will reply personally to arrange a meeting.
+              property or project, and he will reply personally to arrange a meeting in Huntington Beach or anywhere in Orange County.
             </p>
             <a href={MEET_HREF} className="mt-9 inline-flex min-h-12 items-center rounded-full bg-[#b8912f] px-8 py-3 text-sm font-semibold text-black hover:bg-[#e3c268]">Request a meeting</a>
             <p className="mt-8 text-lg">
@@ -304,7 +304,7 @@ export default function IgorOgaiPage() {
 
       <footer className="border-t border-white/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-10 text-sm text-white/45 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-          <span>© {new Date().getFullYear()} Igor Ogai · Long Beach, California</span>
+          <span>© {new Date().getFullYear()} Igor Ogai · Huntington Beach, Orange County, California</span>
           <div className="flex flex-wrap gap-6">
             <a href="https://iogai.com" className="hover:text-white">IOGAI</a>
             <a href="https://iogai.com/careers" className="hover:text-white">Join the team</a>

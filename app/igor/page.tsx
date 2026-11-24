@@ -45,7 +45,7 @@ const chapters = [
     body: [
       "The place I believe is closest to paradise. Here I founded IOGAI: honest service, strong technicians, work done right.",
       "When something important stops, I stay until it runs again. Quietly, and to the end.",
-      "Off the clock: Jackrabbit Boxing Academy, Long Beach. Show up, stay humble, finish what you start.",
+      "Off the clock: Jackrabbit Boxing Academy. Show up, stay humble, finish what you start.",
     ],
   },
 ];
@@ -180,7 +180,7 @@ export default function IgorPreview() {
             <span className="mx-3 text-white/30">·</span>
             <a href={site.emailHref} className="text-accent-soft hover:underline">{site.email}</a>
           </p>
-          <p className="mt-10 text-sm text-white/40">Founder of <Link href="/" className="underline hover:text-white">IOGAI</Link> · Long Beach, California</p>
+          <p className="mt-10 text-sm text-white/40">Founder of <Link href="/" className="underline hover:text-white">IOGAI</Link> · Huntington Beach, Orange County, California</p>
         </div>
       </section>
     </div>
