@@ -10,6 +10,14 @@ const nextConfig: NextConfig = {
   // Next.js site, so without a redirect they'd 404 the moment Google
   // recrawls them, killing whatever ranking/link value they had. Mapped to
   // the closest real equivalent page rather than a blanket homepage dump.
+  // igorogai.com (once its DNS points at this Vercel project) shows Igor's
+  // personal page at its own root instead of forwarding to iogai.com.
+  async rewrites() {
+    return [
+      { source: "/", has: [{ type: "host", value: "(www\\.)?igorogai\\.com" }], destination: "/igor-ogai" },
+    ];
+  },
+
   async redirects() {
     return [
       // Specialty services stay off public offer until scope and qualifications are verified.
