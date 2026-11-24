@@ -72,17 +72,17 @@ export const nav = {
 
 export const hero = {
   eyebrow: "Orange County & Los Angeles County",
-  title: ["Commercial Refrigeration", "& Appliance Repair"],
-  sub: "Walk-ins, commercial freezers, and ice machines for local businesses. Built-in refrigerators and major appliances for your home.",
+  title: ["High-End Appliance", "& Refrigeration Repair"],
+  sub: "Sub-Zero, Viking, Thermador, Wolf and Miele, cared for in your home by refrigeration specialists who respect your kitchen and your time. Walk-ins and ice machines kept running for local businesses.",
   ctaPrimary: "Request Service",
-  ctaSecondary: "Call for Commercial Service",
+  ctaSecondary: "Call (424) 421-7771",
 };
 
 // "10+ years" is now verified - it's on iogai.com's own About page ("Over 10
 // years of success working with systems of any complexity"), checked 2 Sept 2026.
 export const advantages = {
   label: "Our advantages",
-  title: "A team you can count on for cool, comfortable repairs",
+  title: "Experienced hands for the appliances you care about most",
   stats: [
     { value: "13", unit: "+", caption: "Years of hands-on refrigeration experience — Igor Ogai" },
     { value: "5.0", unit: "/5", caption: "Average rating from 136 Google reviews" },
@@ -90,20 +90,11 @@ export const advantages = {
   ],
 };
 
-// Pulled straight from the live iogai.com "why us" icons - already public claims
-// made by the business, not new ones invented for this redesign.
-export const trustbar = [
-  "Swift Response",
-  "Clear Repair Estimates",
-  "Written Service Details",
-  "Same-Day Visits Available",
-];
-
 export const guarantees = {
   label: "Our promise",
-  title: "Service you can trust",
+  title: "What you can count on",
   intro:
-    "What you can expect when you book a repair with IOGAI.",
+    "What you can expect every time IOGAI comes to your home or business.",
   items: [
     { k: "Swift response", v: "Call or text us with your equipment issue. We confirm technician availability before scheduling your visit." },
     { k: "Clear repair estimates", v: "Diagnosis comes first. Review the scope and price before approving a repair." },
@@ -184,15 +175,15 @@ export const services = {
 
 export const process = {
   label: "How it works",
-  title: "From Call To Fixed In 5 Steps",
+  title: "From First Call to Running Again",
   intro:
-    "Getting your equipment back on track is easier than you think - just five simple steps.",
+    "Five clear steps, with the price agreed before any work begins.",
   steps: [
     { no: "01", name: "Contact us", body: "Call or book online. Tell us the equipment and the symptom." },
     { no: "02", name: "Confirm your visit", body: "Pick a 2-hour arrival window: 8–10, 10–12, 12–2, 2–4 or 4–6. We text you when the technician is 30 minutes away." },
-    { no: "03", name: "Get a service", body: "A technician diagnoses the issue and explains repair options and pricing for your approval." },
-    { no: "04", name: "Pay safely", body: "Transparent pricing and secure payment - no surprises on the bill." },
-    { no: "05", name: "Ready", body: "Your equipment back in operation, with a written record of the work." },
+    { no: "03", name: "Diagnosis & quote", body: "A technician diagnoses the issue and explains repair options and pricing for your approval." },
+    { no: "04", name: "Approve & pay", body: "Work starts only after you approve the price. Secure payment, no surprises on the invoice." },
+    { no: "05", name: "Back to normal", body: "Your equipment running again, with a written record of the work and the warranty on your invoice." },
   ],
 };
 
@@ -202,7 +193,7 @@ export const process = {
 // the kind of fabricated proof this project rules out.
 export const testimonials = {
   label: "Testimonials",
-  title: "Look What Our Clients Say",
+  title: "What Our Clients Say",
   intro:
     "5.0 stars across 136 Google reviews. A few of them, word for word.",
   items: [
@@ -266,10 +257,10 @@ export const faq = {
 
 export const closing = {
   eyebrow: "Ready when you are",
-  title: ["Cooling Solutions -", "We've Got This."],
-  sub: "High-end appliance and refrigeration repair across Orange County and LA. Same-day visits available.",
+  title: ["We'll Take It", "From Here."],
+  sub: "High-end appliance and refrigeration repair across Orange County and LA. Same-day and next-day visits are often available.",
   ctaPrimary: "Book a Repair",
-  ctaSecondary: "Call IOGAI",
+  ctaSecondary: "Call (424) 421-7771",
 };
 
 export const contact = {

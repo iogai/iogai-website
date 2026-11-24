@@ -7,17 +7,17 @@ import { guarantees, brands } from "@/lib/copy";
 
 // One distinct icon per guarantee - the four used to share a single
 // checkmark, which made them illegible at a glance. Order matches
-// guarantees.items in lib/copy.ts: swift response, certified team,
-// warranty, emergency service.
+// guarantees.items in lib/copy.ts: swift response, clear estimates,
+// written warranty, urgent commercial service.
 const ICONS = [
   // Clock - swift response
   <path key="clock" d="M12 7v5l3 3M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />,
-  // Badge/certificate - certified team
-  <path key="badge" d="M12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12ZM8.5 13.5 7 21l5-2 5 2-1.5-7.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />,
-  // Shield - service warranty
+  // Document - clear repair estimates
+  <path key="doc" d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5ZM14 3v5h5M9 13h6M9 17h4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />,
+  // Shield - written warranty
   <path key="shield" d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />,
-  // Alert triangle - emergency service
-  <path key="alert" d="M12 9v4m0 4h.01M10.3 4.3 2.6 18a1.8 1.8 0 0 0 1.6 2.7h15.6a1.8 1.8 0 0 0 1.6-2.7L13.7 4.3a1.8 1.8 0 0 0-3.4 0Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />,
+  // Snowflake - urgent commercial refrigeration
+  <path key="snow" d="M12 2v20M4.9 7l14.2 10M4.9 17 19.1 7M9 4l3 2 3-2M9 20l3-2 3 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />,
 ];
 
 export function Guarantees() {

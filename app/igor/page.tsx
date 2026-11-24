@@ -34,7 +34,7 @@ const chapters = [
     place: "A new city",
     title: "From zero",
     body: [
-      "No clients, no name. 350 client reviews, rated 4.84 out of 5 — 280+ of them for my own hands-on work. Then two crews. Restaurants in the heart of the city waited for me, and fridges other techs called dead came back to life.",
+      "No clients, no name. Hundreds of client reviews, earned with my own hands. Then two crews. Restaurants in the heart of the city waited for me, and fridges other techs called dead came back to life.",
       "In my native language, Ogai sounds like pomogai \u2014 \u201chelp.\u201d That word became my calling.",
     ],
   },
@@ -45,7 +45,7 @@ const chapters = [
     body: [
       "The place I believe is closest to paradise. Here I founded IOGAI: honest service, strong technicians, work done right.",
       "When something important stops, I stay until it runs again. Quietly, and to the end.",
-      "Off the clock: Jackrabbit Boxing Academy, Long Beach. Show up, stay humble, finish what you start.",
+      "Off the clock: Jackrabbit Boxing Academy. Show up, stay humble, finish what you start.",
     ],
   },
 ];
@@ -160,7 +160,7 @@ export default function IgorPreview() {
         <div className="mx-auto max-w-5xl px-5 py-24 sm:px-8">
           <p className="text-xs uppercase tracking-[0.3em] text-accent-soft">My word</p>
           <h2 className="display mt-3 text-4xl">One promise, kept on every call.</h2>
-          <blockquote className="mt-6 max-w-2xl border-l-2 border-accent pl-5 text-lg italic text-white/75">&ldquo;I fix it like it&rsquo;s mine. When your equipment starts to satisfy me, it will make you happy for a long time.&rdquo;<span className="mt-2 block text-sm not-italic text-white/40">My promise to every client</span></blockquote>
+          <blockquote className="mt-6 max-w-2xl border-l-2 border-accent pl-5 text-lg italic text-white/75">&ldquo;I fix it as if it were my own. When it meets my standard, it will serve you for years.&rdquo;<span className="mt-2 block text-sm not-italic text-white/40">My promise to every client</span></blockquote>
         </div>
       </section>
 
@@ -180,7 +180,7 @@ export default function IgorPreview() {
             <span className="mx-3 text-white/30">·</span>
             <a href={site.emailHref} className="text-accent-soft hover:underline">{site.email}</a>
           </p>
-          <p className="mt-10 text-sm text-white/40">Founder of <Link href="/" className="underline hover:text-white">IOGAI</Link> · Long Beach, California</p>
+          <p className="mt-10 text-sm text-white/40">Founder of <Link href="/" className="underline hover:text-white">IOGAI</Link> · Huntington Beach, Orange County, California</p>
         </div>
       </section>
     </div>

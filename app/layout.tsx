@@ -4,7 +4,7 @@ import "./globals.css";
 import { MotionRoot } from "@/components/ui/MotionRoot";
 import { Analytics } from "@/components/Analytics";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { faq, services } from "@/lib/copy";
+import { services } from "@/lib/copy";
 
 // LocalBusiness structured data — trust + Google rich results (rating stars, etc.)
 // and a clean, factual entity for AI answer engines to cite.
@@ -49,17 +49,6 @@ const businessLd = {
   aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "136" },
 };
 
-// FAQ structured data — Google FAQ rich results + high-value for AI answer engines.
-const faqLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faq.items.map((i) => ({
-    "@type": "Question",
-    name: i.q,
-    acceptedAnswer: { "@type": "Answer", text: i.a },
-  })),
-};
-
 // One Service entity per real offering, linked back to the business - lets
 // an answer engine cite "IOGAI does X" for a specific service rather than
 // only the business as a whole.
@@ -85,19 +74,6 @@ const servicesLd = [
     areaServed: ["Huntington Beach", "Orange County", "Los Angeles"],
   },
 ];
-
-// The scroll walkthrough video, described for video search / AI crawlers -
-// uploadDate is the date this cut was produced, not a real-world event date.
-const videoLd = {
-  "@context": "https://schema.org",
-  "@type": "VideoObject",
-  name: "IOGAI refrigeration repair walkthrough",
-  description: "A look inside a commercial refrigeration repair: diagnostics, the compressor, and a completed repair.",
-  thumbnailUrl: "https://iogai.com/media/real/video/walkthrough-poster.jpg",
-  uploadDate: "2026-09-03",
-  contentUrl: "https://iogai.com/media/real/video/walkthrough.mp4",
-  publisher: { "@id": "https://iogai.com/#business" },
-};
 
 const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
@@ -169,15 +145,7 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
-        />
-        <script
-          type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(videoLd) }}
         />
         <a
           href="#main"

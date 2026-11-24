@@ -5,7 +5,7 @@ import { site } from "@/lib/copy";
 export const metadata: Metadata = {
   title: "Careers — Refrigeration & Appliance Technicians | IOGAI",
   description:
-    "IOGAI is hiring refrigeration and appliance repair technicians in Long Beach and Orange County. W-2, Mon–Fri, hourly pay plus commission on every job.",
+    "IOGAI is hiring refrigeration and appliance repair technicians in Huntington Beach and Orange County. W-2, Mon–Fri, hourly pay plus commission on every job.",
   alternates: { canonical: "https://iogai.com/careers" },
   robots: { index: true, follow: true },
 };
@@ -23,7 +23,7 @@ const jobLd = {
   "@type": "JobPosting",
   title: "Refrigeration & Appliance Repair Technician",
   description:
-    "<p>IOGAI is hiring refrigeration and appliance repair technicians in Long Beach and Orange County. W-2, Monday–Friday, no weekend shifts. Steady dispatched calls.</p><p>Pay: Junior $25/hr + 12% of each job; Technician (EPA 608) $30/hr + 17%; Senior (EPA Universal) $36/hr + 20%. Strong technicians earn $70,000–$125,000+ per year.</p><p>Requirements: valid California driver's license; EPA 608 for Technician and Senior levels.</p>",
+    "<p>IOGAI is hiring refrigeration and appliance repair technicians in Huntington Beach and Orange County. W-2, Monday–Friday, no weekend shifts. Steady dispatched calls.</p><p>Pay: Junior $25/hr + 12% of each job; Technician (EPA 608) $30/hr + 17%; Senior (EPA Universal) $36/hr + 20%. Strong technicians earn $70,000–$125,000+ per year.</p><p>Requirements: valid California driver's license; EPA 608 for Technician and Senior levels.</p>",
   datePosted: "2026-11-21",
   validThrough: "2027-02-28T23:59",
   employmentType: "FULL_TIME",
@@ -57,7 +57,7 @@ export default function CareersPage() {
     <LegalShell title="We're hiring technicians" updated="November 21, 2026">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jobLd) }} />
       <p>
-        IOGAI repairs refrigerators, freezers and commercial refrigeration across Long Beach and
+        IOGAI repairs refrigerators, freezers and commercial refrigeration across Huntington Beach and
         Orange County. The owner is a technician with 13 years in the field. We bring the jobs; you do
         great work and get paid for it.
       </p>
