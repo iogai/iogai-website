@@ -91,7 +91,7 @@ export default function CareersPage() {
         <li>W-2 employment, Monday–Friday, no weekend shifts</li>
         <li>Steady dispatched calls — no chasing customers</li>
         <li>A clear path from Junior to Senior: learn faster, earn more</li>
-        <li>Spanish and Russian spoken on the team; English with customers</li>
+        <li>Owner-led: old-world craftsmanship, American standards. English and Spanish spoken.</li>
       </ul>
 
       <h2>What we need</h2>
