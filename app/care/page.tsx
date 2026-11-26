@@ -27,8 +27,9 @@ const plans = [
       "15% off repairs",
       "Written report after every visit",
     ],
-    cta: "Join IOGAI Care Home",
-    sms: "Hi, I want IOGAI Care Home ($189/year). My refrigerator brand and city: ",
+    cta: "Reserve IOGAI Care Home",
+    sms: "Hi, please reserve IOGAI Care Home for me. My refrigerator brand and city: ",
+    note: "Launching soon. Reserve your place now — no payment until enrollment opens.",
   },
   {
     name: "IOGAI Care Restaurant",
@@ -44,22 +45,47 @@ const plans = [
       "Service log for every unit — ready for your health inspection",
     ],
     cta: "Get a Restaurant quote",
+    note: "Month to month. Cancel with 30 days' written notice, no cancellation fee.",
     sms: "Hi, I want IOGAI Care Restaurant. Restaurant name, city and equipment: ",
   },
 ];
 
 const faq = [
   {
-    q: "Why a membership instead of calling when it breaks?",
-    a: "Most refrigeration failures start with dirty coils, worn seals and clogged drains. Regular service catches them early, so the equipment lasts longer and breaks down less — and when something does fail, members go first.",
+    q: "What is IOGAI Care?",
+    a: "A maintenance membership: scheduled service by refrigeration specialists, priority when something fails, and 15% off repairs. It keeps equipment cleaner, running longer and failing less.",
   },
   {
-    q: "What does 'from $149 per month' depend on?",
-    a: "The number and type of units at your location. We look at your equipment, confirm the monthly price in writing and you approve it before we start.",
+    q: "How much does it cost?",
+    a: "IOGAI Care Restaurant starts at $149 per month per location. IOGAI Care Home will be $189 per year — enrollment opens soon, and you can reserve a place now with no payment.",
   },
   {
-    q: "Can I cancel?",
-    a: "Yes. The terms are written in your agreement before you sign. No hidden fees.",
+    q: "What decides the restaurant price?",
+    a: "The number and type of units at your location. We look at your equipment, send the monthly price and the visit schedule in writing, and you approve them before anything starts.",
+  },
+  {
+    q: "Is this insurance or a warranty?",
+    a: "No. IOGAI Care covers scheduled maintenance, priority scheduling and 15% off repairs. Repairs are diagnosed and quoted in writing, and you approve the price before any work. Every repair carries our written warranty: 30 days labor, 90 days parts.",
+  },
+  {
+    q: "What does priority mean?",
+    a: "Members are scheduled ahead of non-members when a slot opens, and restaurant members get priority emergency dispatch. We always confirm the actual arrival window by phone or text.",
+  },
+  {
+    q: "Does it renew automatically? How do I cancel?",
+    a: "Restaurant plans run month to month: cancel any time with 30 days' written notice by text, email or phone, with no cancellation fee, and we confirm in writing. Home plans renew only if you say yes — we remind you before the year ends.",
+  },
+  {
+    q: "Will I get records for the health inspector?",
+    a: "Yes. Restaurant members get a service log for every unit after each visit, ready to show an inspector.",
+  },
+  {
+    q: "Which equipment and brands?",
+    a: "Built-in and high-end refrigerators, freezers and wine storage (Sub-Zero, Thermador, Viking, Miele, Monogram), and commercial ice machines, walk-ins, reach-ins, prep tables and bar coolers (Hoshizaki, Manitowoc, Scotsman, True, Traulsen and more). IOGAI is independent and not affiliated with any manufacturer.",
+  },
+  {
+    q: "Where do you serve?",
+    a: "Orange County, Long Beach and the South Bay.",
   },
 ];
 
@@ -71,7 +97,7 @@ export default function CarePage() {
     provider: { "@id": "https://iogai.com/#business" },
     areaServed: ["Orange County", "Los Angeles County"],
     offers: [
-      { "@type": "Offer", name: "IOGAI Care Home", price: "189", priceCurrency: "USD" },
+      { "@type": "Offer", name: "IOGAI Care Home", price: "189", priceCurrency: "USD", availability: "https://schema.org/PreOrder" },
       { "@type": "Offer", name: "IOGAI Care Restaurant", price: "149", priceCurrency: "USD" },
     ],
   };
@@ -122,7 +148,8 @@ export default function CarePage() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <p className="mt-6 text-xs leading-relaxed text-ink-3">{p.note}</p>
+              <div className="mt-4 flex flex-wrap gap-3">
                 <CTA href={`sms:+14244217771?body=${encodeURIComponent(p.sms)}`} variant="solid">
                   {p.cta}
                 </CTA>
