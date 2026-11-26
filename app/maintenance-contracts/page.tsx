@@ -46,6 +46,13 @@ export default function MaintenanceContractsPage() {
         <Eyebrow>{maintenance.label}</Eyebrow>
         <h1 className="display mt-5 text-[clamp(2rem,5vw,3.25rem)] text-ink">{maintenance.title}</h1>
         <p className="mt-6 text-lg leading-relaxed text-ink-2">{maintenance.intro}</p>
+        <p className="mt-4 leading-relaxed text-ink-2">
+          Part of{" "}
+          <Link href="/care" className="underline underline-offset-4 hover:text-accent">
+            IOGAI Care Restaurant
+          </Link>{" "}
+          — from $149 per month per location, with priority emergency dispatch and 15% off repairs.
+        </p>
 
         <div className="mt-12">
           <h2 className="font-display text-xl font-semibold text-ink">The schedule</h2>

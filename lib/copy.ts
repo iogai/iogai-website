@@ -63,6 +63,7 @@ export const rating = { value: "5.0", count: "136", source: "Google" };
 export const nav = {
   links: [
     { label: "Services", href: "/service-areas" },
+    { label: "IOGAI Care", href: "/care" },
     { label: "How it works", href: "/#process" },
     { label: "Reviews", href: "/#testimonials" },
     { label: "FAQ", href: "/#faq" },
@@ -91,10 +92,10 @@ export const advantages = {
 };
 
 export const guarantees = {
-  label: "Our promise",
-  title: "What you can count on",
+  label: "The IOGAI Promise",
+  title: "One standard: perfect.",
   intro:
-    "What you can expect every time IOGAI comes to your home or business.",
+    "You approve the price before any work. If a repair we made fails within the warranty, we come back and make it right at no labor cost. That is the IOGAI Promise.",
   items: [
     { k: "Swift response", v: "Call or text us with your equipment issue. We confirm technician availability before scheduling your visit." },
     { k: "Clear repair estimates", v: "Diagnosis comes first. Review the scope and price before approving a repair." },
@@ -325,6 +326,7 @@ export const footer = {
       links: [
         { label: "Services", href: "/service-areas" },
         { label: "Repair Problems", href: "/repair" },
+        { label: "IOGAI Care Membership", href: "/care" },
         { label: "How it works", href: "/#process" },
         { label: "Reviews", href: "/#testimonials" },
         { label: "FAQ", href: "/#faq" },
