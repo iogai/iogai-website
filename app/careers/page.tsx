@@ -62,6 +62,19 @@ export default function CareersPage() {
         great work and get paid for it.
       </p>
 
+      <h2>Just finished high school? Start here.</h2>
+      <p>
+        You do not need experience. You need to show up on time, be honest and want to learn a real trade.
+        Refrigeration keeps restaurants, hospitals and homes running — it is work that is always needed.
+      </p>
+      <ul>
+        <li>Paid from day one at the Junior level, riding along with an experienced technician</li>
+        <li>We teach you on real jobs: diagnostics, safety, customer respect, clean work</li>
+        <li>We help you prepare for the EPA 608 certification — the first step to Technician pay</li>
+        <li>A clear path: Junior → Technician → Senior, with pay that grows with your skill</li>
+        <li>A steady W-2 job, a trade for life, and a team that does things the right way</li>
+      </ul>
+
       <h2>Pay</h2>
       <p>Hourly pay plus a percentage of every job you complete.</p>
       <ul>
@@ -90,7 +103,7 @@ export default function CareersPage() {
 
       <h2>Apply</h2>
       <p>
-        Text <a href={smsHref}>{site.phoneDisplay}</a> with your level and experience, or email{" "}
+        Text <a href={smsHref}>{site.phoneDisplay}</a> with your level and experience (or &ldquo;new, ready to learn&rdquo;), or email{" "}
         <a href={site.emailHref}>{site.email}</a> with &ldquo;Technician&rdquo; in the subject.
       </p>
       <p>IOGAI is an equal opportunity employer. All qualified applicants are welcome.</p>
