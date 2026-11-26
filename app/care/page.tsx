@@ -10,32 +10,50 @@ import { site, rating } from "@/lib/copy";
 export const metadata: Metadata = {
   title: "IOGAI Care — Refrigerator & Restaurant Refrigeration Membership | IOGAI",
   description:
-    "IOGAI Care: $189/year for Sub-Zero and built-in refrigerators at home, from $149/month per location for restaurants. Scheduled cleaning, priority service, 15% off repairs. Orange County & LA.",
+    "IOGAI Care for homes ($119 per maintenance visit), property managers (no sign-up fee) and restaurants (from $149/month per location). Scheduled cleaning, priority service, 15% off repairs. Orange County & LA.",
   alternates: { canonical: "/care" },
 };
 
 const plans = [
   {
     name: "IOGAI Care Home",
-    price: "$189",
-    per: "per year",
-    for: "Sub-Zero, Thermador, Viking, Miele, Monogram and other built-in refrigerators, freezers and wine storage.",
+    price: "$119",
+    per: "per maintenance visit",
+    for: "For homeowners with Sub-Zero, Thermador, Viking, Miele, Monogram and other built-in refrigerators, freezers and wine storage.",
     items: [
-      "Two visits a year: condenser cleaning and a full performance check",
-      "Door seals, fans, ice maker and temperatures checked every visit",
-      "Priority scheduling — members are booked first",
+      "Condenser cleaning and a full performance check",
+      "Door seals, fans, ice maker and temperatures checked",
+      "We remind you twice a year — you book when it suits you",
+      "Priority scheduling for repairs",
       "15% off repairs",
-      "Written report after every visit",
+      "No annual fee, no prepayment",
     ],
-    cta: "Reserve IOGAI Care Home",
-    sms: "Hi, please reserve IOGAI Care Home for me. My refrigerator brand and city: ",
-    note: "Launching soon. Reserve your place now — no payment until enrollment opens.",
+    cta: "Book a maintenance visit",
+    sms: "Hi, I want an IOGAI Care Home maintenance visit ($119). My refrigerator brand and city: ",
+    note: "Pay per visit. Repairs are quoted in writing and approved before any work.",
+  },
+  {
+    name: "IOGAI Care Property",
+    price: "$100 / $135",
+    per: "service call per home / per business unit",
+    for: "For property managers, HOAs, landlords and vacation-rental owners across Orange County and Long Beach.",
+    items: [
+      "Priority dispatch for your tenants' calls",
+      "We schedule directly with the tenant and keep you informed",
+      "Photo report and written estimate to the manager before any repair",
+      "One monthly invoice for all your properties",
+      "Turnover appliance check: $119 per unit",
+      "15% off repairs, no sign-up fee",
+    ],
+    cta: "Set up my properties",
+    sms: "Hi, I manage properties and want IOGAI Care Property. Company, number of units and cities: ",
+    note: "No contract term. You approve every repair price before work.",
   },
   {
     name: "IOGAI Care Restaurant",
     price: "from $149",
     per: "per month, per location",
-    for: "Ice machines, walk-in coolers and freezers, reach-ins, prep tables and bar coolers.",
+    for: "For restaurants, bars, cafés and markets: ice machines, walk-in coolers and freezers, reach-ins, prep tables and bar coolers.",
     items: [
       "Full refrigeration service visit every 3 months",
       "Ice machine cleaning and sanitizing every 6 months",
@@ -45,19 +63,23 @@ const plans = [
       "Service log for every unit — ready for your health inspection",
     ],
     cta: "Get a Restaurant quote",
-    note: "Month to month. Cancel with 30 days' written notice, no cancellation fee.",
     sms: "Hi, I want IOGAI Care Restaurant. Restaurant name, city and equipment: ",
+    note: "Month to month. Cancel with 30 days' written notice, no cancellation fee.",
   },
 ];
 
 const faq = [
+  {
+    q: "Who is IOGAI Care for?",
+    a: "Homeowners with built-in and high-end refrigeration, property managers, HOAs, landlords and vacation-rental owners, and restaurants, bars, cafés and markets. One standard for all: price approved before any work.",
+  },
   {
     q: "What is IOGAI Care?",
     a: "A maintenance membership: scheduled service by refrigeration specialists, priority when something fails, and 15% off repairs. It keeps equipment cleaner, running longer and failing less.",
   },
   {
     q: "How much does it cost?",
-    a: "IOGAI Care Restaurant starts at $149 per month per location. IOGAI Care Home will be $189 per year — enrollment opens soon, and you can reserve a place now with no payment.",
+    a: "IOGAI Care Home: $119 per maintenance visit, no annual fee. IOGAI Care Property: no sign-up fee — $100 service call per home, $135 per business unit, turnover checks $119 per unit. IOGAI Care Restaurant: from $149 per month per location. Every repair is quoted in writing and approved before work.",
   },
   {
     q: "What decides the restaurant price?",
@@ -73,7 +95,7 @@ const faq = [
   },
   {
     q: "Does it renew automatically? How do I cancel?",
-    a: "Restaurant plans run month to month: cancel any time with 30 days' written notice by text, email or phone, with no cancellation fee, and we confirm in writing. Home plans renew only if you say yes — we remind you before the year ends.",
+    a: "Home and Property programs have no contract term and nothing renews — you pay per visit. Restaurant plans run month to month: cancel any time with 30 days' written notice by text, email or phone, with no cancellation fee, and we confirm in writing.",
   },
   {
     q: "Will I get records for the health inspector?",
@@ -97,7 +119,7 @@ export default function CarePage() {
     provider: { "@id": "https://iogai.com/#business" },
     areaServed: ["Orange County", "Los Angeles County"],
     offers: [
-      { "@type": "Offer", name: "IOGAI Care Home", price: "189", priceCurrency: "USD", availability: "https://schema.org/PreOrder" },
+      { "@type": "Offer", name: "IOGAI Care Home maintenance visit", price: "119", priceCurrency: "USD" },
       { "@type": "Offer", name: "IOGAI Care Restaurant", price: "149", priceCurrency: "USD" },
     ],
   };
@@ -131,7 +153,7 @@ export default function CarePage() {
           {rating.count} Google reviews.
         </p>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
+        <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {plans.map((p) => (
             <section key={p.name} className="flex flex-col rounded-2xl border border-hairline p-7">
               <h2 className="font-display text-xl font-semibold text-ink">{p.name}</h2>
