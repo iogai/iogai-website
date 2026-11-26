@@ -74,7 +74,7 @@ export const nav = {
 export const hero = {
   eyebrow: "Orange County & Los Angeles County",
   title: ["High-End Appliance", "& Refrigeration Repair"],
-  sub: "Sub-Zero, Viking, Thermador, Wolf and Miele, cared for in your home by refrigeration specialists who respect your kitchen and your time. Walk-ins and ice machines kept running for local businesses.",
+  sub: "Sub-Zero, Viking, Thermador, Wolf and Miele, cared for in your home by refrigeration specialists who respect your kitchen and your time. Walk-ins and ice machines kept running for local businesses. Owner-led: old-world craftsmanship, American standards.",
   ctaPrimary: "Request Service",
   ctaSecondary: "Call (424) 421-7771",
 };

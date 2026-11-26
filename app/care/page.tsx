@@ -97,7 +97,7 @@ export default function CarePage() {
       </header>
 
       <main id="main" className="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20">
-        <Eyebrow>Membership</Eyebrow>
+        <Eyebrow>Clear confidence in tomorrow</Eyebrow>
         <h1 className="display mt-5 text-[clamp(2rem,5vw,3.25rem)] text-ink">IOGAI Care</h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-2">
           Your refrigeration, looked after before it fails. Scheduled service by refrigeration specialists,
