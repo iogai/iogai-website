@@ -242,6 +242,10 @@ export const faq = {
       a: "The service call is $100 for homes and $135 for businesses. It covers a diagnostic visit and is applied toward your approved repair. Repairs are quoted separately for your approval before work begins. Any additional diagnostic or access work requires your approval first. If you decide not to repair, the service call is all you pay.",
     },
     {
+      q: "Do you offer maintenance plans?",
+      a: "Yes, IOGAI Care. Care Home: $119 per maintenance visit for built-in and high-end refrigeration, no annual fee and no prepayment. Care Property: for property managers, HOAs, landlords and vacation rentals, $100 per home or $135 per business service call, $119 turnover check per unit, one monthly invoice. Care Restaurant: scheduled maintenance from $149 per month, month to month. Details at iogai.com/care.",
+    },
+    {
       q: "Is my requested time the technician's arrival time?",
       a: "Choose a 2-hour arrival window, Monday to Friday: 8–10 AM, 10 AM–12 PM, 12–2 PM, 2–4 PM or 4–6 PM. Your technician texts you 30 minutes before arrival, so you don't have to wait by the door. Same-day and next-day visits are often available.",
     },

@@ -8,6 +8,29 @@ import { track, trackContact } from "@/lib/track";
 export function Footer() {
   return (
     <footer className="bg-night text-paper">
+      <div className="border-b border-white/10">
+        <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8">
+          <p className="text-xs uppercase tracking-widest text-accent">IOGAI Care maintenance plans</p>
+          <div className="mt-5 grid gap-4 md:grid-cols-3">
+            {[
+              { name: "Care Home", price: "$119 per maintenance visit", body: "Built-in and high-end refrigeration. No annual fee, no prepayment. Twice-a-year reminders and priority scheduling." },
+              { name: "Care Property", price: "$100 home / $135 business call", body: "Property managers, HOAs, landlords, vacation rentals. Turnover check $119 per unit, one monthly invoice, photo report." },
+              { name: "Care Restaurant", price: "from $149 per month", body: "Walk-ins, reach-ins, ice machines. Scheduled maintenance, month to month, 30-day notice." },
+            ].map((p) => (
+              <Link
+                key={p.name}
+                href="/care"
+                onClick={() => track("care_plan_click", { plan: p.name, from: "footer" })}
+                className="rounded-md border border-white/10 p-5 transition-colors hover:border-accent"
+              >
+                <span className="block text-base font-semibold text-paper">IOGAI {p.name}</span>
+                <span className="mt-1 block text-sm font-medium text-accent">{p.price}</span>
+                <span className="mt-2 block text-sm text-white/65">{p.body}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
       <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
         <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
           {footer.columns.map((col) => (
