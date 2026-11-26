@@ -58,7 +58,7 @@ export const maintenance = {
 
 // Google is the only platform with a verified count right now (Yelp shows 5.0 / 7 reviews,
 // but that count wasn't in the source pasted - left off rather than guessed).
-export const rating = { value: "5.0", count: "136", source: "Google" };
+export const rating = { value: "5.0", count: "137", source: "Google" };
 
 export const nav = {
   links: [
