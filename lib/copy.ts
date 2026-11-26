@@ -324,6 +324,7 @@ export const footer = {
       title: "Quick links",
       links: [
         { label: "Services", href: "/service-areas" },
+        { label: "Repair Problems", href: "/repair" },
         { label: "How it works", href: "/#process" },
         { label: "Reviews", href: "/#testimonials" },
         { label: "FAQ", href: "/#faq" },
