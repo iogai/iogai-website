@@ -7,6 +7,7 @@ import { Guarantees } from "@/components/sections/Guarantees";
 import { Process } from "@/components/sections/Process";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
+import { CommonProblems } from "@/components/sections/CommonProblems";
 import { ClosingBand } from "@/components/sections/ClosingBand";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
@@ -61,6 +62,7 @@ export default function Home() {
         <Guarantees />
         <Process />
         <Testimonials />
+        <CommonProblems />
         <FAQ />
         <ClosingBand />
       </main>

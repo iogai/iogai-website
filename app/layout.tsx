@@ -13,7 +13,7 @@ const businessLd = {
   "@type": "HVACBusiness",
   "@id": "https://iogai.com/#business",
   name: "IOGAI - Appliance & Refrigeration Repair Service",
-  description: "High-end and built-in appliance repair (Sub-Zero, Viking, Thermador, Wolf, Miele) and commercial refrigeration across Huntington Beach, Orange County and Los Angeles County. $100 service call. Online requests 24/7.",
+  description: "High-end and built-in appliance repair (Sub-Zero, Viking, Thermador, Wolf, Miele) and commercial refrigeration across Huntington Beach, Orange County and Los Angeles County. $100 home / $135 commercial service call. Online requests 24/7.",
   telephone: "+14244217771",
   email: "support@iogai.com",
   url: "https://iogai.com",
@@ -34,7 +34,7 @@ const businessLd = {
       closes: "18:00",
     },
   ],
-  priceRange: "$100 service call",
+  priceRange: "$100–$135 service call",
   image: "https://iogai.com/media/real/svc-refrigerator.jpg",
   address: {
     "@type": "PostalAddress",
@@ -117,7 +117,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "IOGAI — High-End & Built-In Appliance Repair | Orange County",
     description:
-      "High-end and built-in appliance repair — Sub-Zero, Viking, Thermador, Wolf, Miele — plus commercial refrigeration. $100 service call. Book online 24/7.",
+      "High-end and built-in appliance repair — Sub-Zero, Viking, Thermador, Wolf, Miele — plus commercial refrigeration. $100 home / $135 commercial service call. Book online 24/7.",
     url: "https://iogai.com",
     siteName: "IOGAI",
     type: "website",

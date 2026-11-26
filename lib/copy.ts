@@ -21,7 +21,7 @@ export const site = {
 
 export const offer = {
   badge: "Clear diagnostic pricing",
-  text: "Service call: $100 for homes and businesses. Applied toward your approved repair. Decline the repair and $100 is all you pay.",
+  text: "Service call: $100 for homes, $135 for businesses. Applied toward your approved repair. Decline the repair and the service call is all you pay.",
   cta: "Call (424) 421-7771",
 };
 
@@ -238,7 +238,7 @@ export const faq = {
     },
     {
       q: "How much is the service call?",
-      a: "The service call is $100 for both homes and businesses. It covers a diagnostic visit and is applied toward your approved repair. Repairs are quoted separately for your approval before work begins. Any additional diagnostic or access work requires your approval first. If you decide not to repair, the $100 service call is all you pay.",
+      a: "The service call is $100 for homes and $135 for businesses. It covers a diagnostic visit and is applied toward your approved repair. Repairs are quoted separately for your approval before work begins. Any additional diagnostic or access work requires your approval first. If you decide not to repair, the service call is all you pay.",
     },
     {
       q: "Is my requested time the technician's arrival time?",

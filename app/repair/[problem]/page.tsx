@@ -24,7 +24,7 @@ export async function generateMetadata({
   if (!p) return {};
   return {
     title: `${p.title}? Repair in Orange County & LA | IOGAI`,
-    description: `${p.summary} $100 service call, price approved before work. Call ${site.phoneDisplay}.`,
+    description: `${p.summary} ${p.kind === "commercial" ? "$135" : "$100"} service call, price approved before work. Call ${site.phoneDisplay}.`,
     alternates: { canonical: `/repair/${p.slug}` },
   };
 }
@@ -74,7 +74,7 @@ export default async function ProblemPage({
           name: "How much does the visit cost?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "The service call is $100 and is applied toward the approved repair. The repair price is agreed in writing before any work begins.",
+            text: `The service call is ${p.kind === "commercial" ? "$135 for businesses" : "$100 for homes"} and is applied toward the approved repair. The repair price is agreed in writing before any work begins.`,
           },
         },
       ],
@@ -132,7 +132,7 @@ export default async function ProblemPage({
           <h2 className="font-display text-xl font-semibold text-ink">How IOGAI fixes it</h2>
           <p className="mt-4 leading-relaxed text-ink-2">
             A refrigeration specialist diagnoses the root cause on site, explains it in plain words and
-            gives you the repair price before any work. $100 service call, applied to the approved repair.
+            gives you the repair price before any work. {p.kind === "commercial" ? "$135" : "$100"} service call, applied to the approved repair.
             30-day labor / 90-day parts warranty. Rated {rating.value} stars across {rating.count} Google
             reviews.
           </p>
