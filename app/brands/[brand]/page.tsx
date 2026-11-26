@@ -29,7 +29,7 @@ export async function generateMetadata({
   const heading = brandHeading(brand);
   return {
     title: `${heading} | IOGAI`,
-    description: `IOGAI repairs ${brand.name} ${brand.blurb} ${brand.kind === "residential" ? "Homes" : "Businesses"} across Orange County and LA. $100 service call. Call ${site.phoneDisplay}.`,
+    description: `IOGAI repairs ${brand.name} ${brand.blurb} ${brand.kind === "residential" ? "Homes" : "Businesses"} across Orange County and LA. ${brand.kind === "residential" ? "$100" : "$135"} service call. Call ${site.phoneDisplay}.`,
     alternates: { canonical: `/brands/${brand.slug}` },
   };
 }
@@ -87,7 +87,7 @@ export default async function BrandPage({
           and a {rating.value}-star average across {rating.count} Google reviews.
         </p>
         <p className="mt-4 leading-relaxed text-ink-2">
-          $100 service call, applied to the approved repair. Written estimate before any work. 30-day
+          {brand.kind === "residential" ? "$100" : "$135"} service call, applied to the approved repair. Written estimate before any work. 30-day
           labor / 90-day parts warranty.
         </p>
         <p className="mt-4 text-xs leading-relaxed text-ink-3">

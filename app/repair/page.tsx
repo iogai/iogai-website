@@ -35,7 +35,7 @@ export default function RepairIndex() {
         <h1 className="display mt-5 text-[clamp(2rem,5vw,3.25rem)] text-ink">What is wrong with your equipment?</h1>
         <p className="mt-6 text-lg leading-relaxed text-ink-2">
           Pick the problem to see the usual causes, what you can safely check yourself, and how we fix it.
-          $100 service call, price approved before any work.
+          Service call $100 for homes, $135 for businesses, price approved before any work.
         </p>
         {groups.map((g) => (
           <section key={g.title} className="mt-12">
