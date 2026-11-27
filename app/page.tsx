@@ -11,6 +11,7 @@ import { CommonProblems } from "@/components/sections/CommonProblems";
 import { ClosingBand } from "@/components/sections/ClosingBand";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
+import { Presence } from "@/components/sections/Presence";
 import { MobileCTA } from "@/components/MobileCTA";
 import { faq } from "@/lib/copy";
 
@@ -64,6 +65,7 @@ export default function Home() {
         <Testimonials />
         <CommonProblems />
         <FAQ />
+        <Presence />
         <ClosingBand />
       </main>
       <Footer />

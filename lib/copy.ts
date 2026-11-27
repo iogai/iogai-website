@@ -198,9 +198,8 @@ export const testimonials = {
       quote: "Igor's company very good work, good price & great customer service!",
       name: "Google review",
       role: "Verified customer",
-      // No reviewer photo exists for this one, so this shows real IOGAI work
-      // instead of a stock face standing in for a customer we've never seen.
-      image: "/media/real/about-1.jpg",
+      // Real owner photo (the old image was a stock photo).
+      image: "/media/real/igor-ogai-founder.jpg",
     },
     {
       quote: "He was extremely prompt, reliable, and kind. He was able to solve the issue and made sure everything was functioning properly.",
