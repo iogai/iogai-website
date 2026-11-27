@@ -29,6 +29,9 @@ const nextConfig: NextConfig = {
       { source: "/privacy-policy", destination: "/privacy", permanent: true },
       { source: "/terms-and-conditions", destination: "/terms", permanent: true },
       { source: "/hvac-repair-case", destination: "/", permanent: true },
+      // Google Ads final URL (Commercial Refrigeration ad) pointed here and 404'd.
+      { source: "/commercial/ice-machines", destination: "/service-areas/commercial-refrigeration/huntington-beach", permanent: true },
+      { source: "/commercial/:path*", destination: "/service-areas/commercial-refrigeration/huntington-beach", permanent: true },
       // Walk-in systems and HVAC need a CSLB contractor license (C-38 / C-20).
       // Until IOGAI holds one, those pages point to the plug-in equipment pages.
       { source: "/service-areas/hvac-repair/:city", destination: "/service-areas/refrigerator-freezer-repair/:city", permanent: false },
