@@ -203,7 +203,7 @@ export const testimonials = {
       image: "/media/real/about-1.jpg",
     },
     {
-      quote: "Saturday service - quick response time - AWESOME knowledgable workers.",
+      quote: "He was extremely prompt, reliable, and kind. He was able to solve the issue and made sure everything was functioning properly.",
       name: "Google review",
       role: "Verified customer",
       image: "/media/real/svc-refrigerator.jpg",
