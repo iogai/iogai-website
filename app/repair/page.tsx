@@ -9,7 +9,7 @@ import { problems } from "@/lib/problems";
 
 export const metadata: Metadata = {
   title: "Refrigeration & Appliance Problems We Fix | IOGAI",
-  description: `Ice machine not making ice, walk-in not cooling, refrigerator warm or leaking, oven not heating — causes, safe checks and fast repair across Orange County and LA. Call ${site.phoneDisplay}.`,
+  description: `Ice machine not making ice, reach-in not cooling, refrigerator warm or leaking, oven not heating — causes, safe checks and fast repair across Orange County and LA. Call ${site.phoneDisplay}.`,
   alternates: { canonical: "/repair" },
 };
 

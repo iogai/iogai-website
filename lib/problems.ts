@@ -50,56 +50,6 @@ export const problems: Problem[] = [
     service: "commercial-refrigeration",
   },
   {
-    slug: "walk-in-cooler-not-cooling",
-    title: "Walk-In Cooler Not Cooling",
-    kind: "commercial",
-    summary: "Walk-in cooler warm or above 41°F? Fast diagnosis to protect your inventory and health inspection.",
-    intro:
-      "A walk-in above 41°F puts your product and your health inspection at risk. The cause is usually airflow, ice on the evaporator, or a component that has quietly failed — we find it, explain it, and give you the price before any repair.",
-    causes: [
-      "Evaporator coil iced over from a defrost problem or a door left open",
-      "Dirty condenser coil on the roof or outside unit",
-      "Failed evaporator or condenser fan motor",
-      "Worn door gaskets, strip curtains or a door that does not close",
-      "Bad thermostat, temperature control or contactor",
-      "Low refrigerant from a leak, or a compressor that is not starting",
-    ],
-    checks: [
-      "Check that the door closes and seals fully, and the strip curtain is in place",
-      "Look inside the evaporator (the fan unit on the ceiling): are the fans turning, is the coil covered in ice?",
-      "Make sure boxes are not stacked against the evaporator and blocking airflow",
-      "Check the breaker for the condensing unit",
-    ],
-    urgent:
-      "If product is above 41°F for more than a few hours, move it to another cooler and call right away.",
-    brands: ["true", "traulsen", "beverage-air", "atosa"],
-    service: "commercial-refrigeration",
-  },
-  {
-    slug: "walk-in-freezer-not-freezing",
-    title: "Walk-In Freezer Not Freezing",
-    kind: "commercial",
-    summary: "Walk-in freezer warming up or icing over? Defrost, fan and refrigeration repair in OC and LA.",
-    intro:
-      "Walk-in freezers fail differently from coolers: defrost heaters, drain-line heaters and timers are the usual suspects, and a small problem turns into a block of ice on the coil within a day.",
-    causes: [
-      "Failed defrost heater, defrost timer or termination switch",
-      "Frozen drain line, so defrost water refreezes on the coil",
-      "Evaporator fan motor failure",
-      "Door heater or gasket failure letting warm, humid air in",
-      "Dirty condenser, low refrigerant or compressor problem",
-    ],
-    checks: [
-      "Look for heavy ice on the evaporator coil or ice on the floor under it",
-      "Check that the door closes completely and the frame is not frosted",
-      "Listen for the evaporator fans — silence often means a defrost cycle or a failed motor",
-    ],
-    urgent:
-      "If the box reads above 0°F and rising, keep the door closed, move product if you can, and call.",
-    brands: ["true", "traulsen", "beverage-air", "atosa"],
-    service: "commercial-refrigeration",
-  },
-  {
     slug: "reach-in-refrigerator-not-cooling",
     title: "Commercial Reach-In Refrigerator Not Cooling",
     kind: "commercial",

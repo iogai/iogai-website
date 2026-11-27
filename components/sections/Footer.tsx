@@ -15,7 +15,7 @@ export function Footer() {
             {[
               { name: "Care Home", price: "$119 per maintenance visit", body: "Built-in and high-end refrigeration. No annual fee, no prepayment. Twice-a-year reminders and priority scheduling." },
               { name: "Care Property", price: "$100 home / $135 business call", body: "Property managers, HOAs, landlords, vacation rentals. Turnover check $119 per unit, one monthly invoice, photo report." },
-              { name: "Care Restaurant", price: "from $149 per month", body: "Walk-ins, reach-ins, ice machines. Scheduled maintenance, month to month, 30-day notice." },
+              { name: "Care Restaurant", price: "from $149 per month", body: "Ice machines, reach-ins, prep tables. Scheduled maintenance, month to month, 30-day notice." },
             ].map((p) => (
               <Link
                 key={p.name}

@@ -34,7 +34,7 @@ const personLd = {
   founder: { "@id": "https://iogai.com/#business" },
   knowsAbout: [
     "Commercial refrigeration",
-    "Walk-in coolers and freezers",
+    "Ice machines",
     "Refrigerator repair",
     "Sealed system repair",
     "EPA 608 refrigerant handling",
@@ -114,7 +114,7 @@ const bigJobs = [
 
 const circles = [
   { t: "Estates & private homes", d: "Built-in and high-end refrigeration, wine storage, ice makers along the Orange County coast: Newport Beach, Laguna Beach, Huntington Beach. Discreet, on time, clean." },
-  { t: "Restaurant groups", d: "Scheduled maintenance for walk-ins, reach-ins and ice machines, before Friday night, not after." },
+  { t: "Restaurant groups", d: "Scheduled maintenance for ice machines, reach-ins and prep tables, before Friday night, not after." },
   { t: "Property portfolios", d: "One accountable partner for every unit. Clear reports, fixed standards, a direct line to the founder." },
 ];
 

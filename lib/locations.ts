@@ -89,19 +89,19 @@ export const locations: Location[] = [
 const FOCUS: Record<string, { home: string; commercial: string }> = {
   "huntington-beach": {
     home: "Huntington Beach is our home base — the shop is on Frankfort Ave, a few minutes from most neighborhoods, from Huntington Harbour to the homes off Goldenwest and Brookhurst. Salt air this close to the ocean is hard on condenser coils and electrical connections, so we check both on every refrigerator call.",
-    commercial: "From Main Street and Pacific City to the plazas along Beach Blvd and Brookhurst, Huntington Beach kitchens run hard all summer. Our shop is on Frankfort Ave, so walk-ins, ice machines and reach-ins in town get some of our shortest drive times.",
+    commercial: "From Main Street and Pacific City to the plazas along Beach Blvd and Brookhurst, Huntington Beach kitchens run hard all summer. Our shop is on Frankfort Ave, so ice machines, reach-ins and home refrigerators in town get some of our shortest drive times.",
   },
   "newport-beach": {
     home: "Newport Coast, Corona del Mar, Balboa Island and Dover Shores homes are full of built-in Sub-Zero, Thermador, Wolf and Miele kitchens — exactly the equipment we focus on. Marine air speeds up coil and connector corrosion, which is behind many of the 'fridge is warm' calls we get near the water.",
-    commercial: "Restaurants and bars from Lido Marina Village and the Balboa Peninsula to Fashion Island and Westcliff depend on ice machines and walk-ins that can't go down on a weekend. We service Newport Beach from our Huntington Beach shop, one city over.",
+    commercial: "Restaurants and bars from Lido Marina Village and the Balboa Peninsula to Fashion Island and Westcliff depend on ice machines and reach-ins that can't go down on a weekend. We service Newport Beach from our Huntington Beach shop, one city over.",
   },
   "costa-mesa": {
     home: "Costa Mesa sits right next to our Huntington Beach shop. Mesa Verde, Eastside and College Park homes often have older refrigerators worth repairing instead of replacing — we tell you honestly which side of that line yours is on.",
-    commercial: "The South Coast Plaza area, The LAB and the 17th Street and Harbor Blvd corridors are packed with kitchens and bars. We keep their ice machines, prep tables and walk-ins running, minutes from our Huntington Beach base.",
+    commercial: "The South Coast Plaza area, The LAB and the 17th Street and Harbor Blvd corridors are packed with kitchens and bars. We keep their ice machines, prep tables and reach-ins running, minutes from our Huntington Beach base.",
   },
   "fountain-valley": {
     home: "Fountain Valley borders Huntington Beach, so it's one of the quickest areas for us to reach. We repair refrigerators, freezers and built-in appliances in homes across the city, with a written estimate before any work starts.",
-    commercial: "Restaurants, cafés and markets along Brookhurst, Magnolia and Warner are close to our Huntington Beach shop, which helps when an ice machine or walk-in cooler goes down mid-shift.",
+    commercial: "Restaurants, cafés and markets along Brookhurst, Magnolia and Warner are close to our Huntington Beach shop, which helps when an ice machine or reach-in cooler goes down mid-shift.",
   },
   "seal-beach": {
     home: "Seal Beach homes near the water deal with the same salt air that wears down condenser coils and fan motors. We service refrigerators, freezers and high-end built-ins across town, from Old Town to College Park East.",
@@ -109,7 +109,7 @@ const FOCUS: Record<string, { home: string; commercial: string }> = {
   },
   "laguna-beach": {
     home: "Laguna Beach hillside and oceanfront homes often have premium built-in refrigeration and wine storage. Salt air and limited access make careful work important — we confirm parts and the visit window before we come out.",
-    commercial: "Restaurants and galleries along Coast Highway and Forest Ave rely on bar coolers, ice machines and walk-ins through the busy season. We plan visits around service hours where we can.",
+    commercial: "Restaurants and galleries along Coast Highway and Forest Ave rely on bar coolers, ice machines and reach-ins through the busy season. We plan visits around service hours where we can.",
   },
   irvine: {
     home: "Many Irvine homes, from Turtle Rock and Shady Canyon to the newer villages, came with built-in appliance packages from Sub-Zero, Thermador, Monogram and Miele. We repair those brands and explain repair-vs-replace honestly.",
@@ -117,31 +117,31 @@ const FOCUS: Record<string, { home: string; commercial: string }> = {
   },
   "dana-point": {
     home: "Monarch Beach, Capistrano Beach and the homes above the harbor see constant ocean air. We repair refrigerators, wine coolers and built-in appliances, and check for corrosion that shortens equipment life on the coast.",
-    commercial: "Dana Point Harbor restaurants and the hospitality kitchens along PCH need ice and cold storage every day. We service commercial refrigeration across south Orange County by appointment.",
+    commercial: "Dana Point Harbor restaurants and the hospitality kitchens along PCH need ice and cold product every day. We service commercial refrigeration across south Orange County by appointment.",
   },
   "long-beach": {
     home: "From Naples and Belmont Shore to Bixby Knolls and Los Altos, Long Beach has a mix of classic homes and remodeled kitchens with high-end built-ins. We service refrigerators, freezers and premium appliances across the city.",
-    commercial: "2nd Street in Belmont Shore, Pine Ave downtown and the Bixby Knolls corridor are full of restaurants and bars. We keep their walk-ins, ice machines and bar coolers running, with clear pricing before work starts.",
+    commercial: "2nd Street in Belmont Shore, Pine Ave downtown and the Bixby Knolls corridor are full of restaurants and bars. We keep their reach-ins, ice machines and bar coolers running, with clear pricing before work starts.",
   },
   westminster: {
     home: "Westminster borders Huntington Beach, making it one of our fastest service areas. We repair home refrigerators, freezers and built-in appliances with a written estimate first.",
-    commercial: "Little Saigon along Bolsa Ave and Brookhurst is one of the densest restaurant and market districts in Orange County — and walk-ins, display cases and ice machines there work hard every day. We're right next door in Huntington Beach.",
+    commercial: "Little Saigon along Bolsa Ave and Brookhurst is one of the densest restaurant and market districts in Orange County — and reach-ins, display cases and ice machines there work hard every day. We're right next door in Huntington Beach.",
   },
   "garden-grove": {
     home: "We repair refrigerators, freezers and built-in appliances across Garden Grove, a short drive from our Huntington Beach shop, with the price explained before any work begins.",
-    commercial: "Garden Grove Blvd's restaurant row, the Brookhurst corridor and the hotel kitchens near Harbor Blvd all rely on dependable cold storage and ice. We service walk-ins, reach-ins and ice machines across the city.",
+    commercial: "Garden Grove Blvd's restaurant row, the Brookhurst corridor and the hotel kitchens near Harbor Blvd all rely on dependable refrigeration and ice. We service reach-ins, prep tables and ice machines across the city.",
   },
   "manhattan-beach": {
     home: "From the Sand Section and the Tree Section to the Hill Section, Manhattan Beach homes often have built-in Sub-Zero, Thermador and Wolf kitchens. Ocean air is hard on condenser coils and connections, so we check both on every refrigeration call.",
-    commercial: "Restaurants and bars along Manhattan Beach Blvd, Highland Ave and Manhattan Village rely on ice machines and walk-ins through every busy weekend. We service them by appointment, with the price confirmed before work starts.",
+    commercial: "Restaurants and bars along Manhattan Beach Blvd, Highland Ave and Manhattan Village rely on ice machines and bar coolers through every busy weekend. We service them by appointment, with the price confirmed before work starts.",
   },
   "hermosa-beach": {
     home: "Hermosa Beach homes near the Strand and up the hill toward PCH live with salt air every day — one of the main reasons refrigerators and built-ins near the water lose cooling. We repair them with a written estimate first.",
-    commercial: "Pier Plaza, Hermosa Ave and the PCH corridor are full of bars and kitchens that can't run out of ice on a Friday night. We keep their ice machines, bar coolers and walk-ins running.",
+    commercial: "Pier Plaza, Hermosa Ave and the PCH corridor are full of bars and kitchens that can't run out of ice on a Friday night. We keep their ice machines, bar coolers and reach-ins running.",
   },
   "redondo-beach": {
     home: "From the Hollywood Riviera to North Redondo, many homes have remodeled kitchens with premium built-in refrigeration. We repair refrigerators, freezers and wine coolers and tell you honestly when repair is worth it.",
-    commercial: "Riviera Village, the Redondo Pier and King Harbor restaurants depend on cold storage and ice every day. We service walk-ins, reach-ins and ice machines across Redondo Beach by appointment.",
+    commercial: "Riviera Village, the Redondo Pier and King Harbor restaurants depend on refrigeration and ice every day. We service reach-ins, bar coolers and ice machines across Redondo Beach by appointment.",
   },
   torrance: {
     home: "Torrance has everything from Walteria and Riviera homes to newer kitchens around Del Amo. We repair refrigerators, freezers and premium built-ins with the price explained before any work begins.",
@@ -149,23 +149,23 @@ const FOCUS: Record<string, { home: string; commercial: string }> = {
   },
   "san-clemente": {
     home: "From the Pier Bowl and Avenida Del Mar to Talega and Forster Ranch, San Clemente homes near the coast see faster coil corrosion. We repair refrigerators, freezers and built-in appliances with a written estimate first.",
-    commercial: "Avenida Del Mar, the Pier and the restaurants along El Camino Real rely on ice and cold storage every day. We service commercial refrigeration across south Orange County by appointment.",
+    commercial: "Avenida Del Mar, the Pier and the restaurants along El Camino Real rely on ice and refrigeration every day. We service commercial refrigeration across south Orange County by appointment.",
   },
   "laguna-niguel": {
     home: "Laguna Niguel homes from Bear Brand to the neighborhoods off Crown Valley Parkway often have high-end built-in kitchens. We repair Sub-Zero, Thermador, Wolf and Miele refrigeration with honest repair-vs-replace advice.",
-    commercial: "Restaurants and shopping-center kitchens along Crown Valley Parkway and Alicia Parkway need dependable walk-ins and ice. We service commercial refrigeration in Laguna Niguel by appointment.",
+    commercial: "Restaurants and shopping-center kitchens along Crown Valley Parkway and Alicia Parkway need dependable reach-ins and ice. We service commercial refrigeration in Laguna Niguel by appointment.",
   },
   "mission-viejo": {
     home: "Mission Viejo homes around the lake and across the hills have many family kitchens with refrigerators worth repairing. We tell you honestly whether repair or replacement makes sense, before any work.",
-    commercial: "The Shops at Mission Viejo, Kaleidoscope and the restaurant pads along Marguerite and Crown Valley Parkways run busy kitchens. We keep their walk-ins, reach-ins and ice machines working.",
+    commercial: "The Shops at Mission Viejo, Kaleidoscope and the restaurant pads along Marguerite and Crown Valley Parkways run busy kitchens. We keep their reach-ins, prep tables and ice machines working.",
   },
   tustin: {
     home: "From Tustin Ranch and Lower Peters Canyon to Old Town Tustin, homes range from classic to newly remodeled with premium built-ins. We repair refrigerators, freezers and built-in appliances with clear pricing first.",
-    commercial: "Old Town Tustin, The District at Tustin Legacy and the Tustin Marketplace area are full of restaurants that depend on cold storage and ice. We service their commercial refrigeration by appointment.",
+    commercial: "Old Town Tustin, The District at Tustin Legacy and the Tustin Marketplace area are full of restaurants that depend on refrigeration and ice. We service their commercial refrigeration by appointment.",
   },
   "yorba-linda": {
     home: "Yorba Linda's larger homes, from East Lake Village to the hills off Yorba Linda Blvd, often have built-in and high-end refrigeration. We repair them with a written estimate and honest advice.",
-    commercial: "Restaurants and markets along Yorba Linda Blvd and the Savi Ranch area need reliable walk-ins, reach-ins and ice machines. We service commercial refrigeration across north Orange County.",
+    commercial: "Restaurants and markets along Yorba Linda Blvd and the Savi Ranch area need reliable reach-ins, prep tables and ice machines. We service commercial refrigeration across north Orange County.",
   },
   "villa-park": {
     home: "Villa Park's large custom homes are full of built-in Sub-Zero, Thermador and Wolf kitchens — exactly the equipment we focus on. We repair them carefully, with the price agreed before any work.",
@@ -173,7 +173,7 @@ const FOCUS: Record<string, { home: string; commercial: string }> = {
   },
   anaheim: {
     home: "From Anaheim Hills to the neighborhoods near Brookhurst, Anaheim homes run everything from builder-grade refrigerators to full built-in kitchens. We diagnose on site and give the price before any repair.",
-    commercial: "Hotels, restaurants and food halls around the Anaheim Resort district and the Packing District run ice machines and walk-ins around the clock. We keep them running with by-appointment service and clear pricing.",
+    commercial: "Hotels, restaurants and food halls around the Anaheim Resort district and the Packing District run ice machines and reach-ins around the clock. We keep them running with by-appointment service and clear pricing.",
   },
   fullerton: {
     home: "Sunny Hills, Raymond Hills and the older homes near downtown Fullerton often have built-in refrigerators that are worth repairing, not replacing. We tell you honestly which is which.",
@@ -181,7 +181,7 @@ const FOCUS: Record<string, { home: string; commercial: string }> = {
   },
   orange: {
     home: "Historic homes in Old Towne Orange and the larger properties in Orange Park Acres need careful work around finished cabinetry. We repair built-in refrigerators, freezers and ovens in place.",
-    commercial: "Restaurants around the Old Towne Plaza and along Chapman Ave and Tustin St rely on reach-ins and walk-ins. We find the root cause instead of just resetting the unit.",
+    commercial: "Restaurants around the Old Towne Plaza and along Chapman Ave and Tustin St rely on reach-ins and prep tables. We find the root cause instead of just resetting the unit.",
   },
   cypress: {
     home: "Cypress homes near the 605 and Valley View are a short drive from our base. We repair refrigerators, freezers, ice makers and ovens, with the price agreed before work.",
@@ -197,7 +197,7 @@ const FOCUS: Record<string, { home: string; commercial: string }> = {
   },
   "san-juan-capistrano": {
     home: "Equestrian estates and homes near the Mission often have large built-in kitchens and outdoor refrigeration. We repair them with care for the finished spaces around them.",
-    commercial: "Restaurants around Los Rios and downtown near the Mission rely on walk-ins and ice machines through busy weekends. We service them with the price confirmed before work.",
+    commercial: "Restaurants around Los Rios and downtown near the Mission rely on reach-ins and ice machines through busy weekends. We service them with the price confirmed before work.",
   },
   "los-alamitos": {
     home: "Los Alamitos and nearby Rossmoor homes are close to our Huntington Beach base, so we reach them quickly. Built-in and freestanding refrigerators, freezers and ovens repaired.",
@@ -205,7 +205,7 @@ const FOCUS: Record<string, { home: string; commercial: string }> = {
   },
   "signal-hill": {
     home: "Hilltop homes in Signal Hill often have built-in kitchens with views to match. We repair refrigerators, wine coolers and ovens in place, with the price agreed first.",
-    commercial: "Restaurants at the Signal Hill Town Center and the warehouses below the hill depend on walk-ins and reach-ins. Fast diagnosis, clear pricing.",
+    commercial: "Restaurants at the Signal Hill Town Center and the warehouses below the hill depend on reach-ins and display coolers. Fast diagnosis, clear pricing.",
   },
   lakewood: {
     home: "Lakewood's ranch-style homes have refrigerators and freezers that families depend on every day. We repair warm fridges, frost and ice makers at a fair, approved price.",

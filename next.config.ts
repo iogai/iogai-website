@@ -29,6 +29,11 @@ const nextConfig: NextConfig = {
       { source: "/privacy-policy", destination: "/privacy", permanent: true },
       { source: "/terms-and-conditions", destination: "/terms", permanent: true },
       { source: "/hvac-repair-case", destination: "/", permanent: true },
+      // Walk-in systems and HVAC need a CSLB contractor license (C-38 / C-20).
+      // Until IOGAI holds one, those pages point to the plug-in equipment pages.
+      { source: "/service-areas/hvac-repair/:city", destination: "/service-areas/refrigerator-freezer-repair/:city", permanent: false },
+      { source: "/repair/walk-in-cooler-not-cooling", destination: "/repair/reach-in-refrigerator-not-cooling", permanent: false },
+      { source: "/repair/walk-in-freezer-not-freezing", destination: "/repair/reach-in-refrigerator-not-cooling", permanent: false },
       {
         source: "/refrigerator-service",
         destination: "/service-areas/refrigerator-freezer-repair/huntington-beach",
@@ -56,7 +61,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/hvac-repair-service",
-        destination: "/service-areas/hvac-repair/huntington-beach",
+        destination: "/service-areas/refrigerator-freezer-repair/huntington-beach",
         permanent: true,
       },
       {

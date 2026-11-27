@@ -26,22 +26,16 @@ export const walkthrough = {
       body: services.items[0].body,
     },
     {
-      image: "/media/real/walkthrough/04-commercial.png",
+      image: "/media/real/svc-commercial.jpg",
       eyebrow: "02",
       title: services.items[1].name,
       body: services.items[1].body,
     },
     {
-      image: "/media/real/walkthrough/05-hvac.png",
+      image: "/media/real/svc-refrigerator.jpg",
       eyebrow: "03",
       title: services.items[2].name,
       body: services.items[2].body,
-    },
-    {
-      image: "/media/real/walkthrough/06-specialty.png",
-      eyebrow: "04",
-      title: services.items[3].name,
-      body: services.items[3].body,
     },
   ],
 };

@@ -53,7 +53,7 @@ const plans = [
     name: "IOGAI Care Restaurant",
     price: "from $149",
     per: "per month, per location",
-    for: "For restaurants, bars, cafés and markets: ice machines, walk-in coolers and freezers, reach-ins, prep tables and bar coolers.",
+    for: "For restaurants, bars, cafés and markets: ice machines, reach-in refrigerators and freezers, prep tables and bar coolers.",
     items: [
       "Full refrigeration service visit every 3 months",
       "Ice machine cleaning and sanitizing every 6 months",
@@ -103,7 +103,7 @@ const faq = [
   },
   {
     q: "Which equipment and brands?",
-    a: "Built-in and high-end refrigerators, freezers and wine storage (Sub-Zero, Thermador, Viking, Miele, Monogram), and commercial ice machines, walk-ins, reach-ins, prep tables and bar coolers (Hoshizaki, Manitowoc, Scotsman, True, Traulsen and more). IOGAI is independent and not affiliated with any manufacturer.",
+    a: "Built-in and high-end refrigerators, freezers and wine storage (Sub-Zero, Thermador, Viking, Miele, Monogram), and commercial ice machines, reach-ins, prep tables and bar coolers (Hoshizaki, Manitowoc, Scotsman, True, Traulsen and more). IOGAI is independent and not affiliated with any manufacturer.",
   },
   {
     q: "Where do you serve?",

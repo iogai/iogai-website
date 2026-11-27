@@ -113,7 +113,7 @@ export const guarantees = {
 // Google Business Profile lists IOGAI's category as general Appliance
 // Repair Service (washers, dryers, ovens, dishwashers) alongside
 // refrigeration - confirmed real by the owner 5 Sept 2026, added here
-// without touching the refrigeration/HVAC/marine/mortuary specialist
+// without touching the refrigeration specialist
 // positioning the rest of the site is built around.
 export const brands = {
   label: "What we service",
@@ -122,11 +122,10 @@ export const brands = {
     "Refrigerators",
     "Built-In & High-End Appliances",
     "Commercial Refrigeration",
-    "Walk-In Coolers",
+    "Reach-In Coolers",
     "Freezers",
     "Ice Makers",
     "Restaurant Equipment",
-    "HVAC Systems",
     "Washers & Dryers",
     "Ovens & Stoves",
     "Dishwashers",
@@ -137,7 +136,7 @@ export const services = {
   label: "Our services",
   title: "Repair & Maintenance Services",
   intro:
-    "From a warm fridge to a down walk-in cooler, we handle it. Explore the repair and maintenance services IOGAI offers across Orange County and LA.",
+    "From a warm Sub-Zero to an ice machine that stopped mid-shift, we handle it. Explore the repair and maintenance services IOGAI offers across Orange County and LA.",
   items: [
     {
       no: "01",
@@ -152,8 +151,8 @@ export const services = {
       slug: "commercial-refrigeration",
       name: "Commercial Refrigeration & Restaurant Equipment",
       titleName: "Commercial Refrigeration",
-      body: "Ice machines (Hoshizaki, Manitowoc, Scotsman), walk-in coolers and freezers, reach-ins, prep tables and bar coolers — kept running for restaurants, bars and markets that can't afford downtime.",
-      image: "/media/real/svc-walkin.jpg",
+      body: "Ice machines (Hoshizaki, Manitowoc, Scotsman), reach-in refrigerators and freezers, prep tables, bar coolers and display cases — kept running for restaurants, bars and markets that can't afford downtime.",
+      image: "/media/real/svc-commercial.jpg",
     },
     {
       no: "03",
@@ -165,14 +164,6 @@ export const services = {
       titleName: "Refrigerator Repair",
       body: "Residential and commercial refrigerators and freezers, diagnosed on site, with repair options and pricing explained before work begins.",
       image: "/media/real/svc-refrigerator.jpg",
-    },
-    {
-      no: "04",
-      slug: "hvac-repair",
-      name: "HVAC Repair",
-      titleName: "HVAC Repair",
-      body: "Heating and air conditioning repair for homes and small businesses, done right the first time.",
-      image: "/media/real/svc-hvac.jpg",
     },
   ],
 };
@@ -213,7 +204,7 @@ export const testimonials = {
       quote: "Saturday service - quick response time - AWESOME knowledgable workers.",
       name: "Google review",
       role: "Verified customer",
-      image: "/media/real/svc-freezer.jpg",
+      image: "/media/real/svc-refrigerator.jpg",
     },
     {
       quote: "He quickly diagnosed the issue, and had it fixed asap same day!",
@@ -234,7 +225,7 @@ export const faq = {
   items: [
     {
       q: "What types of equipment do you repair?",
-      a: "We specialize in ice machines (Hoshizaki, Manitowoc, Scotsman), walk-in coolers and freezers, commercial and home refrigerators, high-end built-ins like Sub-Zero, and HVAC.",
+      a: "We specialize in ice machines (Hoshizaki, Manitowoc, Scotsman), reach-in refrigerators and freezers, prep tables and bar coolers, home refrigerators and freezers, and high-end built-ins like Sub-Zero, Viking and Thermador.",
     },
     {
       q: "Do you offer emergency repair services?",
@@ -280,9 +271,8 @@ export const contact = {
     heading: "What do you need help with?",
     options: [
       { id: "repair", label: "Appliance Repair", note: "Built-in & high-end appliances, refrigerators, ovens, dishwashers, washers & dryers." },
-      { id: "commercial", label: "Commercial", note: "Walk-in cooler, ice maker, or restaurant equipment" },
-      { id: "hvac", label: "HVAC", note: "Heating or air conditioning issue" },
-      { id: "specialty", label: "Marine / Mortuary", note: "Specialty refrigeration" },
+      { id: "commercial", label: "Commercial", note: "Ice machine, reach-in, prep table or bar cooler" },
+      { id: "other", label: "Something else", note: "Tell us the equipment and we will confirm" },
     ],
   },
   detailStep: {

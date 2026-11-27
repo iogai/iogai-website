@@ -10,7 +10,7 @@ import { services, rating } from "@/lib/copy";
 // and a clean, factual entity for AI answer engines to cite.
 const businessLd = {
   "@context": "https://schema.org",
-  "@type": "HVACBusiness",
+  "@type": "LocalBusiness",
   "@id": "https://iogai.com/#business",
   name: "IOGAI - Appliance & Refrigeration Repair Service",
   description: "High-end and built-in appliance repair (Sub-Zero, Viking, Thermador, Wolf, Miele) and commercial refrigeration across Huntington Beach, Orange County and Los Angeles County. $100 home / $135 commercial service call. Online requests 24/7.",
@@ -104,12 +104,12 @@ export const metadata: Metadata = {
     "built-in refrigerator repair",
     "refrigerator repair Huntington Beach",
     "commercial refrigeration repair",
-    "walk-in cooler repair",
+    "reach-in refrigerator repair",
     "ice maker repair",
     "ice machine repair Orange County",
     "Hoshizaki ice machine repair",
     "Manitowoc ice machine repair",
-    "walk-in freezer repair",
+    "home appliance repair Orange County",
     "appliance repair Huntington Beach",
   ],
   alternates: { canonical: "/" },
