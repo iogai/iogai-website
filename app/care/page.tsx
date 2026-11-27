@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
+import { UrgentRepair } from "@/components/UrgentRepair";
 import { Footer } from "@/components/sections/Footer";
 import { CTA } from "@/components/ui/CTA";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -19,7 +20,7 @@ const plans = [
     name: "IOGAI Care Home",
     price: "$119",
     per: "per maintenance visit",
-    for: "For homeowners with Sub-Zero, Thermador, Viking, Miele, Monogram and other built-in refrigerators, freezers and wine storage.",
+    for: "For homeowners with built-in and high-end refrigerators, freezers and wine storage.",
     items: [
       "Condenser cleaning and a full performance check",
       "Door seals, fans, ice maker and temperatures checked",
@@ -29,7 +30,7 @@ const plans = [
       "No annual fee, no prepayment",
     ],
     cta: "Book a maintenance visit",
-    sms: "Hi, I want an IOGAI Care Home maintenance visit ($119). My refrigerator brand and city: ",
+    sms: "Hi, I want an IOGAI Care Home maintenance visit ($119). My refrigerator type and city: ",
     note: "Pay per visit. Repairs are quoted in writing and approved before any work.",
   },
   {
@@ -102,8 +103,8 @@ const faq = [
     a: "Yes. Restaurant members get a service log for every unit after each visit, ready to show an inspector.",
   },
   {
-    q: "Which equipment and brands?",
-    a: "Built-in and high-end refrigerators, freezers and wine storage (Sub-Zero, Thermador, Viking, Miele, Monogram), and commercial ice machines, reach-ins, prep tables and bar coolers (Hoshizaki, Manitowoc, Scotsman, True, Traulsen and more). IOGAI is independent and not affiliated with any manufacturer.",
+    q: "Which equipment?",
+    a: "Built-in and high-end refrigerators, freezers and wine storage at home, and commercial ice machines, reach-ins, prep tables and bar coolers. Manufacturers recommend regular service, the health department checks it — we take care of it.",
   },
   {
     q: "Where do you serve?",
@@ -144,7 +145,9 @@ export default function CarePage() {
         </div>
       </header>
 
-      <main id="main" className="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20">
+      <main id="main" className="mx-auto max-w-5xl px-5 py-10 sm:px-8 sm:py-14">
+        <UrgentRepair />
+        <div className="mt-16" />
         <Eyebrow>Clear confidence in tomorrow</Eyebrow>
         <h1 className="display mt-5 text-[clamp(2rem,5vw,3.25rem)] text-ink">IOGAI Care</h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-2">
