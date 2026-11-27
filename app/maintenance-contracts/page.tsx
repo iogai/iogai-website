@@ -7,9 +7,9 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { site, maintenance } from "@/lib/copy";
 
 export const metadata: Metadata = {
-  title: "Restaurant Refrigeration Maintenance Contracts | IOGAI",
+  title: "Refrigeration Maintenance Contracts for Restaurant Groups | IOGAI",
   description:
-    "Quarterly refrigeration maintenance contracts for restaurant chains and independent restaurants in Orange County and LA. Scheduled service, no surprise downtime.",
+    "One maintenance contract for restaurant groups with 5+ locations in Orange County and LA: one schedule, one contact, one invoice. Single locations: IOGAI Care Restaurant from $149/month.",
   alternates: { canonical: "/maintenance-contracts" },
 };
 
@@ -21,7 +21,7 @@ const serviceLd = {
     "Quarterly refrigeration and freezer maintenance, twice-yearly ice maker service, annual filter replacement, condenser coil cleaning, drain system service, and electrical diagnostics for restaurant chains and independent restaurants.",
   provider: { "@id": "https://iogai.com/#business" },
   areaServed: ["Huntington Beach", "Orange County", "Los Angeles"],
-  audience: { "@type": "BusinessAudience", audienceType: "Restaurants and restaurant chains" },
+  audience: { "@type": "BusinessAudience", audienceType: "Restaurant groups with five or more locations" },
 };
 
 export default function MaintenanceContractsPage() {
@@ -47,11 +47,11 @@ export default function MaintenanceContractsPage() {
         <h1 className="display mt-5 text-[clamp(2rem,5vw,3.25rem)] text-ink">{maintenance.title}</h1>
         <p className="mt-6 text-lg leading-relaxed text-ink-2">{maintenance.intro}</p>
         <p className="mt-4 leading-relaxed text-ink-2">
-          Part of{" "}
+          One location?{" "}
           <Link href="/care" className="underline underline-offset-4 hover:text-accent">
-            IOGAI Care Restaurant
+            See IOGAI Care Restaurant
           </Link>{" "}
-          — from $149 per month per location, with priority emergency dispatch and 15% off repairs.
+          — from $149 per month, month to month, with priority dispatch and 15% off repairs.
         </p>
 
         <div className="mt-12">

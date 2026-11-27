@@ -31,6 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: base, changeFrequency: "weekly", priority: 1 },
     { url: `${base}/care`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/maintenance-contracts`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/medical-lab-beauty-refrigeration`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/service-areas`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/repair`, changeFrequency: "monthly", priority: 0.8 },
     ...problemPages,

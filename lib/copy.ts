@@ -29,10 +29,10 @@ export const offer = {
 // 3 Sept 2026 - for restaurant chains and independent restaurants that
 // contract IOGAI for ongoing service instead of one-off repair calls.
 export const maintenance = {
-  label: "Maintenance Contracts",
-  title: "Annual Maintenance Contracts for Restaurants",
+  label: "Restaurant groups · 5+ locations",
+  title: "One Contract for Every Location",
   intro:
-    "For restaurant chains and independent restaurants that need their refrigeration running every day, not just fixed when it breaks. A planned maintenance schedule to help reduce avoidable downtime.",
+    "For restaurant groups with five or more locations: one schedule, one point of contact and one invoice for every site. Priced for your portfolio after a walk-through. A single location? IOGAI Care Restaurant is the simpler fit, from $149 per month.",
   schedule: [
     {
       k: "Every 3 months",
@@ -53,7 +53,7 @@ export const maintenance = {
     "Electrical connection diagnostics",
     "Full equipment check at every technician visit",
   ],
-  cta: "Ask about a maintenance contract",
+  cta: "Request a portfolio quote",
 };
 
 // ONE PLACE for the Google review count. Change it here and every page,
@@ -129,6 +129,8 @@ export const brands = {
     "Washers & Dryers",
     "Ovens & Stoves",
     "Dishwashers",
+    "Medical & Lab Refrigeration",
+    "Beauty Clinic Equipment Cooling",
   ],
 };
 
@@ -240,6 +242,10 @@ export const faq = {
       a: "Yes, IOGAI Care. Care Home: $119 per maintenance visit for built-in and high-end refrigeration, no annual fee and no prepayment. Care Property: for property managers, HOAs, landlords and vacation rentals, $100 per home or $135 per business service call, $119 turnover check per unit, one monthly invoice. Care Restaurant: scheduled maintenance from $149 per month, month to month. Details at iogai.com/care.",
     },
     {
+      q: "Do you service medical, lab and beauty clinic equipment?",
+      a: "Yes, plug-in refrigeration of any complexity: pharmacy and vaccine refrigerators, lab refrigerators and freezers, ultra-low freezers, blood bank and specimen refrigerators, mortuary refrigerators, and the cooling systems in aesthetic clinic devices. We do not service X-ray or other radiation equipment, and equipment under a manufacturer's warranty goes to the manufacturer first. Details at iogai.com/medical-lab-beauty-refrigeration.",
+    },
+    {
       q: "Is my requested time the technician's arrival time?",
       a: "Choose a 2-hour arrival window, Monday to Friday: 8–10 AM, 10 AM–12 PM, 12–2 PM, 2–4 PM or 4–6 PM. Your technician texts you 30 minutes before arrival, so you don't have to wait by the door. Same-day and next-day visits are often available.",
     },
@@ -272,6 +278,7 @@ export const contact = {
     options: [
       { id: "repair", label: "Appliance Repair", note: "Built-in & high-end appliances, refrigerators, ovens, dishwashers, washers & dryers." },
       { id: "commercial", label: "Commercial", note: "Ice machine, reach-in, prep table or bar cooler" },
+      { id: "medical", label: "Medical / Lab / Beauty", note: "Pharmacy, vaccine, lab or clinic refrigeration" },
       { id: "other", label: "Something else", note: "Tell us the equipment and we will confirm" },
     ],
   },
@@ -327,7 +334,8 @@ export const footer = {
         { label: "Reviews", href: "/#testimonials" },
         { label: "FAQ", href: "/#faq" },
         { label: "Service Areas", href: "/service-areas" },
-        { label: "Maintenance Contracts", href: "/maintenance-contracts" },
+        { label: "Medical, Lab & Beauty", href: "/medical-lab-beauty-refrigeration" },
+        { label: "Restaurant Groups", href: "/maintenance-contracts" },
       ],
     },
     {
