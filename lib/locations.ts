@@ -81,6 +81,11 @@ export const locations: Location[] = [
   oc("El Segundo", "South Bay / SE Los Angeles County"),
   oc("Los Angeles", "South Bay / SE Los Angeles County"),
   oc("Santa Monica", "Westside Los Angeles County"),
+  oc("Rancho Palos Verdes", "South Bay / SE Los Angeles County"),
+  oc("Palos Verdes Estates", "South Bay / SE Los Angeles County"),
+  oc("Rolling Hills Estates", "South Bay / SE Los Angeles County"),
+  oc("Ladera Ranch", "South Orange County"),
+  oc("Coto de Caza", "South Orange County"),
 ];
 
 // Core markets: close to the Huntington Beach base, high-end homes and dense
@@ -214,6 +219,54 @@ const FOCUS: Record<string, { home: string; commercial: string }> = {
   "santa-ana": {
     home: "From Floral Park and French Park to Riverview West, Santa Ana homes range from historic houses to remodeled kitchens. We repair refrigerators, freezers and premium built-ins with honest repair-vs-replace advice.",
     commercial: "Downtown Santa Ana's 4th Street dining and the busy corridors along Bristol, Main and 17th keep commercial kitchens running long hours. We service their refrigeration by appointment, with pricing confirmed up front.",
+  },
+  "la-palma": {
+    home: "La Palma is a quiet, well-kept city where people keep appliances for years. We repair refrigerators, freezers and ice makers so they last longer, with the price agreed first.",
+    commercial: "Caf\u00e9s and shops along Valley View St and La Palma Ave rely on reach-ins and bar coolers. Clear diagnosis, written quote, no surprises.",
+  },
+  "brea": {
+    home: "Brea homes in the hills and around downtown often have built-in kitchens and wine storage. We repair them carefully, in place, with the price approved before work.",
+    commercial: "Downtown Brea's Birch Street dining and the restaurants around Brea Mall keep commercial kitchens busy. We service ice machines, reach-ins and prep tables by appointment.",
+  },
+  "placentia": {
+    home: "From Old Town Placentia to the newer homes off Kraemer Blvd, families depend on their refrigerators and freezers. We fix them at a fair, approved price.",
+    commercial: "Old Town Placentia's restaurants and the eateries along Yorba Linda Blvd and Kraemer run reach-ins and ice machines all day. Fast diagnosis, clear pricing.",
+  },
+  "laguna-hills": {
+    home: "Laguna Hills homes off Moulton Pkwy and Alicia often have built-in refrigerators and wine coolers. We repair them in place, with a written price before work.",
+    commercial: "Restaurants and medical offices around Moulton Pkwy and the Laguna Hills shopping area rely on reach-ins and plug-in refrigerators. We keep them running.",
+  },
+  "rancho-santa-margarita": {
+    home: "Rancho Santa Margarita's family homes around the lake and Santa Margarita Pkwy have busy kitchens. We repair refrigerators, freezers and ice makers, price approved first.",
+    commercial: "Restaurants and caf\u00e9s along Santa Margarita Pkwy and Antonio Pkwy depend on reach-ins, prep tables and ice machines. Clear diagnosis, written quote.",
+  },
+  "cerritos": {
+    home: "Cerritos homes are known for well-kept kitchens, many with built-in and high-end refrigerators. We repair them in place, carefully and at an approved price.",
+    commercial: "Restaurants around Cerritos Towne Center and along South St run full days. We service their reach-ins, prep tables and ice machines by appointment.",
+  },
+  "el-segundo": {
+    home: "El Segundo's neighborhood homes near Main Street often have remodeled kitchens with built-in refrigeration. We repair them carefully, in place.",
+    commercial: "Main Street restaurants and the office kitchens along Rosecrans depend on reach-ins, under-counter units and ice machines. Clear diagnosis, written quote.",
+  },
+  "rancho-palos-verdes": {
+    home: "Rancho Palos Verdes homes with ocean views often have built-in refrigerators and wine storage. Marine air is hard on coils and connections, so we check both on every visit.",
+    commercial: "Restaurants and clubs on the Palos Verdes Peninsula rely on bar coolers, reach-ins and ice machines. We service them by appointment.",
+  },
+  "palos-verdes-estates": {
+    home: "Palos Verdes Estates homes are full of built-in and high-end refrigeration. We repair it carefully, in place, with the price approved before any work.",
+    commercial: "Clubs and caf\u00e9s in Palos Verdes Estates rely on bar coolers and ice machines. We keep them clean and running.",
+  },
+  "rolling-hills-estates": {
+    home: "Rolling Hills Estates homes often have large kitchens with built-in refrigerators and wine coolers. We repair them in place, with a written price first.",
+    commercial: "Restaurants around the Promenade on the Peninsula run reach-ins and ice machines all day. We service them by appointment.",
+  },
+  "ladera-ranch": {
+    home: "Ladera Ranch's newer homes have built-in kitchens, wine coolers and ice makers that need proper care. We repair them in place and help them last longer.",
+    commercial: "Caf\u00e9s and restaurants along Crown Valley Pkwy and Antonio Pkwy depend on reach-ins and ice machines. Clear diagnosis, written quote.",
+  },
+  "coto-de-caza": {
+    home: "Coto de Caza estates often run several refrigerators, freezers and wine units at once. We repair and maintain them carefully, with the price approved before any work.",
+    commercial: "Club kitchens in Coto de Caza rely on reach-ins, bar coolers and ice machines. We service them on schedule.",
   },
 };
 

@@ -91,7 +91,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "IOGAI — High-End & Built-In Appliance Repair | Orange County",
   description:
-    "Sub-Zero, Viking, Thermador, Wolf & Miele repair by refrigeration specialists in Orange County & LA. $100 service call, applied to the repair. Book online 24/7.",
+    "Sub-Zero, Viking, Thermador, Wolf & Miele repair by refrigeration specialists in Orange County & LA. $100 home / $135 business service call, applied to the repair. Book online 24/7.",
   metadataBase: new URL("https://iogai.com"),
   // Google Search Console site ownership verification (added 5 Sept 2026,
   // via HTML tag method - the property was otherwise unverified).
@@ -126,7 +126,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "IOGAI — High-End & Built-In Appliance Repair | Orange County",
-    description: "High-end & built-in appliance repair in Orange County. Sub-Zero, Viking, Thermador, Wolf, Miele. $100 service call.",
+    description: "High-end & built-in appliance repair in Orange County. Sub-Zero, Viking, Thermador, Wolf, Miele. $100 home / $135 business service call.",
     images: ["/media/real/svc-refrigerator.jpg"],
   },
 };
