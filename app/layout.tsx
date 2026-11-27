@@ -4,7 +4,7 @@ import "./globals.css";
 import { MotionRoot } from "@/components/ui/MotionRoot";
 import { Analytics } from "@/components/Analytics";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { services } from "@/lib/copy";
+import { services, rating } from "@/lib/copy";
 
 // LocalBusiness structured data — trust + Google rich results (rating stars, etc.)
 // and a clean, factual entity for AI answer engines to cite.
@@ -46,7 +46,7 @@ const businessLd = {
   },
   areaServed: ["Huntington Beach", "Orange County", "Los Angeles"],
   serviceType: [...services.items.map((s) => s.name), "General Appliance Repair"],
-  aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "136" },
+  aggregateRating: { "@type": "AggregateRating", ratingValue: rating.value, reviewCount: rating.count },
 };
 
 // One Service entity per real offering, linked back to the business - lets

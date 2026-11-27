@@ -56,6 +56,9 @@ export const maintenance = {
   cta: "Ask about a maintenance contract",
 };
 
+// ONE PLACE for the Google review count. Change it here and every page,
+// the structured data (layout.tsx) and Igor's page update together.
+// public/llms.txt is static text: update the two numbers there too.
 // Google is the only platform with a verified count right now (Yelp shows 5.0 / 7 reviews,
 // but that count wasn't in the source pasted - left off rather than guessed).
 export const rating = { value: "5.0", count: "137", source: "Google" };
@@ -86,7 +89,7 @@ export const advantages = {
   title: "Experienced hands for the appliances you care about most",
   stats: [
     { value: "13", unit: "+", caption: "Years of hands-on refrigeration experience — Igor Ogai" },
-    { value: "5.0", unit: "/5", caption: "Average rating from 136 Google reviews" },
+    { value: "5.0", unit: "/5", caption: `Average rating from ${rating.count} Google reviews` },
     { value: "24", unit: "/7", caption: "Request service online anytime. We confirm your technician's arrival window." },
   ],
 };
@@ -196,7 +199,7 @@ export const testimonials = {
   label: "Testimonials",
   title: "What Our Clients Say",
   intro:
-    "5.0 stars across 136 Google reviews. A few of them, word for word.",
+    `${rating.value} stars across ${rating.count} Google reviews. A few of them, word for word.`,
   items: [
     {
       quote: "Igor's company very good work, good price & great customer service!",

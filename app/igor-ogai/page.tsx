@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { site } from "@/lib/copy";
+import { site, rating } from "@/lib/copy";
 
 // Igor Ogai's personal page (igorogai.com points here). Black and gold to
 // match the IOGAI emblem. Story text is Igor's own, from the /igor drafts he
@@ -56,7 +56,7 @@ const stats = [
   { v: "13", l: "years in the field" },
   { v: "3", l: "countries, one standard" },
   { v: "5.0", l: "Google rating in California" },
-  { v: "136", l: "Google reviews" },
+  { v: rating.count, l: "Google reviews" },
 ];
 
 const chapters = [
