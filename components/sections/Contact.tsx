@@ -20,7 +20,7 @@ export function Contact() {
         <Reveal>
           <Eyebrow>{contact.label}</Eyebrow>
           <h2 className="display mt-5 text-[clamp(2.25rem,5vw,3.5rem)] text-ink">{contact.title}</h2>
-          <p className="mt-6 max-w-md text-base leading-relaxed text-ink-2">Request service online 24/7. For urgent commercial refrigeration problems, call us to check the soonest available technician. We confirm the arrival window before your visit.</p>
+          <p className="mt-6 max-w-md text-base leading-relaxed text-ink-2">{contact.intro}</p>
           <div className="mt-10 space-y-5">
             <div className="text-xs uppercase tracking-widest text-ink-3">{contact.directLabel}</div>
             <a

@@ -14,7 +14,7 @@ export const site = {
   hours: "Mon–Fri 8 AM–6 PM · Book online 24/7",
   // State registration confirmed by the owner (BHGS / BEAR Major Appliance
   // Repair, status Clear, expires 31 Mar 2027). Shown so customers can verify.
-  license: "CA BHGS Service Dealer Reg. #A50829",
+  license: "CA Bureau of Household Goods & Services · Major Appliance Repair No. 50829",
   licenseHref:
     "https://search.dca.ca.gov/details/3900/A/50829/74c24905a98775ee65175f3b0bbdfcbf",
 };
@@ -77,7 +77,7 @@ export const nav = {
 export const hero = {
   eyebrow: "Orange County & Los Angeles County",
   title: ["High-End Appliance", "& Refrigeration Repair"],
-  sub: "Sub-Zero, Viking, Thermador, Wolf and Miele, cared for in your home by refrigeration specialists who respect your kitchen and your time. Walk-ins and ice machines kept running for local businesses. Owner-led: old-world craftsmanship, American standards.",
+  sub: "When the cold stops, everything waits. We repair Sub-Zero, Viking, Thermador, Wolf and Miele in your home, and keep ice machines and kitchen refrigeration running for local businesses. Owner-led: the owner's name stands behind every job.",
   ctaPrimary: "Request Service",
   ctaSecondary: "Call (424) 421-7771",
 };
@@ -254,7 +254,7 @@ export const faq = {
     },
     {
       q: "Can you service my equipment?",
-      a: "Send the equipment type, brand, model, and ZIP code. We will confirm whether we can accept the work before scheduling. Ask for any registration or license information relevant to your project.",
+      a: "Send the equipment type, brand, model, and ZIP code. We will confirm whether we can accept the work before scheduling.",
     },
     {
       q: "Do you provide a warranty for your services?",
@@ -275,7 +275,7 @@ export const contact = {
   label: "Request service online",
   title: "Request a service visit",
   intro:
-    "Call or text us directly to arrange service. You can text a photo of the equipment and tell us what's going wrong.",
+    "Tell us what's wrong, online 24/7. We call to confirm your arrival window. Urgent problem at a business? Call us now.",
   serviceStep: {
     heading: "What do you need help with?",
     options: [
@@ -313,7 +313,7 @@ export const contact = {
   next: "Continue",
   submit: "Request Service",
   submitting: "Sending…",
-  success: "Received. A technician will call you shortly at the number you gave us.",
+  success: "Received. We'll call to confirm your visit, Mon–Fri, 8 AM–6 PM.",
   error: "Something went wrong. Please call or email us directly.",
   directLabel: "Or reach us directly",
 };
@@ -331,7 +331,6 @@ export const footer = {
     {
       title: "Quick links",
       links: [
-        { label: "Services", href: "/service-areas" },
         { label: "Repair Problems", href: "/repair" },
         { label: "IOGAI Care Membership", href: "/care" },
         { label: "How it works", href: "/#process" },
