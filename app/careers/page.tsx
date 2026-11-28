@@ -16,7 +16,7 @@ const levels = [
   { name: "Senior", req: "EPA Universal, sealed systems", pay: "$36/hr + 20%" },
 ];
 
-const smsHref = "sms:+14244217771?body=" + encodeURIComponent("Hi, I want to apply for the technician job. My level and experience: ");
+const smsHref = "sms:+14244217771?&body=" + encodeURIComponent("Hi, I want to apply for the technician job. My level and experience: ");
 
 const jobLd = {
   "@context": "https://schema.org",
@@ -93,6 +93,12 @@ export default function CareersPage() {
         <li>A clear path from Junior to Senior: learn faster, earn more</li>
         <li>Owner-led: old-world craftsmanship, American standards. English and Spanish spoken.</li>
       </ul>
+
+      <h2>Know a great technician? Earn $500</h2>
+      <p>
+        Refer a technician we hire and earn <strong>$500</strong>: $250 after their first 30 days and $250 after 90 days.
+        Text their name and number to <a href={smsHref}>{site.phoneDisplay}</a>.
+      </p>
 
       <h2>What we need</h2>
       <ul>

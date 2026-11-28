@@ -36,7 +36,7 @@ export function Contact() {
             <div className="pt-1">
               <div className="text-xs uppercase tracking-widest text-ink-3">{contact.textUs.label}</div>
               <a
-                href={`${smsUrl}?body=${encodeURIComponent(contact.textUs.prefill)}`}
+                href={`${smsUrl}?&body=${encodeURIComponent(contact.textUs.prefill)}`}
                 onClick={() => trackContact("sms")}
                 className="mt-2 inline-flex h-11 items-center gap-2 rounded-md border border-hairline px-4 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent"
               >

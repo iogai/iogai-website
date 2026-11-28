@@ -175,7 +175,7 @@ export default function CarePage() {
               </ul>
               <p className="mt-6 text-xs leading-relaxed text-ink-3">{p.note}</p>
               <div className="mt-4 flex flex-wrap gap-3">
-                <CTA href={`sms:+14244217771?body=${encodeURIComponent(p.sms)}`} variant="solid">
+                <CTA href={`sms:+14244217771?&body=${encodeURIComponent(p.sms)}`} variant="solid">
                   {p.cta}
                 </CTA>
                 <CTA href={site.phoneHref} variant="ghost">
